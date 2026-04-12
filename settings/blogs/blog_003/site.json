@@ -1,7 +1,7 @@
 {
   "blog_folder": "blog_003",
   "blog_id": "blog-static-web-operations",
-  "site_url": "",
+  "site_url": "https://staticsite-fjs.pages.dev",
   "site_title": "Static Site Ops Guide",
   "site_description": "A practical blog about running static websites with clear deployment, indexing, search, image, and operating rules.",
   "footer_copy_en": "Practical rules for operating static websites without drift.",
