@@ -1,0 +1,100 @@
+---
+import type { Locale } from '../config/i18n';
+import MainLayout from '../layouts/MainLayout.astro';
+import { DESCRIPTION_UI_LIMIT, SEARCH_RESULT_LIMIT, TITLE_UI_LIMIT } from '../lib/blog';
+import { SITE_TITLE } from '../config/site';
+
+interface Props {
+	locale: Locale;
+	title: string;
+	description: string;
+	heading: string;
+	intro: string;
+	placeholder: string;
+	loadingText: string;
+	emptyText: string;
+	errorText: string;
+	resultSuffix: string;
+	searchIndexPath: string;
+	cardClass: string;
+	dateLocale: string;
+}
+
+const props = Astro.props;
+---
+
+<MainLayout locale={props.locale} title={`${SITE_TITLE} | ${props.title}`} description={props.description}>
+	<section class:list={['search-shell', { 'search-shell--en': props.locale === 'en' }]}>
+		<h1>{props.heading}</h1>
+		<p>{props.intro}</p>
+		<input id="search-input" class="search-input" type="search" placeholder={props.placeholder} />
+		<div id="search-count" class="search-meta">{props.loadingText}</div>
+		<div id="search-results" class="search-results"></div>
+	</section>
+	<script
+		slot="body-end"
+		define:vars={{
+			TITLE_UI_LIMIT,
+			DESCRIPTION_UI_LIMIT,
+			SEARCH_RESULT_LIMIT,
+			searchIndexPath: props.searchIndexPath,
+			cardClass: props.cardClass,
+			dateLocale: props.dateLocale,
+			emptyText: props.emptyText,
+			errorText: props.errorText,
+			resultSuffix: props.resultSuffix,
+		}}
+	>
+		const input = document.querySelector('#search-input');
+		const count = document.querySelector('#search-count');
+		const results = document.querySelector('#search-results');
+		let documents = [];
+
+		const TITLE_LIMIT = TITLE_UI_LIMIT;
+		const DESCRIPTION_LIMIT = DESCRIPTION_UI_LIMIT;
+		const RESULT_LIMIT = SEARCH_RESULT_LIMIT;
+		const clamp = (text, limit) =>
+			text.length <= limit ? text : `${text.slice(0, limit).trim()}...`;
+
+		const renderResults = (query) => {
+			const normalized = query.trim().toLowerCase();
+			const filtered = (!normalized
+				? documents
+				: documents.filter((doc) =>
+						[doc.title, doc.description, ...(doc.tags || []), doc.content]
+							.join(' ')
+							.toLowerCase()
+							.includes(normalized)
+					)).slice(0, RESULT_LIMIT);
+
+			count.textContent = `${filtered.length}${resultSuffix}`;
+			results.innerHTML = filtered.length
+				? filtered
+						.map(
+							(doc) => `
+								<article class="search-card ${cardClass}">
+									<h2><a href="${doc.url}">${clamp(doc.title, TITLE_LIMIT)}</a></h2>
+									<p>${clamp(doc.description, DESCRIPTION_LIMIT)}</p>
+									<p class="search-meta">${doc.stage} · ${new Date(doc.pubDate).toLocaleDateString(dateLocale)}</p>
+								</article>
+							`
+						)
+						.join('')
+				: `<p class="search-empty">${emptyText}</p>`;
+		};
+
+		fetch(searchIndexPath)
+			.then((response) => response.json())
+			.then((data) => {
+				documents = data;
+				renderResults('');
+			})
+			.catch(() => {
+				count.textContent = errorText;
+			});
+
+		input?.addEventListener('input', (event) => {
+			renderResults(event.target.value);
+		});
+	</script>
+</MainLayout>

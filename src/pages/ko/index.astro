@@ -1,0 +1,19 @@
+---
+import PostFeed from '../../components/PostFeed.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getBlogPosts, getVisiblePosts } from '../../lib/blog';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../config/site';
+
+const posts = getVisiblePosts(await getBlogPosts('ko'));
+---
+
+<MainLayout locale="ko" title={`${SITE_TITLE} | 최신글`} description={SITE_DESCRIPTION} mainClass="page-shell">
+	<PostFeed
+		locale="ko"
+		title={SITE_TITLE}
+		description={SITE_DESCRIPTION}
+		posts={posts}
+		titleClass="post-card-title--ko-index"
+		titleTag="h2"
+	/>
+</MainLayout>

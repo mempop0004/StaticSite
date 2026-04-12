@@ -1,0 +1,19 @@
+---
+import SearchPage from '../../components/SearchPage.astro';
+---
+
+<SearchPage
+	locale="ko"
+	title="검색"
+	description="현재 포스팅 기준으로 자동 생성되는 검색 페이지."
+	heading="검색"
+	intro="현재 블로그 포스트 기준으로 검색 인덱스를 자동 생성한다."
+	placeholder="제목, 설명, 태그, 본문 검색"
+	loadingText="검색 인덱스를 불러오는 중..."
+	emptyText="검색 결과가 없다."
+	errorText="검색 인덱스를 불러오지 못했다."
+	resultSuffix="개 결과"
+	searchIndexPath="/ko/search-index.json"
+	cardClass="search-card--ko"
+	dateLocale="ko-KR"
+/>

@@ -1,0 +1,29 @@
+---
+import { type CollectionEntry, render } from 'astro:content';
+import BlogUnitRail from '../../../components/BlogUnitRail.astro';
+import { getBlogUnit } from '../../../data/blogUnits';
+import BlogPost from '../../../layouts/BlogPost.astro';
+import { getBlogPosts, getLocalizedSlug, getRelatedPosts } from '../../../lib/blog';
+
+export async function getStaticPaths() {
+	const posts = await getBlogPosts('ko');
+	return posts.map((post) => ({
+		params: { slug: getLocalizedSlug(post, 'ko') },
+		props: { post },
+	}));
+}
+
+type Props = {
+	post: CollectionEntry<'blog'>;
+};
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const unit = getBlogUnit(post.data.blogId);
+const relatedPosts = await getRelatedPosts(post, 'ko');
+---
+
+<BlogPost locale="ko" {...post.data}>
+	<Content />
+	{unit && <BlogUnitRail locale="ko" unit={unit} relatedPosts={relatedPosts} />}
+</BlogPost>

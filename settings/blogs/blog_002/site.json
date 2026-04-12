@@ -1,0 +1,14 @@
+{
+  "blog_folder": "blog_002",
+  "blog_id": "blog-ai-for-developers",
+  "site_url": "https://b02-ang.pages.dev",
+  "site_title": "Developer AI Guide",
+  "site_description": "A practical blog for developers who want to use AI for coding, debugging, refactoring, testing, and documentation without turning every task into a black box.",
+  "footer_copy_en": "Practical AI guidance for developers.",
+  "footer_copy_ko": "개발자를 위한 실전 AI 활용 가이드.",
+  "default_locale": "en",
+  "locales": [
+    "en",
+    "ko"
+  ]
+}

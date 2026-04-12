@@ -1,0 +1,19 @@
+---
+import SearchPage from '../components/SearchPage.astro';
+---
+
+<SearchPage
+	locale="en"
+	title="Search"
+	description="Search posts by title, description, tags, and content."
+	heading="Search"
+	intro="Search is generated automatically from the current blog posts during build."
+	placeholder="Search title, description, tags, or content"
+	loadingText="Loading search index..."
+	emptyText="No posts matched this search."
+	errorText="Failed to load search index."
+	resultSuffix=" result(s)"
+	searchIndexPath="/search-index.json"
+	cardClass="search-card--en"
+	dateLocale="en-US"
+/>

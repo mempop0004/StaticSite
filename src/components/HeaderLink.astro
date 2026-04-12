@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'a'>;
+
+const { href, class: className, ...props } = Astro.props;
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '') || '/';
+const normalizedHref = href && href !== '/' ? href.replace(/\/$/, '') : href;
+const normalizedPathname = pathname !== '/' ? pathname.replace(/\/$/, '') : pathname;
+const hrefSegments = typeof normalizedHref === 'string' ? normalizedHref.match(/[^\/]+/g) ?? [] : [];
+const isLocaleHome = hrefSegments.length === 1 && ['ko', 'en'].includes(hrefSegments[0]);
+const isActive =
+	normalizedHref === normalizedPathname ||
+	(normalizedHref !== '/' &&
+		!isLocaleHome &&
+		typeof normalizedHref === 'string' &&
+		normalizedPathname.startsWith(`${normalizedHref}/`));
+---
+
+<a href={href} class:list={[className, { active: isActive }]} {...props}>
+	<slot />
+</a>

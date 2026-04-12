@@ -1,0 +1,14 @@
+{
+  "blog_folder": "blog_003",
+  "blog_id": "blog-static-web-operations",
+  "site_url": "",
+  "site_title": "Static Site Ops Guide",
+  "site_description": "A practical blog about running static websites with clear deployment, indexing, search, image, and operating rules.",
+  "footer_copy_en": "Practical rules for operating static websites without drift.",
+  "footer_copy_ko": "정적 웹사이트를 흔들림 없이 운영하기 위한 실전 규칙.",
+  "default_locale": "en",
+  "locales": [
+    "en",
+    "ko"
+  ]
+}

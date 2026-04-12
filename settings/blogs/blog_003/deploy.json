@@ -1,0 +1,12 @@
+{
+  "blog_folder": "blog_003",
+  "blog_id": "blog-static-web-operations",
+  "hosting_provider": "cloudflare-pages",
+  "production_url": "",
+  "github_repo": "https://github.com/mempop0004/StaticSite.git",
+  "local_working_repo": "https://github.com/golrazo/studio-blog.git",
+  "production_branch": "main",
+  "build_command": "npm run blog:build -- blog_003",
+  "output_dir": "dist",
+  "root_dir": "/"
+}

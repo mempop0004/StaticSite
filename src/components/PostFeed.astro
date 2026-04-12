@@ -1,0 +1,84 @@
+---
+import { Image } from 'astro:assets';
+import type { Locale } from '../config/i18n';
+import type { BlogEntry } from '../lib/blog';
+import { getLocalizedSlug, getUiTitle } from '../lib/blog';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+	locale: Locale;
+	title: string;
+	description: string;
+	posts: BlogEntry[];
+	page?: {
+		currentPage: number;
+		lastPage: number;
+		prevUrl?: string;
+		nextUrl?: string;
+	};
+	titleClass?: string;
+	titleTag?: 'h2' | 'h4';
+}
+
+const { locale, title, description, posts, page, titleClass = '', titleTag = 'h2' } = Astro.props;
+const TitleTag = titleTag;
+---
+
+<section class:list={['latest-intro', { 'latest-intro--en': locale === 'en', 'latest-intro--ko': locale === 'ko' }]}>
+	<h1>{title}</h1>
+	<p>{description}</p>
+</section>
+{
+	page && page.lastPage > 1 && (
+		<nav class="pagination" aria-label={locale === 'ko' ? '페이지 목록' : 'Pagination'}>
+			<div class="pagination-links">
+				{page.prevUrl ? (
+					<a class="pagination-link" href={page.prevUrl}>
+						{locale === 'ko' ? '이전' : 'Previous'}
+					</a>
+				) : (
+					<span class="pagination-link pagination-link--disabled">
+						{locale === 'ko' ? '이전' : 'Previous'}
+					</span>
+				)}
+				<p class="pagination-status">
+					{page.currentPage} / {page.lastPage}
+				</p>
+				{page.nextUrl ? (
+					<a class="pagination-link" href={page.nextUrl}>
+						{locale === 'ko' ? '다음' : 'Next'}
+					</a>
+				) : (
+					<span class="pagination-link pagination-link--disabled">
+						{locale === 'ko' ? '다음' : 'Next'}
+					</span>
+				)}
+			</div>
+		</nav>
+	)
+}
+<section>
+	<ul class="post-list">
+		{
+			posts.map((post) => (
+				<li class="post-card">
+					<a class="post-card-link" href={locale === 'ko' ? `/ko/blog/${getLocalizedSlug(post, locale)}/` : `/blog/${getLocalizedSlug(post, locale)}/`}>
+						{post.data.heroImage && (
+							<Image
+								class:list={['post-card-media', { 'post-card-media--ko': locale === 'ko' }]}
+								width={720}
+								height={360}
+								src={post.data.heroImage}
+								alt={post.data.heroImageAlt || post.data.title}
+							/>
+						)}
+						<TitleTag class:list={['post-card-title', titleClass]}>{getUiTitle(post.data.title)}</TitleTag>
+						<p class:list={['post-card-date', { 'post-card-date--ko': locale === 'ko' }]}>
+							<FormattedDate date={post.data.pubDate} />
+						</p>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</section>

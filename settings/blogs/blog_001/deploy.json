@@ -1,0 +1,12 @@
+{
+  "blog_folder": "blog_001",
+  "blog_id": "blog-ai-for-everyday-users",
+  "hosting_provider": "cloudflare-pages",
+  "production_url": "https://blog-1ye.pages.dev",
+  "github_repo": "https://github.com/mempop0002-lgtm/blog",
+  "local_working_repo": "https://github.com/golrazo/studio-blog.git",
+  "production_branch": "main",
+  "build_command": "npm run build",
+  "output_dir": "dist",
+  "root_dir": ""
+}

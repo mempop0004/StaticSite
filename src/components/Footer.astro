@@ -1,0 +1,16 @@
+---
+import { SITE_FOOTER_COPY, SITE_TITLE } from '../config/site';
+import type { Locale } from '../config/i18n';
+
+interface Props {
+	locale?: Locale;
+}
+
+const today = new Date();
+const { locale = 'en' } = Astro.props;
+---
+
+<footer>
+	<p>&copy; {today.getFullYear()} {SITE_TITLE}.</p>
+	<p>{SITE_FOOTER_COPY[locale]}</p>
+</footer>

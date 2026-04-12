@@ -1,0 +1,11 @@
+{
+  "blog_folder": "blog_001",
+  "blog_id": "blog-ai-for-everyday-users",
+  "site_url": "https://blog-1ye.pages.dev",
+  "site_title": "Everyday AI Guide",
+  "site_description": "A practical blog for everyday users who want to use AI for email, documents, learning, and repetitive admin work without turning everything into a complex workflow.",
+  "footer_copy_en": "Practical AI guidance for everyday users.",
+  "footer_copy_ko": "일반 사용자를 위한 실전 AI 활용 가이드.",
+  "default_locale": "en",
+  "locales": ["en", "ko"]
+}

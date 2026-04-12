@@ -1,0 +1,66 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { activeBlogUnits, getBlogUnit } from '../../../data/blogUnits';
+import { getBlogPostsByUnit, getLocalizedSlug } from '../../../lib/blog';
+
+export async function getStaticPaths() {
+	return activeBlogUnits.map((unit) => ({
+		params: { blogId: unit.id },
+	}));
+}
+
+const blogId = Astro.params.blogId as (typeof activeBlogUnits)[number]['id'];
+const unit = getBlogUnit(blogId);
+
+if (!unit) {
+	throw new Error(`Unknown blog unit: ${blogId}`);
+}
+
+const posts = await getBlogPostsByUnit('ko', unit.id);
+const pillarPost = posts.find((post) => post.data.stage === 'pillar') ?? posts[0];
+const supportingPosts = posts.filter((post) => post.id !== pillarPost?.id);
+---
+
+<MainLayout locale="ko" title={`${unit.topic.ko} | 최신글`} description={unit.goal.ko} mainClass="unit-page">
+	<section class="unit-card unit-hero">
+		<p>운영 단위: <code>{unit.id}</code></p>
+		<h1>{unit.topic.ko}</h1>
+		<p>{unit.goal.ko}</p>
+		<ul class="unit-meta-grid">
+			<li><strong>유형</strong>{unit.type}</li>
+			<li><strong>독자</strong>{unit.reader.ko}</li>
+			<li><strong>자동화</strong>{unit.automationName}</li>
+			<li><strong>운영 시간</strong>{unit.dailyHours}</li>
+			<li><strong>시작일</strong>{unit.startDate}</li>
+			<li><strong>리뷰일</strong>{unit.reviewDate}</li>
+		</ul>
+	</section>
+	<section class="unit-card">
+		<h2>최신글 루프</h2>
+		<ol class="unit-loop-list">
+			{unit.publishingLoop.ko.map((item) => <li>{item}</li>)}
+		</ol>
+	</section>
+	<section class="unit-card">
+		<h2>대표 글</h2>
+		{pillarPost ? (
+			<p>
+				<a href={`/ko/blog/${getLocalizedSlug(pillarPost, 'ko')}/`}>{pillarPost.data.title}</a>
+			</p>
+		) : (
+			<p>대표 글이 아직 없다.</p>
+		)}
+		{supportingPosts.length > 0 && (
+			<>
+				<h3>다음 글</h3>
+				<ul class="unit-post-list">
+					{supportingPosts.map((post) => (
+						<li>
+							<a href={`/ko/blog/${getLocalizedSlug(post, 'ko')}/`}>{post.data.title}</a>
+						</li>
+					))}
+				</ul>
+			</>
+		)}
+	</section>
+</MainLayout>

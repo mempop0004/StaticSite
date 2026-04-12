@@ -1,0 +1,72 @@
+[
+  {
+    "number": "001",
+    "folder": "blog_001",
+    "blogId": "blog-ai-for-everyday-users",
+    "topicKo": "일반인이 AI를 활용하는 방법",
+    "topicEn": "How everyday users can use AI"
+  },
+  {
+    "number": "002",
+    "folder": "blog_002",
+    "blogId": "blog-ai-for-developers",
+    "topicKo": "개발자가 AI를 활용하는 방법",
+    "topicEn": "How developers can use AI"
+  },
+  {
+    "number": "003",
+    "folder": "blog_003",
+    "blogId": "blog-static-web-operations",
+    "topicKo": "정적 웹사이트 운영",
+    "topicEn": "Static website operations"
+  },
+  {
+    "number": "004",
+    "folder": "blog_004",
+    "blogId": "blog-technical-blog-operations",
+    "topicKo": "기술 블로그 운영",
+    "topicEn": "Technical blog operations"
+  },
+  {
+    "number": "005",
+    "folder": "blog_005",
+    "blogId": "blog-developer-deployment-and-hosting",
+    "topicKo": "개발자용 배포와 호스팅",
+    "topicEn": "Developer deployment and hosting"
+  },
+  {
+    "number": "006",
+    "folder": "blog_006",
+    "blogId": "blog-search-driven-web-operations",
+    "topicKo": "검색 유입형 웹 운영",
+    "topicEn": "Search-driven web operations"
+  },
+  {
+    "number": "007",
+    "folder": "blog_007",
+    "blogId": "blog-web-automation-and-ops-systems",
+    "topicKo": "웹 자동화와 운영 시스템",
+    "topicEn": "Web automation and ops systems"
+  },
+  {
+    "number": "008",
+    "folder": "blog_008",
+    "blogId": "blog-solo-website-operations",
+    "topicKo": "1인 웹사이트 운영",
+    "topicEn": "Solo website operations"
+  },
+  {
+    "number": "009",
+    "folder": "blog_009",
+    "blogId": "blog-web-content-production-system",
+    "topicKo": "웹 콘텐츠 제작 시스템",
+    "topicEn": "Web content production system"
+  },
+  {
+    "number": "010",
+    "folder": "blog_010",
+    "blogId": "blog-real-world-web-troubleshooting",
+    "topicKo": "실전 웹 문제 해결",
+    "topicEn": "Real-world web troubleshooting"
+  }
+]

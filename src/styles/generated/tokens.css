@@ -1,0 +1,11 @@
+:root {
+  --content-max-width: 853px;
+  --shell-max-width: 1120px;
+  --gutter-mobile: 16px;
+  --gutter-desktop: 24px;
+  --english-intro-max-width: 760px;
+  --english-search-shell-width: 853px;
+  --english-search-copy-width: 700px;
+  --mobile-breakpoint: 768px;
+}
+

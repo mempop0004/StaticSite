@@ -1,0 +1,22 @@
+---
+import { SITE_TITLE } from '../config/site';
+import { NAV_LABELS, localePath, type Locale } from '../config/i18n';
+import HeaderLink from './HeaderLink.astro';
+
+interface Props {
+	locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const labels = NAV_LABELS[locale];
+---
+
+<header>
+	<nav class="site-nav">
+		<h2 class="site-nav-title"><a href={localePath(locale, '/')}>{SITE_TITLE}</a></h2>
+		<div class="site-nav-links">
+			<HeaderLink href={localePath(locale, '/')}>{labels.latest}</HeaderLink>
+			<HeaderLink href={localePath(locale, '/search')}>{labels.search}</HeaderLink>
+		</div>
+	</nav>
+</header>

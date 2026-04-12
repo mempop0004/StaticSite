@@ -1,0 +1,74 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { activeBlogUnits, getBlogUnit } from '../../data/blogUnits';
+import { getBlogPostsByUnit, getLocalizedSlug } from '../../lib/blog';
+
+export async function getStaticPaths() {
+	return activeBlogUnits.map((unit) => ({
+		params: { blogId: unit.id },
+	}));
+}
+
+const blogId = Astro.params.blogId as (typeof activeBlogUnits)[number]['id'];
+const unit = getBlogUnit(blogId);
+
+if (!unit) {
+	throw new Error(`Unknown blog unit: ${blogId}`);
+}
+
+const posts = await getBlogPostsByUnit('en', unit.id);
+const pillarPost = posts.find((post) => post.data.stage === 'pillar') ?? posts[0];
+const supportingPosts = posts.filter((post) => post.id !== pillarPost?.id);
+---
+
+<MainLayout locale="en" title={`${unit.topic.en} | Latest posts`} description={unit.goal.en} mainClass="unit-page">
+	<section class="unit-card unit-hero">
+		<p>운영 단위: <code>{unit.id}</code></p>
+		<h1>{unit.topic.en}</h1>
+		<p>{unit.goal.en}</p>
+		<ul class="unit-meta-grid">
+			<li><strong>유형</strong>{unit.type}</li>
+			<li><strong>독자</strong>{unit.reader.en}</li>
+			<li><strong>자동화</strong>{unit.automationName}</li>
+			<li><strong>운영 시간</strong>{unit.dailyHours}</li>
+			<li><strong>시작일</strong>{unit.startDate}</li>
+			<li><strong>리뷰일</strong>{unit.reviewDate}</li>
+		</ul>
+	</section>
+	<section class="unit-card">
+		<h2>Latest posts loop</h2>
+		<ol class="unit-loop-list">
+			{unit.publishingLoop.en.map((item) => <li>{item}</li>)}
+		</ol>
+	</section>
+	<section class="unit-card">
+		<h2>Lead post</h2>
+		{pillarPost ? (
+			<p>
+				<a href={`/blog/${getLocalizedSlug(pillarPost, 'en')}/`}>{pillarPost.data.title}</a>
+			</p>
+		) : (
+			<p>No lead post yet.</p>
+		)}
+		{supportingPosts.length > 0 && (
+			<>
+				<h3>Next posts</h3>
+				<ul class="unit-post-list">
+					{supportingPosts.map((post) => (
+						<li>
+							<a href={`/blog/${getLocalizedSlug(post, 'en')}/`}>{post.data.title}</a>
+						</li>
+					))}
+				</ul>
+			</>
+		)}
+	</section>
+	<section class="unit-card">
+		<h2>Measurement</h2>
+		<ul class="unit-metric-list">
+			{unit.measurement.map((metric) => <li>{metric}</li>)}
+		</ul>
+		<p>기록 파일: <code>{unit.recordPath}</code></p>
+		<p>{unit.successSignal.en}</p>
+	</section>
+</MainLayout>

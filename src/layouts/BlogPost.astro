@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import MainLayout from './MainLayout.astro';
+import { UPDATED_COPY, type Locale } from '../config/i18n';
+
+type Props = CollectionEntry<'blog'>['data'] & {
+	locale?: Locale;
+};
+
+const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, locale = 'en' } = Astro.props;
+---
+
+<MainLayout locale={locale} title={title} description={description} image={heroImage} mainClass="article-shell">
+	<article>
+		<div class="article-hero">
+			{heroImage && <Image width={1020} height={510} src={heroImage} alt={heroImageAlt || title} />}
+		</div>
+		<div class="prose article-prose">
+			<div class="article-title">
+				<div class="article-date">
+					<FormattedDate date={pubDate} />
+					{
+						updatedDate && (
+							<div class="article-updated">
+								{UPDATED_COPY[locale]} <FormattedDate date={updatedDate} />
+							</div>
+						)
+					}
+				</div>
+				<h1>{title}</h1>
+				<hr />
+			</div>
+			<slot />
+		</div>
+	</article>
+</MainLayout>

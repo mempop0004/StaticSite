@@ -1,0 +1,40 @@
+---
+import type { Locale } from '../config/i18n';
+import type { BlogEntry } from '../lib/blog';
+import { getLocalizedSlug } from '../lib/blog';
+import type { BlogUnit } from '../data/blogUnits';
+
+interface Props {
+	locale: Locale;
+	unit: BlogUnit;
+	relatedPosts: BlogEntry[];
+}
+
+const { locale, unit, relatedPosts } = Astro.props;
+const unitPath = locale === 'ko' ? `/ko/units/${unit.id}/` : `/units/${unit.id}/`;
+---
+
+<aside class="blog-unit-rail">
+	<p class="eyebrow">{unit.id}</p>
+	<h2>{locale === 'ko' ? '운영 단위' : 'Operating unit'}</h2>
+	<p>{unit.goal[locale]}</p>
+	<p>
+		<a href={unitPath}>{locale === 'ko' ? '단위 허브 보기' : 'Open unit hub'}</a>
+	</p>
+	{
+		relatedPosts.length > 0 && (
+			<div class="related-group">
+				<h3>{locale === 'ko' ? '다음 글' : 'Next posts'}</h3>
+				<ul>
+					{relatedPosts.map((post) => (
+						<li>
+							<a href={locale === 'ko' ? `/ko/blog/${getLocalizedSlug(post, locale)}/` : `/blog/${getLocalizedSlug(post, locale)}/`}>
+								{post.data.title}
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+		)
+	}
+</aside>

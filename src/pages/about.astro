@@ -1,0 +1,29 @@
+---
+import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	locale="ko"
+	title="소개"
+	description="이 블로그가 왜 존재하는지와 어떤 독자를 위한 실전 AI 활용 가이드를 다루는지 설명한다."
+	pubDate={new Date('April 09 2026')}
+	heroImage={AboutHeroImage}
+>
+	<p>
+		이 블로그는 일반 사용자가 AI를 실제 생활과 업무에 바로 적용할 수 있도록 돕기 위해 만든 실전 가이드다.
+		거창한 자동화나 복잡한 프롬프트 기술보다, 메일, 문서, 검색, 공부, 반복 업무처럼 바로 써먹을 수 있는
+		활용부터 다룬다.
+	</p>
+
+	<p>
+		핵심 원칙은 단순하다. AI를 마법처럼 포장하지 않고, 사용자가 직접 검토할 수 있는 낮은 위험의 작업부터
+		현실적으로 정리한다. 그래서 처음부터 모든 것을 자동화하는 대신, 작은 마찰을 줄이는 반복 가능한 사용
+		방식부터 설명한다.
+	</p>
+
+	<p>
+		이 블로그의 목표는 글 수를 늘리는 것이 아니다. 일반 사용자가 실제로 시간을 절약하고, 더 명확하게 읽고 쓰고
+		정리할 수 있도록 도와주는 실전형 글을 꾸준히 쌓는 것이다.
+	</p>
+</Layout>
