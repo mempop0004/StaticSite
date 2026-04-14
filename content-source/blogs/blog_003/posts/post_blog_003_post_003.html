@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_003_post_003</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>정적 사이트에서 RSS를 안정적으로 유지하는 방법</h1>
+        <div class="studio-meta" data-date>작성 2026-04-14T09:00:00+09:00</div>
+      </div>
+      <div class="studio-actions"><button class="btn" data-copy-title>제목 복사</button></div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="how-to-keep-rss-working-on-a-static-site"
+  blog-id="blog-static-web-operations"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-only"
+  timestamp="2026-04-14T09:00:00+09:00"
+  updated-date="2026-04-14T09:00:00+09:00"
+  hero-image="../../../assets/generated/post_blog_003_post_003-slot-001.png"
+  related-slugs="how-to-run-robots-txt-safely-on-a-static-site,static-website-operations-rules-you-should-fix-first"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 정적 사이트의 RSS가 겉으로는 멀쩡해 보이지만 실제로는 쉽게 깨질 수 있다는 긴장감을 보여주는 대표 이미지
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- 과장된 합성 느낌 금지
+- 실사형 모니터, 노트북, 사람 장면 금지
+- XML 코드 텍스트를 길게 넣는 구성 금지
+- flat editorial concept visual
+- 입체감 강한 3D, isometric, realistic rendering 금지
+- 좌우 before/after 설명도 금지
+- 클릭을 만드는 긴장감이 있어야 함
+
+개별 프롬프트:
+flat editorial cover showing one RSS feed card that looks valid at first glance but has one clearly broken or missing feed item block, with subtle static-site page cards in the background, minimal 2D poster composition, quiet technical tension, no person, no monitor, no arrow, no text-heavy XML, calm neutral palette with one muted warning accent
+
+참고 검색어:
+rss static site, feed maintenance, xml feed static website</prompt>
+    </slot>
+
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: source post, generated feed xml, head link, public validation의 네 단계를 한 장면으로 설명하는 보조 이미지
+
+공통 기준:
+- 글의 설명 맥락을 직접 보조해야 함
+- 억지 장식 이미지 금지
+- 현실적인 화면 재현보다 설명 구조 우선
+- 카드, XML block, link marker, validation check 정도만 사용
+- 한 장면 안에 한 설명 포인트만 남길 것
+- flat explanatory visual, no text inside image
+
+개별 프롬프트:
+simple explanatory visual showing four connected parts: source post, generated feed XML, head feed link, and public validation result, flat editorial diagram, no realistic browser chrome, no person, no office scene, no text inside image
+
+참고 검색어:
+rss validation flow, static site feed check, xml output check</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">How to keep RSS working on a static site</title>
+  <title lang="ko">정적 사이트에서 RSS를 안정적으로 유지하는 방법</title>
+
+  <description lang="en">RSS on a static site often breaks quietly: the page loads, but the feed URL serves the wrong thing. This guide shows how to lock URLs, XML output, head links, and public validation so the feed stays trustworthy.</description>
+  <description lang="ko">정적 사이트의 RSS는 조용히 깨지는 경우가 많다. 페이지는 열리지만 피드 URL이 다른 응답을 내주면 검색과 구독 흐름이 함께 무너진다. URL, XML, head 링크, 공개 검증을 무엇부터 고정해야 하는지 정리한다.</description>
+
+  <tags lang="en">rss, static site, feed, site operations, xml</tags>
+  <tags lang="ko">RSS, 정적사이트, 피드, 사이트운영, XML</tags>
+
+  <body lang="en"><![CDATA[
+<p>RSS on a static site rarely fails loudly. The homepage still opens, blog posts still render, and the deployment can even look green. Meanwhile the public feed URL may be serving HTML, stale XML, or no useful items at all.</p>
+
+<p>That is why feed maintenance should be treated as an operations problem, not a one-time template task. The goal is not just “have an RSS file.” The goal is to keep one public feed URL trustworthy across rebuilds, refactors, route changes, and hosting moves.</p>
+
+<p>This post belongs next to the broader baseline on <a href="/units/blog-static-web-operations/">the static website operations unit page</a>, the crawl rule guide on <a href="/blog/how-to-run-robots-txt-safely-on-a-static-site/">robots.txt</a>, and the wider foundation post on <a href="/blog/static-website-operations-rules-you-should-fix-first/">static website operations rules</a>.</p>
+
+<h2>1. Lock one public feed URL and stop changing it</h2>
+<p>The fastest way to break RSS is to let the path drift every time the build shape changes. Pick one canonical URL such as <code>/rss.xml</code> and keep it stable.</p>
+<p>If you also ship a locale feed, make that rule stable too, for example <code>/ko/rss.xml</code>. Do not alternate between <code>/feed.xml</code>, <code>/rss.xml</code>, and nested build-only paths.</p>
+
+<h2>2. Validate the live response, not the local guess</h2>
+<p>A static build artifact can be correct while the deployed host still serves the wrong thing. That is the common failure mode.</p>
+<p>Check the public feed URL directly and confirm three things:</p>
+<ul>
+  <li>the response is XML, not HTML</li>
+  <li>the latest post items are actually present</li>
+  <li>the URL is the same one linked from the live pages</li>
+</ul>
+
+<h2>3. Treat the head feed link as part of the contract</h2>
+<p>RSS is not just the XML file. The discovery link in the page head matters too. If the head still points to an old path, crawlers, readers, and validators will follow the wrong feed even when a correct one exists somewhere else.</p>
+
+<figure class="article-inline-image">
+  <img src="/generated-post-assets/post_blog_003_post_003-slot-002.png" alt="A flat explanatory visual showing source posts, generated feed XML, the head feed link, and a final public validation check connected in one static-site workflow." loading="lazy" decoding="async">
+</figure>
+
+<h2>4. Keep a tiny feed checklist in the build loop</h2>
+<p>RSS breaks because no one checks it after changes. A short build checklist is enough:</p>
+<ol>
+  <li>Does <code>/rss.xml</code> return XML?</li>
+  <li>Does the feed contain the latest published item?</li>
+  <li>Does the page head point to the same feed URL?</li>
+  <li>Does the locale feed path still work if you expose one?</li>
+</ol>
+
+<p>If one of those fails, the deployment should not be treated as complete.</p>
+
+<h2>5. Watch for the quiet failure patterns</h2>
+<p>Most RSS problems on static sites come from a small set of causes:</p>
+<ul>
+  <li>an HTML fallback served at the feed URL</li>
+  <li>a route rename without a redirect or updated head link</li>
+  <li>stale build output after content changes</li>
+  <li>missing locale feed while the site still references it</li>
+  <li>a correct feed file that is never linked from the live site</li>
+</ul>
+
+<h2>What to do first</h2>
+<p>Open the live <code>/rss.xml</code> first. If it is not valid XML with your newest post item and the same URL is not referenced from the page head, your feed is not stable yet, even if the site looks fine.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>정적 사이트의 RSS는 크게 망가지기보다 조용히 망가진다. 홈은 열리고 글도 보이고 배포도 초록색인데, 실제 공개 피드 URL은 HTML을 내주거나 오래된 XML을 내주거나 최신 글을 빼먹는 식이다.</p>
+
+<p>그래서 RSS는 템플릿 한 번 추가하는 작업이 아니라 운영 기준으로 다뤄야 한다. 목표는 “RSS 파일이 있다”가 아니라, 리팩터링과 라우트 변경과 호스팅 이동 이후에도 <strong>공개 피드 URL 하나를 계속 신뢰할 수 있는 상태</strong>를 유지하는 것이다.</p>
+
+<p>이 글은 <a href="/ko/units/blog-static-web-operations/">정적 웹사이트 운영 유닛 페이지</a>, <a href="/ko/blog/how-to-run-robots-txt-safely-on-a-static-site/">robots.txt 운영 글</a>, <a href="/ko/blog/static-website-operations-rules-you-should-fix-first/">정적 사이트 운영 기준 글</a>과 같이 묶어 읽는 편이 맞다.</p>
+
+<h2>1. 공개 피드 URL 하나를 고정한다</h2>
+<p>RSS를 가장 빨리 깨뜨리는 방법은 빌드 구조가 바뀔 때마다 경로를 같이 바꾸는 것이다. <code>/rss.xml</code> 같은 공개 경로 하나를 정했으면 끝까지 유지해야 한다.</p>
+<p>locale 피드가 있다면 그것도 같은 원칙으로 고정한다. 예를 들어 <code>/ko/rss.xml</code>은 항상 같은 규칙으로 남아야 한다. <code>/feed.xml</code>, <code>/rss.xml</code>, 빌드 내부 경로를 왔다 갔다 하면 운영이 금방 흐트러진다.</p>
+
+<h2>2. 로컬 파일이 아니라 live 응답을 본다</h2>
+<p>정적 산출물이 맞아도 실제 배포 호스트가 다른 응답을 줄 수 있다. 이게 가장 흔한 실패 방식이다.</p>
+<p>공개 피드 URL을 열고 최소 세 가지를 확인한다.</p>
+<ul>
+  <li>응답이 HTML이 아니라 XML인가</li>
+  <li>최신 글 항목이 실제로 들어가 있는가</li>
+  <li>live 페이지 head가 같은 피드 URL을 가리키는가</li>
+</ul>
+
+<h2>3. head의 feed link도 계약으로 본다</h2>
+<p>RSS는 XML 파일 하나로 끝나지 않는다. head 안의 discovery link도 같이 맞아야 한다. head가 예전 경로를 가리키고 있으면, 올바른 피드 파일이 어딘가 존재해도 크롤러와 리더는 계속 잘못된 경로를 따라간다.</p>
+
+<figure class="article-inline-image">
+  <img src="/generated-post-assets/post_blog_003_post_003-slot-002.png" alt="source post, 생성된 feed XML, head 링크, 최종 공개 검증이 한 흐름으로 연결된 정적 사이트 RSS 운영 구조를 보여주는 평면 설명 이미지." loading="lazy" decoding="async">
+</figure>
+
+<h2>4. 빌드 루프에 짧은 피드 체크를 넣는다</h2>
+<p>RSS는 아무도 배포 후 확인하지 않기 때문에 깨진다. 길게 볼 필요는 없다. 아래 네 개면 충분하다.</p>
+<ol>
+  <li><code>/rss.xml</code>이 XML을 반환하는가</li>
+  <li>피드에 최신 발행 글이 들어가 있는가</li>
+  <li>페이지 head가 같은 피드 URL을 가리키는가</li>
+  <li>locale 피드를 노출한다면 그 경로도 같이 살아 있는가</li>
+</ol>
+
+<p>이 중 하나라도 틀리면 배포가 끝난 것으로 보면 안 된다.</p>
+
+<h2>5. 조용히 깨지는 패턴을 기억한다</h2>
+<p>정적 사이트 RSS 문제는 대부분 비슷한 원인에서 나온다.</p>
+<ul>
+  <li>피드 URL에서 HTML fallback을 반환한다</li>
+  <li>라우트 이름을 바꿨는데 redirect나 head 링크를 같이 안 고쳤다</li>
+  <li>콘텐츠는 바뀌었는데 build output이 오래된 상태다</li>
+  <li>locale feed는 빠졌는데 사이트는 여전히 그 경로를 참조한다</li>
+  <li>올바른 피드 파일은 있지만 live 페이지 어디에서도 링크하지 않는다</li>
+</ul>
+
+<h2>무엇부터 시작할까</h2>
+<p>가장 먼저 live <code>/rss.xml</code>을 열어라. 거기서 XML이 안 보이거나, 최신 글이 빠져 있거나, 페이지 head가 다른 경로를 가리키고 있다면 그 피드는 아직 안정적이지 않다. 사이트가 멀쩡해 보여도 RSS는 이미 깨진 상태다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}
+</script>
+  <script src="./assets/posts.js"></script>
+</body>
+</html>
