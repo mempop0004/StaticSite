@@ -7,7 +7,7 @@ purpose: 'operations'
 searchIntent: 'learn'
 readerState: 'operating'
 sectionStyle: 'checklist'
-imageNeed: 'cover-inline'
+imageNeed: 'inline-needed'
 tags:
   - '프리뷰배포'
   - '프로덕션배포'

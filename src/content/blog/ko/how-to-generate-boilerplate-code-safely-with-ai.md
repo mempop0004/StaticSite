@@ -18,7 +18,7 @@ pubDate: '2026-04-17T11:21:35+09:00'
 relatedSlugs:
   - 'questions-to-ask-ai-first-when-reading-unfamiliar-legacy-code'
 updatedDate: '2026-04-17T11:21:35+09:00'
-heroImage: '../../../assets/generated/post_blog_002_post_001-slot-001.png'
+heroImage: '../../../assets/generated/post_blog_002_post_006-slot-001.png'
 heroImageAlt: '이 글의 핵심 개념을 보여주는 대표 이미지. AI를 활용해 반복적인 보일러플레이트 코드를 빠르고 안전하게 생성하는 기준'
 ---
 <p>오후 2시, 당신에게 15개의 CRUD 엔드포인트와 그에 맞는 단위 테스트를 전부 작성하라는 티켓이 떨어졌습니다. 개발자들이 가장 싫어하는, 뇌를 비우고 타이핑만 해야 하는 보일러플레이트 작업입니다. 당연히 당신은 AI 에디터를 켜서 "엔드포인트 다 만들어줘"라고 지시한 뒤, 생성된 코드를 복사해서 붙여넣고 실행 버튼을 누릅니다. 터미널에는 빨간색 에러 메시지가 5줄이나 쏟아집니다. 결국 당신은 AI가 지어낸 엉뚱한 변수명과 임포트 에러를 디버깅하느라 한 시간을 날렸습니다.</p>

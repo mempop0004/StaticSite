@@ -7,7 +7,7 @@ purpose: 'operations'
 searchIntent: 'learn'
 readerState: 'planning'
 sectionStyle: 'checklist'
-imageNeed: 'cover-inline'
+imageNeed: 'inline-needed'
 tags:
   - '1인사이트'
   - '발행주기'

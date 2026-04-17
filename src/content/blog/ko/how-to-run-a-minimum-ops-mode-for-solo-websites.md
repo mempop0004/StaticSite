@@ -7,7 +7,7 @@ purpose: 'operations'
 searchIntent: 'learn'
 readerState: 'operating'
 sectionStyle: 'checklist'
-imageNeed: 'cover-inline'
+imageNeed: 'inline-needed'
 tags:
   - '1인사이트'
   - '유지보수루틴'

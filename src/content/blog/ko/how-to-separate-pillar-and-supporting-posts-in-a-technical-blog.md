@@ -7,7 +7,7 @@ purpose: 'problem-fix'
 searchIntent: 'fix'
 readerState: 'stuck'
 sectionStyle: 'checklist'
-imageNeed: 'cover-inline'
+imageNeed: 'inline-needed'
 tags:
   - '기준글'
   - '후속글'

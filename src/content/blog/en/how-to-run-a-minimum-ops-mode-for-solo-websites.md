@@ -7,7 +7,7 @@ purpose: 'operations'
 searchIntent: 'learn'
 readerState: 'operating'
 sectionStyle: 'checklist'
-imageNeed: 'cover-inline'
+imageNeed: 'inline-needed'
 tags:
   - 'solo website'
   - 'maintenance routine'

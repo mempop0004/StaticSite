@@ -7,7 +7,7 @@ purpose: 'operations'
 searchIntent: 'learn'
 readerState: 'operating'
 sectionStyle: 'checklist'
-imageNeed: 'cover-inline'
+imageNeed: 'inline-needed'
 tags:
   - '콘텐츠단계'
   - '에디토리얼워크플로'

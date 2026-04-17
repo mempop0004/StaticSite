@@ -7,7 +7,7 @@ purpose: 'problem-fix'
 searchIntent: 'fix'
 readerState: 'stuck'
 sectionStyle: 'checklist'
-imageNeed: 'cover-inline'
+imageNeed: 'inline-needed'
 tags:
   - 'AI디버깅'
   - '디버깅가설'

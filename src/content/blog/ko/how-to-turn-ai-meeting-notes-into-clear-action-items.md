@@ -7,7 +7,7 @@ purpose: 'problem-fix'
 searchIntent: 'fix'
 readerState: 'stuck'
 sectionStyle: 'checklist'
-imageNeed: 'cover-inline'
+imageNeed: 'inline-needed'
 tags:
   - 'AI회의메모'
   - '할일목록'

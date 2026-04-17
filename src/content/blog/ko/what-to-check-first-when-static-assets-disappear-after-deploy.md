@@ -7,7 +7,7 @@ purpose: 'problem-fix'
 searchIntent: 'fix'
 readerState: 'stuck'
 sectionStyle: 'checklist'
-imageNeed: 'cover-inline'
+imageNeed: 'inline-needed'
 tags:
   - '정적자산'
   - '배포문제해결'

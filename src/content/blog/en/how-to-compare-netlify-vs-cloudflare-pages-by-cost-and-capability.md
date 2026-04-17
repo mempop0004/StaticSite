@@ -7,7 +7,7 @@ purpose: 'comparison'
 searchIntent: 'learn'
 readerState: 'operating'
 sectionStyle: 'checklist'
-imageNeed: 'cover-inline'
+imageNeed: 'inline-needed'
 tags:
   - 'netlify'
   - 'cloudflare pages'

@@ -18,7 +18,7 @@ pubDate: '2026-04-17T11:21:29+09:00'
 relatedSlugs:
   - 'practical-ways-everyday-users-can-start-with-ai'
 updatedDate: '2026-04-17T11:21:29+09:00'
-heroImage: '../../../assets/generated/post_blog_001_post_001-slot-001.png'
+heroImage: '../../../assets/generated/post_blog_001_post_006-slot-001.png'
 heroImageAlt: '이 글의 핵심 개념을 보여주는 대표 이미지. AI로 긴 유튜브 영상이나 팟캐스트의 핵심만 빠르게 요약하는 법'
 ---
 <p>금요일 저녁, 평소 존경하던 업계 전문가가 출연한 2시간짜리 팟캐스트 인터뷰 영상을 드디어 재생했습니다. 하지만 20분째 이어지는 진행자의 농담과 스폰서 광고를 듣다 보니, 정작 내게 필요한 3가지 핵심 노하우를 찾기 위해 이 긴 영상을 다 볼 시간도, 체력도 없다는 사실을 깨닫게 됩니다.</p>

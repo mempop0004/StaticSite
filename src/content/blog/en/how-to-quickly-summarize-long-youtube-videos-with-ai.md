@@ -18,7 +18,7 @@ pubDate: '2026-04-17T11:21:29+09:00'
 relatedSlugs:
   - 'practical-ways-everyday-users-can-start-with-ai'
 updatedDate: '2026-04-17T11:21:29+09:00'
-heroImage: '../../../assets/generated/post_blog_001_post_001-slot-001.png'
+heroImage: '../../../assets/generated/post_blog_001_post_006-slot-001.png'
 heroImageAlt: 'Editorial hero image for the core concept of this post. How to quickly summarize long YouTube videos or podcasts with AI'
 ---
 <p>It's Friday evening, and you finally found a 2-hour podcast interview featuring an expert you deeply respect. You hit play, but after 20 minutes of casual banter and sponsors, you realize you don't have the time to sit through the whole thing just to find the three actionable insights you actually need.</p>

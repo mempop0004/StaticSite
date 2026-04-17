@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_001_post_006</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>문제와 보상을 같이 말하는 새 글 제목 001-001</h1>
+        <div class="studio-meta" data-date>작성 2026-04-17T11:21:29+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="how-to-quickly-summarize-long-youtube-videos-with-ai"
+  blog-id="blog-ai-for-everyday-users"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-only"
+  timestamp="2026-04-17T11:21:29+09:00"
+  updated-date="2026-04-17T11:21:29+09:00"
+  hero-image="../../../assets/blog-placeholder-1.jpg"
+  related-slugs="practical-ways-everyday-users-can-start-with-ai"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 긴 동영상 타임라인이 깔때기를 통과하며 한 장의 핵심 메모로 압축되는 장면
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- 이 이미지는 본문 설명도가 아니라 대표 장면이어야 함
+- 과장된 합성 느낌 금지
+- 기사나 실전 가이드에 맞는 현실적인 구도
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+
+직관성 체크:
+- 썸네일로 봤을 때 1초 안에 핵심 대비가 읽혀야 함
+- checklist board처럼 보이면 실패
+- explanatory diagram처럼 보이면 실패
+
+개별 프롬프트:
+A minimalist editorial illustration showing a complex soundwave or messy video timeline entering a sleek geometric funnel, transforming into a single, structured document node. Flat vector style, clean shapes, cool blue and grey color palette, conveying information compression without photorealism.
+
+참고 검색어:
+ai video summary, summarize podcast, information overload</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">How to quickly summarize long YouTube videos or podcasts with AI</title>
+  <title lang="ko">AI로 긴 유튜브 영상이나 팟캐스트의 핵심만 빠르게 요약하는 법</title>
+
+  <description lang="en">Stop watching hour-long videos just to find one point. Learn how to use AI to extract the core ideas from long YouTube videos and podcasts instantly.</description>
+  <description lang="ko">1시간짜리 영상을 다 볼 시간이 없다면? AI를 활용해 긴 유튜브 영상과 팟캐스트에서 나에게 필요한 핵심 정보만 3분 안에 뽑아내는 구체적인 방법을 알아봅니다.</description>
+
+  <tags lang="en">AI summary, YouTube summary, podcast notes, productivity, ChatGPT</tags>
+  <tags lang="ko">AI 요약, 유튜브 요약, 팟캐스트 요약, 생산성, 챗GPT</tags>
+
+  <body lang="en"><![CDATA[
+<p>It's Friday evening, and you finally found a 2-hour podcast interview featuring an expert you deeply respect. You hit play, but after 20 minutes of casual banter and sponsors, you realize you don't have the time to sit through the whole thing just to find the three actionable insights you actually need.</p>
+
+<p>We've all been there. You don't have to consume the entire media file. By feeding the raw transcript into an AI, you can quickly extract a highly structured summary and find exactly what you need in under three minutes. But doing this correctly requires more than just pasting a link.</p>
+
+<h2>1. Why simple "Summarize this URL" prompts fail</h2>
+<p>Most people try the easy route first: they install a generic browser extension or drop a YouTube link into ChatGPT and type, "Summarize this." The problem? These tools often return a highly abstract, generic overview that reads like a Wikipedia intro. They strip away the specific, granular details—the exact name of the tool the guest mentioned, or the exact 3-step framework they explained.</p>
+<p>When the summary becomes too vague, you inevitably have to go back and watch the video anyway to find the missing details. That completely defeats the purpose of summarization.</p>
+
+<h2>2. The secret is treating the transcript as your database</h2>
+<p>AI doesn't "watch" videos or "listen" to podcasts. It reads text. If you want a surgically precise summary, you must provide a precise text transcript.</p>
+<p>When you rely on a built-in tool to fetch the video itself, you surrender control to its scraping capabilities. Often, it misses context or fails to bypass anti-bot protections. Instead, pulling the YouTube transcript manually (or using a dedicated transcript extraction site) gives you the raw data. Once you have the text, you can treat it like a database and query it with highly targeted questions: "What specific marketing tools did the speaker recommend between the 30-minute and 45-minute mark?"</p>
+
+<h2>3. My 3 criteria for a bulletproof summarization prompt</h2>
+<p>After wrestling with vague AI summaries for months, I realized the prompt structure dictates everything. When you paste the transcript into Claude or ChatGPT, use these three constraints:</p>
+<ul>
+  <li><strong>Assign a ruthless editor role:</strong> Don't just ask it to summarize. Say, "Act as a meticulous researcher extracting actionable, concrete steps. Ignore all small talk, introductions, and sponsor reads."</li>
+  <li><strong>Force a specific output architecture:</strong> Ask for a table of tools, a numbered step-by-step checklist, or a "Problem / Solution" matrix. This forces the AI to hunt for specific data points rather than writing a flowing, useless essay.</li>
+  <li><strong>Demand timestamps:</strong> Always instruct the AI to append timestamps next to key insights. If a summary point seems confusing, you need to know exactly where to jump in the original video to get the nuance.</li>
+</ul>
+
+<h2>4. The Video-to-Action Prompt Template</h2>
+<p>Stop writing new prompts every time. Save this template in your notes app and use it the next time you face a massive video file:</p>
+<blockquote>
+<p>I am providing a transcript of a long video interview. I need to extract practical knowledge for [Your Specific Goal/Role].<br><br>
+Please analyze the text and provide:<br>
+1. A 3-sentence executive summary of the core thesis.<br>
+2. A numbered list of actionable steps or frameworks mentioned, including timestamps.<br>
+3. A separate list of any books, software, or resources explicitly named by the speaker.<br>
+<br>
+Do not include generic advice. Only include insights explicitly stated in this transcript.<br>
+[Paste Transcript Here]</p>
+</blockquote>
+
+<h2>What to do first</h2>
+<p>Open that long YouTube tutorial or podcast you added to your "Watch Later" playlist weeks ago. Click 'Show transcript', copy the raw text, and run it through your favorite AI using the prompt above. You'll clear your backlog faster than you ever thought possible.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>금요일 저녁, 평소 존경하던 업계 전문가가 출연한 2시간짜리 팟캐스트 인터뷰 영상을 드디어 재생했습니다. 하지만 20분째 이어지는 진행자의 농담과 스폰서 광고를 듣다 보니, 정작 내게 필요한 3가지 핵심 노하우를 찾기 위해 이 긴 영상을 다 볼 시간도, 체력도 없다는 사실을 깨닫게 됩니다.</p>
+
+<p>누구나 겪는 정보의 병목 현상입니다. 우리는 미디어의 처음부터 끝까지 끌려다닐 필요가 없습니다. 원본 스크립트(Transcript)를 추출해 AI에게 던져주면, 단 3분 안에 내가 원하는 정보만 구조화된 텍스트로 뽑아낼 수 있습니다. 하지만 이 작업을 제대로 하려면 단순히 '링크 복붙' 이상의 전략이 필요합니다.</p>
+
+<h2>1. "이 링크 요약해 줘"가 실패하는 진짜 이유</h2>
+<p>가장 흔히 하는 실수는 크롬 확장 프로그램을 대충 깔거나, ChatGPT 창에 유튜브 링크를 던진 뒤 "이거 요약해"라고 명령하는 것입니다. 문제는 이런 방식이 위키백과 서론처럼 지나치게 추상적이고 뻔한 개요만 뱉어낸다는 점입니다. 정작 화자가 추천했던 구체적인 툴 이름이나, 3단계 프레임워크의 정확한 명칭 같은 알맹이는 다 빠져버립니다.</p>
+<p>요약본이 너무 모호하면 결국 "대체 아까 그 툴 이름이 뭐였지?" 하며 영상을 다시 뒤적거려야 합니다. 요약을 하는 의미가 완전히 사라지는 순간입니다.</p>
+
+<h2>2. 핵심은 영상이 아니라 '스크립트'라는 데이터베이스다</h2>
+<p>AI는 영상을 눈으로 '보거나' 귀로 '듣지' 않습니다. 오직 텍스트만 읽습니다. 수술칼처럼 날카로운 요약을 원한다면 그에 맞는 정밀한 텍스트 스크립트를 직접 쥐여주어야 합니다.</p>
+<p>플러그인이나 외부 툴이 알아서 영상을 긁어오길 기대하면, 봇 방어 시스템에 막히거나 핵심 맥락을 놓치기 일쑤입니다. 대신 유튜브에서 제공하는 스크립트를 직접 복사하거나 추출 툴을 사용해 순수 텍스트를 확보하세요. 텍스트를 쥐는 순간, 긴 영상은 내가 마음대로 검색하고 조작할 수 있는 '데이터베이스'로 변합니다. "영상 중반부 30분~45분 사이에 화자가 강조한 마케팅 툴만 뽑아줘" 같은 날카로운 쿼리가 가능해집니다.</p>
+
+<h2>3. 쓸모 있는 요약을 얻기 위한 3가지 프롬프트 기준</h2>
+<p>수개월간 뜬구름 잡는 AI 요약과 싸우면서 내린 결론은, '제약(Constraint)'이 결과를 만든다는 것입니다. 추출한 스크립트를 붙여넣을 때 반드시 다음 3가지 기준을 프롬프트에 포함하세요.</p>
+<ul>
+  <li><strong>무자비한 편집자 역할 부여:</strong> 단순히 요약하라고 하지 마세요. "너는 쓸데없는 잡담, 인사말, 광고를 모두 무시하고 구체적이고 실행 가능한 노하우만 추출하는 꼼꼼한 리서처다"라고 선을 그어주어야 합니다.</li>
+  <li><strong>출력 아키텍처 강제하기:</strong> 줄글로 쓰지 못하게 막으세요. '언급된 도구 표', '번호가 매겨진 체크리스트', '문제/해결 매트릭스' 등으로 출력 형식을 강제하면 AI가 허튼소리를 할 공간이 사라집니다.</li>
+  <li><strong>타임스탬프 요구:</strong> 스크립트에 시간이 포함되어 있다면 "모든 요약 포인트 옆에 원본 타임스탬프를 적어라"라고 지시하세요. 요약본을 읽다 헷갈리는 부분이 생겼을 때, 원본 영상의 정확한 위치로 즉시 점프할 수 있는 생명줄이 됩니다.</li>
+</ul>
+
+<h2>4. 복붙해서 바로 쓰는 '영상 요약 프롬프트 템플릿'</h2>
+<p>매번 프롬프트를 새로 쓰지 마세요. 아래 템플릿을 메모장에 저장해 두고, 감당 안 되는 긴 영상을 만날 때마다 꺼내 쓰시기 바랍니다.</p>
+<blockquote>
+<p>다음은 긴 인터뷰 영상의 스크립트 텍스트입니다. 나는 여기서 [내가 알고 싶은 구체적인 주제/목적]에 대한 실전 지식을 추출하려 합니다.<br><br>
+아래 텍스트를 분석해서 다음 3가지를 작성해 주세요:<br>
+1. 이 영상의 핵심 주장을 3문장으로 요약한 요약본.<br>
+2. 화자가 제안하는 구체적인 행동 지침이나 프레임워크를 순서대로 나열 (타임스탬프 포함).<br>
+3. 영상에서 화자가 직접 추천한 도구, 책, 참고 자료 목록 표.<br><br>
+뻔한 일반론은 제외하고, 오직 이 스크립트 안에서 언급된 구체적인 정보만 사용하세요.<br>
+[여기에 스크립트 붙여넣기]</p>
+</blockquote>
+
+<h2>무엇부터 시작할까</h2>
+<p>지금 바로 '나중에 볼 동영상' 목록에 방치해둔 1시간짜리 유튜브 영상을 하나 엽니다. [스크립트 표시]를 눌러 텍스트를 복사한 뒤, 위의 프롬프트와 함께 여러분이 쓰는 AI에게 분석을 요청해 보세요. 골칫거리였던 영상 더미가 순식간에 인사이트 노트로 바뀔 것입니다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "pseudo-text나 UI 라벨처럼 보이는 가짜 텍스트도 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다",
+      "본문 설명용 체크리스트 보드처럼 보이면 안 된다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다",
+      "pseudo-text나 UI 라벨처럼 보이는 가짜 텍스트도 넣지 않는다",
+      "대표 Hero 이미지처럼 보이면 안 된다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

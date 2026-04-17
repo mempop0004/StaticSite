@@ -18,7 +18,7 @@ pubDate: '2026-04-17T11:21:35+09:00'
 relatedSlugs:
   - 'questions-to-ask-ai-first-when-reading-unfamiliar-legacy-code'
 updatedDate: '2026-04-17T11:21:35+09:00'
-heroImage: '../../../assets/generated/post_blog_002_post_001-slot-001.png'
+heroImage: '../../../assets/generated/post_blog_002_post_006-slot-001.png'
 heroImageAlt: 'Editorial hero image for the core concept of this post. How to generate boilerplate code safely with AI'
 ---
 <p>It's 2 PM, and you've just been handed a ticket to create 15 CRUD endpoints and their corresponding unit tests. It's the kind of mindless, repetitive boilerplate work that developers dread. Naturally, you open your AI assistant, prompt it to "generate the endpoints," copy the result, paste it into your editor, and hit run. Immediately, the compiler throws five errors. You spend the next hour fixing hallucinations, mismatched types, and weird variable names.</p>
