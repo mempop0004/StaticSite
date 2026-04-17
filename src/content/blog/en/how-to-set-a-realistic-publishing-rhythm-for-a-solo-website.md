@@ -5,7 +5,7 @@ blogId: 'blog-solo-website-operations'
 stage: 'pillar'
 purpose: 'operations'
 searchIntent: 'learn'
-readerState: 'planning'
+readerState: 'first-time'
 sectionStyle: 'checklist'
 imageNeed: 'inline-needed'
 tags:

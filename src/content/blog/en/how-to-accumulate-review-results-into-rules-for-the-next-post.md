@@ -5,7 +5,7 @@ blogId: 'blog-web-automation-and-ops-systems'
 stage: 'pillar'
 purpose: 'operations'
 searchIntent: 'learn'
-readerState: 'improving'
+readerState: 'operating'
 sectionStyle: 'checklist'
 imageNeed: 'inline-needed'
 tags:

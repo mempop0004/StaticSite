@@ -5,7 +5,7 @@ blogId: 'blog-web-content-production-system'
 stage: 'pillar'
 purpose: 'operations'
 searchIntent: 'learn'
-readerState: 'organizing'
+readerState: 'operating'
 sectionStyle: 'checklist'
 imageNeed: 'inline-needed'
 tags:
