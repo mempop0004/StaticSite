@@ -3,7 +3,7 @@
 - `issue_id: goal-0-issue-08-first-28day-operation`
 - `goal_id: goal-0`
 - `title: 첫 2개 블로그 28일 운영 실행`
-- `status: candidate`
+- `status: done`
 
 # Goal Link
 
@@ -18,6 +18,7 @@
 - daily log
 - weekly summary
 - 운영 시간 기록
+- 하루 시작 키워드 3순위 선정 루틴
 
 # Task
 
@@ -31,20 +32,25 @@
 
 # Current
 
-- 아직 시작 전
+- `blog_001`, `blog_002`를 day 1 기준으로 기록 시작
+- 검색/체류 지표는 아직 없으므로 운영 상태와 메모만 먼저 남김
 
 # Next
 
-- daily logging 시작
+- queue 시스템 미사용 상태로 전환
+- 후속 운영 기록은 필요 시 별도 로그 기준으로 이어감
 
 # Done
 
-- None
+- `ops/28day-records/blog-ai-for-everyday-users.md` day 1 기록 시작
+- `ops/28day-records/blog-ai-for-developers.md` 파일 생성 및 day 1 기록 시작
+- queue 기준 현재 이슈 종료 처리
 
 # Output
 
 - 28일 운영 기록
+- `ops/daily-keyword-routine.md`
 
 # Resume Prompt
 
-- running 블로그 2개의 28일 일일 기록과 주간 요약을 실제로 채운다.
+- queue 시스템 없이 운영 로그만 유지할지 결정하고, 필요 시 기록 파일만 계속 갱신한다.

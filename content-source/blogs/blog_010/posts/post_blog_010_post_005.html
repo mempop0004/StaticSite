@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_010_post_005</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>locale 경로와 canonical이 꼬일 때 문제를 좁히는 법</h1>
+        <div class="studio-meta" data-date>작성 2026-04-16T16:30:00+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="how-to-narrow-locale-path-and-canonical-conflicts"
+  blog-id="blog-real-world-web-troubleshooting"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-inline"
+  timestamp="2026-04-16T16:30:00+09:00"
+  updated-date="2026-04-16T16:30:00+09:00"
+  hero-image=""
+  related-slugs="check-base-path-first-when-css-and-js-break-after-deploy,when-to-use-404-410-and-redirects-without-hurting-seo"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 같은 페이지가 locale 경로와 canonical 신호 충돌로 갈라졌다가 하나의 정돈된 경로로 수렴하는 대표 대비 이미지
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+- 사람 장면 금지
+- 광고형 mockup 금지
+
+직관성 체크:
+- 서로 다른 locale 경로가 같은 콘텐츠를 가리키며 충돌하는 장면과 정리된 단일 신호가 대비되어야 함
+- checklist board처럼 보이면 실패
+- 설명도처럼 너무 복잡하면 실패
+
+개별 프롬프트:
+clear editorial hero image for a web troubleshooting article, showing one webpage identity splitting into conflicting locale path branches and canonical signals on one side, then resolving into one clean preferred route on the other side, flat 2D composition, minimal elements, no text, no letters, no UI labels, no people, should feel like route conflict diagnosis rather than a marketing mockup
+
+참고 검색어:
+canonical conflict, locale path issue, duplicate route signal</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: locale URL, canonical target, redirect path 세 신호를 대조하는 구조 이미지
+
+공통 기준:
+- 글의 설명 맥락을 직접 보조해야 함
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+- 분위기용 컨셉 아트 금지
+- 대표 이미지와 같은 장면 금지
+
+직관성 체크:
+- 페이지 URL, canonical, redirect 세 신호를 어떻게 대조하는지 보여야 함
+- hero cover처럼 보이면 실패
+- route diagram처럼 읽혀야 함
+
+개별 프롬프트:
+practical explanatory route diagram for a web troubleshooting article, showing one content page with locale-specific URLs, one canonical target, and one redirect branch being compared side by side, flat 2D structure, no text, no letters, no UI labels, no people, should feel like a reusable debugging map for URL signal conflicts
+
+참고 검색어:
+locale canonical redirect map, duplicate URL signals, technical SEO troubleshooting</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">How to narrow locale path and canonical conflicts</title>
+  <title lang="ko">locale 경로와 canonical이 꼬일 때 문제를 좁히는 법</title>
+
+  <description lang="en">Locale routes, canonical tags, and redirects can quietly point at different preferred URLs. This guide shows how to narrow the conflict by checking the first three signals before touching anything deeper.</description>
+  <description lang="ko">locale 경로, canonical, redirect가 서로 다른 URL을 가리키면 신호 충돌이 조용히 쌓인다. 더 깊게 내려가기 전에 가장 먼저 대조할 세 신호를 기준으로 문제를 좁히는 방법을 정리한다.</description>
+
+  <tags lang="en">canonical conflict, locale path, redirect debugging, duplicate urls, technical seo</tags>
+  <tags lang="ko">canonical충돌,locale경로,redirect디버깅,중복URL,기술SEO</tags>
+
+  <body lang="en"><![CDATA[
+<p>A page can look fine in the browser and still send conflicting URL signals to search engines. One locale path opens, another path redirects, and the canonical points somewhere else. Nothing seems catastrophically broken, but the site is quietly telling three different stories about the same page.</p>
+
+<p>That is why locale and canonical problems often feel slippery. The issue is not always visible as a 404 or a broken layout. It shows up as ambiguity about which URL should be treated as the real one.</p>
+
+<p>This post is about narrowing that ambiguity quickly. The goal is not to solve every international SEO problem at once. The goal is to compare the first three signals that usually reveal where the conflict begins.</p>
+
+<h2>1. The common mistake is checking canonical alone</h2>
+<p>Many people inspect the canonical tag first, see a plausible value, and move on. That is too narrow. Canonical matters, but it only tells part of the story.</p>
+
+<p>If the live locale path, redirect behavior, and canonical target do not agree, the page is still sending mixed instructions. Looking at only one layer often hides the mismatch instead of surfacing it.</p>
+
+<h2>2. Start by comparing the page URL, the canonical target, and the redirect behavior together</h2>
+<p>This is the main diagnostic move. Before changing templates or route config, put these three signals side by side.</p>
+
+<p>First, what URL is the page actually opening on? Second, what URL does the canonical declare as preferred? Third, does any locale or base route redirect somewhere else before the canonical is even read? Those three checks often reveal whether the conflict lives in route generation, canonical logic, or redirect policy.</p>
+
+<p>This matters because the symptoms can mislead you. A page may open successfully at <code>/ko/path/</code>, but the canonical may point to a root-language version. Or the root path may redirect into a locale path while the canonical points back out again. That kind of loop does not always break the page for a person, but it creates a weak signal system.</p>
+
+<p>Once you compare those three layers together, the debugging gets calmer. You stop asking “why is search confused?” in the abstract and start asking which instruction is disagreeing with the others. That is a much smaller and more useful question.</p>
+
+<h2>3. Check these three things before changing templates</h2>
+<ul>
+  <li>Which locale URL is actually serving the page right now?</li>
+  <li>What exact URL does the canonical point to?</li>
+  <li>Does any redirect send the user or crawler to a different preferred path first?</li>
+</ul>
+
+<h2>4. A common failure pattern is a page that opens in one locale but canonicals to another</h2>
+<p>Imagine a Korean page that opens correctly under a <code>/ko/</code> path, but its canonical points to the default-language route. Or imagine a default-language route that immediately redirects into a locale-specific path while the canonical still insists the root version is preferred. Those are not small differences. They are competing identity signals.</p>
+
+<p>The same tension appears when locale routes are generated correctly but redirects were left behind from an earlier structure. Then the page, canonical, and redirect each describe a different preferred URL. The page feels fine in a browser, but the signal model is unstable.</p>
+
+<image-slot code="002" alt-en="A route diagram showing locale-specific page URLs, a canonical target, and redirect branches being compared side by side." alt-ko="locale URL, canonical 대상, redirect 분기를 나란히 대조하는 구조를 보여주는 경로 설명 이미지."></image-slot>
+
+<h2>5. Add prevention after the fix</h2>
+<p>Once the conflict is identified, do not stop at the repair. Add one simple verification habit: whenever a locale route changes, check the live page URL, the canonical target, and the redirect behavior together. That small habit catches most repeat failures before they spread.</p>
+
+<p>In real troubleshooting, prevention is often just a fixed comparison order repeated consistently.</p>
+
+<h2>What to do first</h2>
+<p>Open one affected page and write down three exact URLs side by side: the live page URL, the canonical target, and the first redirect target if one exists. If those three URLs do not describe the same preferred route family, treat it as a URL-signal conflict before changing anything deeper.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>페이지가 브라우저에서는 멀쩡해 보여도 검색 엔진에는 충돌하는 URL 신호를 보내고 있을 수 있다. 한 locale 경로는 열리고, 다른 경로는 redirect되고, canonical은 또 다른 곳을 가리키는 식이다. 겉으로 크게 깨져 보이지 않아서 더 미끄럽게 느껴진다.</p>
+
+<p>locale과 canonical 문제는 보통 404처럼 대놓고 드러나지 않는다. 진짜 문제는 어느 URL이 이 페이지의 대표인지 시스템이 스스로도 일관되게 말하지 못하는 데 있다.</p>
+
+<p>이 글은 그 모호함을 빠르게 좁히는 방법을 다룬다. 목표는 국제화 SEO 전체를 한 번에 해결하는 게 아니라, 가장 먼저 봐야 할 세 신호를 나란히 두어 충돌이 어디서 시작되는지 찾는 것이다.</p>
+
+<h2>1. 사람들이 자주 틀리는 지점은 canonical만 따로 보는 것이다</h2>
+<p>많은 사람이 canonical 태그를 먼저 열어보고, 그럴듯한 값이 보이면 일단 넘어간다. 하지만 그건 너무 좁다. canonical은 중요하지만 이야기의 일부만 말한다.</p>
+
+<p>실제 locale 경로, redirect 동작, canonical 대상이 서로 안 맞으면 페이지는 여전히 섞인 지시를 보내고 있다. 한 층만 보면 어긋남이 드러나는 대신 가려질 수 있다.</p>
+
+<h2>2. 시작은 페이지 URL, canonical 대상, redirect 동작을 같이 대조하는 것이다</h2>
+<p>여기가 핵심 점검 포인트다. 템플릿이나 라우트 설정을 고치기 전에 이 세 신호를 나란히 둔다.</p>
+
+<p>첫째, 페이지는 실제로 어느 URL에서 열리고 있는가. 둘째, canonical은 정확히 어느 URL을 대표로 선언하는가. 셋째, locale이나 기본 경로에서 redirect가 먼저 다른 데로 보내고 있지는 않은가. 이 세 가지만 같이 봐도 충돌이 route generation에 있는지, canonical 로직에 있는지, redirect 정책에 있는지 대개 드러난다.</p>
+
+<p>증상이 자꾸 헷갈리는 이유도 여기에 있다. 예를 들어 페이지는 <code>/ko/path/</code>에서 잘 열리는데 canonical은 기본 언어 경로를 가리킬 수 있다. 반대로 기본 경로는 locale 경로로 redirect되는데 canonical은 다시 루트 버전을 고집할 수도 있다. 이런 루프는 사람 눈에는 잘 안 깨져 보여도 신호 시스템을 약하게 만든다.</p>
+
+<p>이 세 층을 같이 놓는 순간 디버깅은 훨씬 차분해진다. “왜 검색이 헷갈리지?”라는 큰 질문 대신, 셋 중 어느 지시가 나머지 둘과 다르지?라는 더 작고 쓸모 있는 질문으로 바뀌기 때문이다.</p>
+
+<h2>3. 템플릿을 건드리기 전에 먼저 볼 세 가지</h2>
+<ul>
+  <li>지금 실제로 페이지를 제공하는 locale URL이 무엇인가</li>
+  <li>canonical이 정확히 가리키는 URL이 무엇인가</li>
+  <li>redirect가 먼저 다른 대표 경로로 보내고 있지는 않은가</li>
+</ul>
+
+<h2>4. 가장 흔한 실패 장면은 한 locale에서 열리는데 canonical은 다른 locale을 가리키는 경우다</h2>
+<p>예를 들어 한국어 페이지가 <code>/ko/</code> 경로에서 잘 열리는데 canonical은 기본 언어 경로를 가리키고 있다고 해보자. 혹은 기본 언어 경로가 locale 전용 경로로 즉시 redirect되는데 canonical은 여전히 루트 버전이 대표라고 적고 있을 수도 있다. 이런 건 작은 차이가 아니라, 같은 페이지에 대해 서로 다른 정체성을 주장하는 상태다.</p>
+
+<p>비슷한 문제는 locale 경로 생성은 맞는데 예전 구조의 redirect가 남아 있을 때도 생긴다. 그러면 페이지 URL, canonical, redirect가 각자 다른 대표 경로를 설명하게 된다. 브라우저에서는 괜찮아 보여도 신호 모델은 불안정해진다.</p>
+
+<image-slot code="002" alt-en="A route diagram showing locale-specific page URLs, a canonical target, and redirect branches being compared side by side." alt-ko="locale URL, canonical 대상, redirect 분기를 나란히 대조하는 구조를 보여주는 경로 설명 이미지."></image-slot>
+
+<h2>5. 고친 뒤에는 재발 방지까지 같이 넣는다</h2>
+<p>충돌을 찾았다고 끝내면 안 된다. locale 경로나 canonical 규칙을 손댈 때마다 라이브 페이지 URL, canonical 대상, redirect 동작을 항상 같이 보는 습관을 남겨라. 이 간단한 순서만 반복해도 같은 문제가 다시 퍼지기 전에 대부분 잡힌다.</p>
+
+<p>실전 문제 해결에서 재발 방지는 대개 거창한 장치가 아니라, 같은 대조 순서를 계속 지키는 것이다.</p>
+
+<h2>무엇부터 시작할까</h2>
+<p>문제가 있는 페이지 하나를 열고 세 URL을 나란히 적어라. 실제 페이지 URL, canonical 대상 URL, redirect가 있으면 첫 번째 redirect 대상 URL이다. 이 셋이 같은 대표 경로 계열을 설명하지 않으면, 더 깊은 곳을 고치기 전에 먼저 URL 신호 충돌로 다뤄라.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

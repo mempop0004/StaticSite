@@ -11,6 +11,7 @@
 - `npm run blog:build -- blog_001`
 - `npm run blog:dev -- blog_001`
 - `npm run blog:preview -- blog_001`
+- `npm run post:focus -- blog_003 004`
 
 ## Structure
 
@@ -41,7 +42,12 @@
 출력 기준은 `rule/output-rule.md`를 따른다.
 SEO 기준은 `rule/seo-rule.md`를 따른다.
 글 조합 기준은 `rule/content-parts-rule.md`와 `docs/content-parts-system.md`를 따른다.
+고품질 글 방향은 `docs/high-quality-post-direction.md`를 따른다.
+글 품질 점검은 `checklist/high-quality-post-checklist.md`를 따른다.
+현재 반복 약점은 `docs/current-quality-gaps.md`를 본다.
 이미지 프롬프트 기준은 `rule/image-prompt-rule.md`를 따른다.
+현재 이미지 판정은 `docs/current-image-decisions.md`를 본다.
+블로그 타입별 이미지 기준은 `docs/blog-image-fit-guide.md`를 따른다.
 리뷰 사이클 기준은 `rule/review-cycle-rule.md`를 따른다.
 실제 블로그별 값은 `settings/blogs/blog_00n/`을 기준으로 관리한다.
 
@@ -66,8 +72,12 @@ SEO 기준은 `rule/seo-rule.md`를 따른다.
 - 글은 `src/content/blog/`에 추가한다.
 - 사이트 공통 설정은 `src/config/site.ts`에서 관리한다.
 - 활성 블로그는 `BLOG_FOLDER=blog_00n` 또는 `npm run blog:build -- blog_00n`으로 고른다.
+- 이미 완료된 글 작업기를 다시 열 때는 `npm run post:focus -- blog_003 004`처럼 쓴다.
+- `post:focus`는 `content-source/posts/`에 작업 파일이 없으면 블로그 보관 폴더에서 같은 포스트를 다시 꺼내온다.
 - 작업 진행 상태는 `queue/` 아래 turn-skill 형식으로 관리한다.
 - 운영 기준은 `ops/revenue-pipeline.md`를 우선 참고한다.
+- 하루 시작 키워드 선정 기준은 `ops/daily-keyword-routine.md`를 따른다.
+- 글 완료 기준은 `ops/content-completion-system.md`를 따른다.
 - 운영 직전 블로그별 구조는 `docs/blog-folder-structure.md`를 따른다.
 - 실제 운영 전 점검은 `checklist/pre-operation-checklist.md`를 따른다.
 

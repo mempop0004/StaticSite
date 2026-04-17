@@ -1,0 +1,12 @@
+{
+  "blog_folder": "blog_006",
+  "blog_id": "blog-search-driven-web-operations",
+  "hosting_provider": "cloudflare-pages",
+  "production_url": "https://sdweb-7lp.pages.dev",
+  "github_repo": "https://github.com/mempop0007/SDWeb",
+  "local_working_repo": "https://github.com/golrazo/studio-blog.git",
+  "production_branch": "main",
+  "build_command": "npm run blog:build -- blog_006",
+  "output_dir": "dist",
+  "root_dir": "/"
+}

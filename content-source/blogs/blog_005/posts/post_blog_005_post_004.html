@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_005_post_004</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>프리뷰 배포를 테스트 링크가 아니라 승격 기준으로 운영하는 방법</h1>
+        <div class="studio-meta" data-date>작성 2026-04-15T11:37:53+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="how-to-operate-preview-deployments-as-promotion-gates"
+  blog-id="blog-developer-deployment-and-hosting"
+  stage="pillar"
+  purpose="operations"
+  search-intent="learn"
+  reader-state="operating"
+  section-style="checklist"
+  image-need="cover-inline"
+  timestamp="2026-04-15T11:37:53+09:00"
+  updated-date="2026-04-15T11:37:53+09:00"
+  hero-image=""
+  related-slugs="deployment-and-hosting-rules-you-should-fix-first,what-to-check-before-changing-your-deployment-platform"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 프리뷰 배포가 단순 임시 링크가 아니라 프로덕션 직전 승격 관문이라는 점을 보여주는 대표 이미지
+
+공통 기준:
+- 한 장면에서 핵심 대비가 읽혀야 함
+- locale-safe, no text
+- 사람이나 책상 장면 금지
+- 실제 브라우저 UI 재현 금지
+- 장식보다 운영 구조 우선
+
+개별 프롬프트:
+editorial cover image for a technical operations article, showing a preview deployment as a controlled gate before production release, with one stable preview artifact feeding into one production release path, flat 2D document-like visual, no text, no realistic UI, no people, calm technical palette, should feel like release discipline rather than generic deployment art
+
+참고 검색어:
+preview deployment workflow, release gate, production promotion</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: 프리뷰 확인 항목과 프로덕션 승격 조건이 어떻게 연결되는지 설명하는 자료형 이미지
+
+공통 기준:
+- 본문 설명 맥락을 직접 보조해야 함
+- locale-safe, no text
+- 카드, 단계 블록, 검증 포인트 위주
+- 분위기용 컨셉 아트 금지
+- 한 장면에 한 설명 포인트만 남길 것
+
+개별 프롬프트:
+practical explanatory diagram for a deployment operations article, showing one preview deployment block, a checklist layer with domain, redirect, assets, env, and rollback verification nodes, and one production promotion block, flat 2D layout, no text, no realistic UI, no person, should feel like a reusable promotion checklist map
+
+참고 검색어:
+preview verification checklist, deployment promotion flow, release gate diagram</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">How to operate preview deployments as promotion gates</title>
+  <title lang="ko">프리뷰 배포를 테스트 링크가 아니라 승격 기준으로 운영하는 방법</title>
+
+  <description lang="en">Preview deployments only help when they are tied to clear promotion criteria. This guide shows what to verify in preview before a release deserves production traffic.</description>
+  <description lang="ko">프리뷰 배포는 링크를 띄우는 것만으로는 의미가 약하다. 어떤 항목을 프리뷰에서 확인해야 프로덕션 승격이 안전해지는지 운영 기준으로 정리한다.</description>
+
+  <tags lang="en">preview deployment, production release, hosting operations, deployment workflow, rollback</tags>
+  <tags lang="ko">프리뷰배포, 프로덕션배포, 호스팅운영, 배포워크플로, 롤백</tags>
+
+  <body lang="en"><![CDATA[
+<p>Many teams say they use preview deployments, but what they really have is a temporary link that someone clicks once before shipping. That is not a release gate. That is just a softer form of hope.</p>
+
+<p>A preview deployment only becomes operationally useful when it answers one question clearly: is this build ready to be promoted to production traffic or not?</p>
+
+<p>This post is about turning preview deployments into promotion gates. The point is not to create more preview URLs. The point is to make release decisions less vague.</p>
+
+<h2>1. The common mistake is treating preview as evidence instead of a stage</h2>
+<p>People often talk about preview as if its existence already reduces risk. It does not. A preview link only reduces risk when the team knows what must be verified there before a release moves forward.</p>
+
+<p>If preview is just “looks okay on my screen,” then production still becomes the first real test. That usually means the failure shows up under real traffic instead of inside a controlled step.</p>
+
+<h2>2. A preview becomes valuable only when promotion criteria are fixed before the release</h2>
+<p>This is the core operating shift. The preview link should not be the destination. It should be the gate.</p>
+
+<p>That means the release question changes from “did the preview build successfully?” to “did this preview clear the checks that matter for production?” Those are different questions. A build can succeed while the release should still be blocked.</p>
+
+<p>That distinction matters because many deployment failures are not build failures. They are promotion failures. The page renders, but the real domain is wrong. Redirect behavior changed. Asset paths break only outside the preview hostname. A missing environment variable does not surface until the feature path is hit. The preview exists, but the release is still unsafe.</p>
+
+<p>Teams usually notice this too late because the preview stage feels like completion. The URL is live, the branch is visible, and the workflow feels almost finished. That emotional shortcut is what makes preview less useful than it should be.</p>
+
+<p>A better operating habit is to define the promotion checks before the preview is even shared. Then the preview has a job. It is no longer “please look at this build.” It becomes “verify these release conditions in a safe place before production traffic sees them.”</p>
+
+<p>Once a team works that way, preview stops being a courtesy link and starts becoming a release discipline. That is when the step begins saving real operational cost.</p>
+
+<h2>3. Decide what must be true before promotion</h2>
+<p>The exact list differs by stack, but most teams should lock a short promotion set:</p>
+<ul>
+  <li>the right domain or domain behavior is ready</li>
+  <li>critical redirects behave as expected</li>
+  <li>public asset paths resolve cleanly</li>
+  <li>required environment-dependent features still work</li>
+  <li>rollback is still obvious if the release fails</li>
+</ul>
+
+<p>If those checks are not explicit, preview stays ambiguous. Ambiguous preview leads to ambiguous release decisions.</p>
+
+<h2>4. Use preview to test release shape, not just page appearance</h2>
+<p>Looking at the UI is necessary, but it is rarely enough. Preview is where you confirm release shape: routes, redirects, asset behavior, environment-dependent flows, and whether the release can still be reversed cleanly.</p>
+
+<p>That is especially important when the platform changes domain behavior between preview and production. A preview can look correct while the production promotion still introduces a routing or caching surprise.</p>
+
+<h2>5. A small promotion checklist is enough</h2>
+<p>You do not need a large release process to get value from preview. A short checklist is enough if it blocks the right failures.</p>
+<ol>
+  <li>open the preview on the routes that matter</li>
+  <li>verify domain and redirect behavior</li>
+  <li>check assets and environment-dependent paths</li>
+  <li>confirm who promotes and how rollback happens</li>
+</ol>
+
+<p>The goal is not bureaucracy. The goal is making sure production is not where the real release test begins.</p>
+
+<image-slot code="002" alt-en="A practical structure image showing a preview deployment, a verification checklist layer, and a production promotion step connected in one release flow." alt-ko="프리뷰 배포, 검증 체크리스트, 프로덕션 승격 단계가 하나의 운영 흐름으로 이어지는 구조를 보여주는 설명 이미지."></image-slot>
+
+<h2>What to do first</h2>
+<p>Take your current preview workflow and write down the exact checks that must pass before a build can be promoted. If that list does not exist yet, you are not operating preview as a gate. You are only operating a link.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>프리뷰 배포를 쓴다고 말하는 팀이 많지만, 실제로는 누군가 한 번 눌러보고 지나가는 임시 링크로 끝나는 경우가 많다. 그건 승격 기준이 아니라 기대를 조금 늦추는 방식에 가깝다.</p>
+
+<p>프리뷰 배포가 운영적으로 의미를 가지려면 질문이 하나로 모여야 한다. 이 빌드는 실제 프로덕션 트래픽으로 올려도 되는가, 아니면 아직 막아야 하는가.</p>
+
+<p>이 글은 프리뷰 링크를 많이 만드는 법이 아니라 프리뷰를 승격 관문으로 운영하는 법을 다룬다. 핵심은 배포를 더 화려하게 만드는 게 아니라 릴리스 판단을 덜 모호하게 만드는 것이다.</p>
+
+<h2>1. 사람들이 자주 틀리는 지점은 프리뷰를 단계가 아니라 증거처럼 보는 것이다</h2>
+<p>프리뷰가 있다는 사실만으로 리스크가 줄었다고 생각하기 쉽다. 하지만 그건 착각에 가깝다. 프리뷰는 거기서 무엇을 확인해야 승격이 가능한지 팀이 알고 있을 때만 리스크를 줄인다.</p>
+
+<p>프리뷰가 그냥 “내 화면에서는 괜찮아 보인다” 수준이면, 프로덕션이 여전히 첫 번째 진짜 테스트 환경이 된다. 그러면 실패는 통제된 단계가 아니라 실제 트래픽 위에서 드러난다.</p>
+
+<h2>2. 프리뷰는 승격 조건이 먼저 고정돼 있을 때만 가치가 커진다</h2>
+<p>이 지점이 운영 기준의 핵심이다. 프리뷰 링크는 도착점이 아니라 관문이어야 한다.</p>
+
+<p>그러면 질문도 달라진다. “프리뷰가 떴는가?”가 아니라 “이 프리뷰가 프로덕션 승격 조건을 통과했는가?”를 물어야 한다. 둘은 완전히 다른 질문이다. 빌드는 성공했는데 승격은 막아야 하는 상황이 실제로 자주 나온다.</p>
+
+<p>왜냐하면 배포 실패의 상당수는 build 실패가 아니라 release 실패이기 때문이다. 페이지는 떠도 실제 도메인 동작이 틀릴 수 있고, redirect 규칙이 바뀌었을 수 있고, 자산 경로는 프리뷰 호스트에서는 살아도 프로덕션에서만 깨질 수 있다. 환경 변수 누락도 특정 기능 경로를 실제로 밟기 전에는 안 보일 수 있다. 프리뷰는 존재하지만 릴리스는 여전히 위험한 상태다.</p>
+
+<p>여기서 자주 생기는 착각은 프리뷰 URL이 생기면 일이 거의 끝난 것처럼 느껴진다는 점이다. 링크가 열리고, 브랜치도 보이고, 배포도 성공처럼 보이니까 팀이 심리적으로 완료에 가까워졌다고 느낀다. 바로 그 감각 때문에 프리뷰가 생각보다 약하게 쓰인다.</p>
+
+<p>더 좋은 방식은 프리뷰를 공유하기 전에 승격 체크를 먼저 적어두는 것이다. 그러면 프리뷰는 역할이 생긴다. 단순히 “이 빌드 좀 봐줘”가 아니라 “프로덕션에 올리기 전에 이 조건들을 안전한 곳에서 검증해줘”가 된다.</p>
+
+<p>이렇게 운영하기 시작하면 프리뷰는 친절한 확인 링크가 아니라 릴리스 규율이 된다. 프리뷰 단계가 실제 운영 비용을 줄이기 시작하는 순간도 여기다.</p>
+
+<h2>3. 프로덕션으로 올리기 전에 무엇이 참이어야 하는지 정한다</h2>
+<p>정확한 목록은 스택마다 다르지만, 대부분의 팀은 아래 정도를 먼저 잠그면 된다.</p>
+<ul>
+  <li>도메인 또는 도메인 동작이 기대한 대로 맞는가</li>
+  <li>중요 redirect가 예상대로 동작하는가</li>
+  <li>public 자산 경로가 깨지지 않는가</li>
+  <li>환경 변수에 의존하는 기능이 실제로 살아 있는가</li>
+  <li>문제가 생겼을 때 롤백 방식이 여전히 분명한가</li>
+</ul>
+
+<p>이 기준이 명시되지 않으면 프리뷰는 계속 모호한 단계로 남는다. 모호한 프리뷰는 결국 모호한 릴리스 판단으로 이어진다.</p>
+
+<h2>4. 프리뷰에서는 화면보다 릴리스 형태를 본다</h2>
+<p>UI를 보는 건 필요하지만 충분하지 않다. 프리뷰는 routes, redirects, assets, 환경 의존 기능, 롤백 가능성처럼 릴리스의 형태를 확인하는 단계여야 한다.</p>
+
+<p>특히 플랫폼이 프리뷰와 프로덕션에서 도메인 동작을 다르게 가져가는 경우엔 더 그렇다. 프리뷰에서는 멀쩡해 보여도 실제 승격 순간에 라우팅이나 캐시 문제를 만든다면, 그 프리뷰는 핵심을 놓친 셈이다.</p>
+
+<h2>5. 작은 승격 체크리스트면 충분하다</h2>
+<p>프리뷰를 제대로 쓰기 위해 거대한 릴리스 절차가 필요한 건 아니다. 자주 틀리는 실패를 막는 짧은 체크리스트면 충분하다.</p>
+<ol>
+  <li>중요한 경로에서 프리뷰를 연다</li>
+  <li>도메인과 redirect 동작을 확인한다</li>
+  <li>자산 경로와 환경 의존 기능을 확인한다</li>
+  <li>누가 승격하고 어떻게 롤백하는지 확인한다</li>
+</ol>
+
+<p>목적은 절차를 늘리는 게 아니다. 프로덕션이 첫 번째 진짜 릴리스 테스트가 되지 않게 만드는 것이다.</p>
+
+<image-slot code="002" alt-en="A practical structure image showing a preview deployment, a verification checklist layer, and a production promotion step connected in one release flow." alt-ko="프리뷰 배포, 검증 체크리스트, 프로덕션 승격 단계가 하나의 운영 흐름으로 이어지는 구조를 보여주는 설명 이미지."></image-slot>
+
+<h2>무엇부터 시작할까</h2>
+<p>지금 쓰고 있는 프리뷰 워크플로에서, 프로덕션 승격 전에 반드시 통과해야 할 체크를 먼저 적어라. 그 목록이 없다면 아직 프리뷰를 관문으로 운영하는 게 아니라 링크로만 운영하고 있는 것이다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

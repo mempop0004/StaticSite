@@ -1,0 +1,14 @@
+{
+  "blog_folder": "blog_009",
+  "blog_id": "blog-web-content-production-system",
+  "site_url": "https://websys-bk7.pages.dev",
+  "site_title": "Web Content System Guide",
+  "site_description": "A practical blog about web content production systems, including writing structure, image slots, metadata, review loops, and publishing stages.",
+  "footer_copy_en": "Practical rules for web content production systems.",
+  "footer_copy_ko": "웹 콘텐츠 제작 시스템을 위한 실전 기준.",
+  "default_locale": "en",
+  "locales": [
+    "en",
+    "ko"
+  ]
+}

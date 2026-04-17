@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_003_post_005</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>배포 후 정적 자산이 사라질 때 먼저 볼 것</h1>
+        <div class="studio-meta" data-date>작성 2026-04-16T11:20:00+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="what-to-check-first-when-static-assets-disappear-after-deploy"
+  blog-id="blog-static-web-operations"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-inline"
+  timestamp="2026-04-16T11:20:00+09:00"
+  updated-date="2026-04-16T11:20:00+09:00"
+  hero-image=""
+  related-slugs="how-to-check-static-site-sitemap-could-not-be-read,static-website-operations-rules-you-should-fix-first"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 페이지는 열리지만 이미지, CSS, JS 같은 정적 자산이 비어 있는 깨진 상태와 정상 로드 상태의 대비
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+- hero cover처럼 보여야 함
+- 설명도처럼 보이면 실패
+
+직관성 체크:
+- 썸네일에서 `페이지는 있는데 자산이 비어 있다`가 먼저 읽혀야 함
+- 카드 보드나 dashboard처럼 보이면 실패
+
+개별 프롬프트:
+editorial hero image for a static site operations article, split contrast between a loaded page shell with missing image/css/js placeholders and a correctly restored static page, flat 2D web artifact composition, no decorative clutter, no text, no realistic browser chrome, should feel like asset path recovery
+
+참고 검색어:
+static asset missing after deploy, css js missing, static site asset path</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: HTML 요청에서 이미지, CSS, JS 자산 요청이 갈라지고 어느 지점에서 404나 경로 불일치가 나는지 보여주는 구조
+
+공통 기준:
+- 글의 설명 맥락을 직접 보조해야 함
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+- 한 장면에 한 구조만 남긴다
+
+직관성 체크:
+- 독자가 경로/호스트/배포 폴더 중 어디를 봐야 하는지 이해해야 함
+- hero cover처럼 보이면 실패
+- mood image처럼 보이면 실패
+
+개별 프롬프트:
+practical explanatory diagram for a static site troubleshooting article, one html page request branching into image, css, and js asset requests, with one broken branch and one correct branch, flat 2D route diagram, no text, no realistic UI, no people
+
+참고 검색어:
+asset request path, static deploy routing, css js image 404</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">What to check first when static assets disappear after deploy</title>
+  <title lang="ko">배포 후 정적 자산이 사라질 때 먼저 볼 것</title>
+
+  <description lang="en">When images, CSS, or JS disappear after a static site deploy, the root cause is usually path, host, or folder layout mismatch. This guide shows the fastest checks before you blame the framework.</description>
+  <description lang="ko">정적 사이트 배포 후 이미지, CSS, JS가 사라질 때 원인은 대개 경로, 호스트, 배포 폴더 레이아웃 불일치다. 프레임워크를 의심하기 전에 가장 먼저 확인할 순서를 정리한다.</description>
+
+  <tags lang="en">static assets, deploy troubleshooting, css missing, js missing, static site ops</tags>
+  <tags lang="ko">정적자산, 배포문제해결, CSS누락, JS누락, 정적사이트운영</tags>
+
+  <body lang="en"><![CDATA[
+<p>A static site can look half alive after deploy. The HTML page opens, but the images are gone, the layout is broken, and the scripts no longer run. That kind of failure feels bigger than it often is.</p>
+
+<p>In many cases, the framework did its job. The problem starts after that, when the deployed page, the asset paths, and the public host no longer agree.</p>
+
+<p>This post is about the first checks to run before you go deeper. The goal is to reduce a vague “the deploy is broken” feeling into one smaller question: which asset path is failing, and why?</p>
+
+<h2>1. The common mistake is debugging the site before debugging the asset request</h2>
+<p>When a static site looks broken, teams often start reading config files or rebuilding locally. That is usually too early.</p>
+
+<p>If the browser is asking for CSS, JS, or images from the wrong location, no amount of component debugging will help. The visible page is already telling you this is an asset request problem first.</p>
+
+<h2>2. The most important check is whether the page path and asset path still belong to the same deploy shape</h2>
+<p>This is the core operational question. A page can load correctly while its asset requests still point somewhere the host is not serving.</p>
+
+<p>That mismatch appears in a few common ways. The site moved under a subpath but asset URLs still point to the root. The host changed but generated asset prefixes did not. Or the deploy output placed files under a nested folder while the live HTML still points to the older layout.</p>
+
+<p>This is why the failure feels confusing. The site is not fully down. It is partially present. The first document opens, which makes the deploy look successful, but the artifact network under it has already split apart.</p>
+
+<p>A calm way to read this is to compare four things only: the public page URL, one missing image request, one missing CSS or JS request, and the actual folder layout of the deployed output. Once those four are side by side, the mismatch is often obvious.</p>
+
+<h2>3. Check these first before rebuilding</h2>
+<ul>
+  <li>Does the page load from root or a subpath?</li>
+  <li>Do asset URLs use the same path family as the page?</li>
+  <li>Did the deploy folder layout change from the previous release?</li>
+  <li>Is the host serving the same public path your build assumes?</li>
+</ul>
+
+<h2>4. One broken branch usually explains the whole symptom</h2>
+<p>Imagine the homepage loads, but all images return 404 while CSS and JS still work. That usually means the issue is narrower than the full deploy. The image branch may point to a different folder, host, or prefix than the other artifacts.</p>
+
+<p>The reverse can happen too: images load from a CDN path, but CSS and JS are requested from a wrong local prefix. In that case the page looks even stranger because some assets survive and others do not.</p>
+
+<image-slot code="002" alt-en="A route diagram showing an HTML page branching into image, CSS, and JS requests, with one broken branch and one correct branch." alt-ko="HTML 페이지 요청에서 이미지, CSS, JS 자산 요청이 갈라지고, 어느 가지가 깨지고 어느 가지가 정상인지 보여주는 설명 이미지."></image-slot>
+
+<h2>5. Use one fixed inspection order</h2>
+<p>Open the live page. Inspect one missing asset request. Compare it to the public page URL. Then compare both to the actual build output layout. Do not change code until those three views line up.</p>
+
+<ol>
+  <li>open the broken page</li>
+  <li>inspect one failing asset request</li>
+  <li>compare the request path against the page URL path</li>
+  <li>compare both against the deploy folder layout</li>
+  <li>only then decide whether the fix is config, path, or host-related</li>
+</ol>
+
+<h2>What to do first</h2>
+<p>Write down one live page URL and one failing asset URL side by side. If they do not belong to the same deploy shape, stop debugging the app and start debugging the path.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>정적 사이트는 배포 후 반쯤 살아 있는 것처럼 깨질 때가 있다. HTML 페이지는 열리는데 이미지가 사라지고, 레이아웃이 무너지고, 스크립트가 돌지 않는다. 보기에는 크게 망가진 것 같지만, 원인은 생각보다 작고 기계적인 경우가 많다.</p>
+
+<p>실전에서는 프레임워크가 실패했다기보다, 그 뒤 단계에서 페이지 경로와 자산 경로, 공개 호스트가 서로 안 맞기 시작한 경우가 더 흔하다.</p>
+
+<p>이 글은 더 깊이 내려가기 전에 먼저 봐야 할 것들을 정리한다. 목표는 “배포가 망가졌다”는 막연한 느낌을 “어느 자산 요청이 왜 실패하는가”라는 작은 질문으로 줄이는 것이다.</p>
+
+<h2>1. 사람들이 자주 틀리는 지점은 사이트를 먼저 디버깅하고 자산 요청은 나중에 보는 것이다</h2>
+<p>정적 사이트가 깨져 보이면 많은 팀이 바로 설정 파일을 뒤지거나 로컬 빌드부터 다시 해본다. 대개는 너무 이르다.</p>
+
+<p>브라우저가 CSS, JS, 이미지 자산을 잘못된 위치에서 찾고 있다면, 컴포넌트나 템플릿을 아무리 들여다봐도 도움이 안 된다. 이미 화면이 “이건 자산 요청 문제다”라고 먼저 말해주고 있는 셈이다.</p>
+
+<h2>2. 가장 중요한 점검은 페이지 경로와 자산 경로가 같은 배포 형태에 속해 있는지 보는 것이다</h2>
+<p>여기가 핵심 운영 질문이다. 페이지는 잘 열리는데 자산 요청만 호스트가 제공하지 않는 다른 위치를 가리킬 수 있다.</p>
+
+<p>이 불일치는 몇 가지 패턴으로 자주 나타난다. 사이트가 서브패스로 옮겨졌는데 자산 URL은 여전히 루트를 가리킨다. 호스트는 바뀌었는데 생성된 자산 prefix는 그대로다. 또는 배포 결과물이 nested folder 아래에 놓였는데 HTML은 여전히 예전 레이아웃을 가리킨다.</p>
+
+<p>그래서 증상이 더 헷갈린다. 사이트가 완전히 죽은 게 아니라 부분적으로만 존재한다. 첫 문서는 열리니 배포는 성공한 것처럼 보이지만, 그 아래 artifact network는 이미 갈라져 있다.</p>
+
+<p>차분하게 보려면 네 가지만 비교하면 된다. 공개 페이지 URL, 사라진 이미지 요청 하나, 실패한 CSS나 JS 요청 하나, 그리고 실제 배포 결과물의 폴더 레이아웃이다. 이 넷을 나란히 놓으면 어긋남이 대부분 보인다.</p>
+
+<h2>3. 다시 빌드하기 전에 먼저 볼 기준</h2>
+<ul>
+  <li>페이지는 루트에서 열리는가, 서브패스에서 열리는가</li>
+  <li>자산 URL이 페이지와 같은 경로 계열을 쓰는가</li>
+  <li>배포 폴더 레이아웃이 직전 릴리스와 달라졌는가</li>
+  <li>호스트가 빌드가 가정한 공개 경로를 실제로 제공하고 있는가</li>
+</ul>
+
+<h2>4. 깨진 가지 하나가 전체 증상을 설명하는 경우가 많다</h2>
+<p>예를 들어 홈은 열리는데 이미지만 전부 404이고 CSS와 JS는 살아 있다고 하자. 이런 경우 문제는 전체 배포가 아니라 더 좁다. 이미지 가지가 다른 폴더, 다른 호스트, 다른 prefix를 가리키고 있을 가능성이 높다.</p>
+
+<p>반대도 가능하다. 이미지는 CDN 경로라 살아 있는데 CSS와 JS만 잘못된 local prefix로 가면, 일부 자산만 남아서 페이지가 더 이상하게 보인다.</p>
+
+<image-slot code="002" alt-en="A route diagram showing an HTML page branching into image, CSS, and JS requests, with one broken branch and one correct branch." alt-ko="HTML 페이지 요청에서 이미지, CSS, JS 자산 요청이 갈라지고, 어느 가지가 깨지고 어느 가지가 정상인지 보여주는 설명 이미지."></image-slot>
+
+<h2>5. 점검 순서는 고정해두는 편이 낫다</h2>
+<p>먼저 live 페이지를 연다. 그다음 실패한 자산 요청 하나를 본다. 그 경로를 공개 페이지 URL과 비교하고, 둘 다 실제 build output 폴더 구조와 대조한다. 이 세 뷰가 맞기 전에는 코드 수정으로 내려가지 않는 편이 맞다.</p>
+
+<ol>
+  <li>깨진 페이지를 연다</li>
+  <li>실패한 자산 요청 하나를 본다</li>
+  <li>요청 경로를 페이지 URL 경로와 비교한다</li>
+  <li>둘 다 배포 폴더 레이아웃과 대조한다</li>
+  <li>그다음에야 설정, 경로, 호스트 중 어디를 고칠지 판단한다</li>
+</ol>
+
+<h2>무엇부터 시작할까</h2>
+<p>live 페이지 URL 하나와 실패한 자산 URL 하나를 나란히 적어라. 이 둘이 같은 배포 형태에 속하지 않으면, 앱을 디버깅하지 말고 경로부터 디버깅해야 한다.</p>
+]]></body>
+</post>
+  </script>
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

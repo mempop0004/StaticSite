@@ -1,0 +1,12 @@
+{
+  "blog_folder": "blog_007",
+  "blog_id": "blog-web-automation-and-ops-systems",
+  "hosting_provider": "cloudflare-pages",
+  "production_url": "https://waops.pages.dev",
+  "github_repo": "https://github.com/mempop0008/WAOps",
+  "local_working_repo": "https://github.com/golrazo/studio-blog.git",
+  "production_branch": "main",
+  "build_command": "npm run blog:build -- blog_007",
+  "output_dir": "dist",
+  "root_dir": "/"
+}

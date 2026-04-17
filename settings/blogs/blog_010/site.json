@@ -1,0 +1,14 @@
+{
+  "blog_folder": "blog_010",
+  "blog_id": "blog-real-world-web-troubleshooting",
+  "site_url": "https://rwweb.pages.dev",
+  "site_title": "Real-World Web Troubleshooting Guide",
+  "site_description": "A practical blog about diagnosing and fixing real-world web issues, including 404s, broken assets, bad redirects, crawl failures, and deployment-side regressions.",
+  "footer_copy_en": "Practical rules for real-world web troubleshooting.",
+  "footer_copy_ko": "실전 웹 문제 해결을 위한 실전 기준.",
+  "default_locale": "en",
+  "locales": [
+    "en",
+    "ko"
+  ]
+}

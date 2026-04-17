@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_006_post_002</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>Sitemap couldn't fetch를 점검하는 실제 순서</h1>
+        <div class="studio-meta" data-date>작성 2026-04-13T10:21:40+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="how-to-diagnose-sitemap-couldnt-fetch"
+  blog-id="blog-search-driven-web-operations"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-only"
+  timestamp="2026-04-13T10:21:40+09:00"
+  updated-date="2026-04-13T10:21:40+09:00"
+  hero-image="../../../assets/blog-placeholder-1.jpg"
+  related-slugs=""
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 글 제목과 가장 잘 맞는 핵심 장면
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- 과장된 합성 느낌 금지
+- 기사나 실전 가이드에 맞는 현실적인 구도
+
+개별 프롬프트:
+search indexing system with one broken sitemap request turning into a clear diagnostics checklist, editorial hero, no text-heavy infographic
+
+참고 검색어:
+sitemap couldnt fetch, sitemap error, search console</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: 핵심 비교나 과정 설명을 돕는 장면
+
+공통 기준:
+- 글의 설명 맥락을 직접 보조해야 함
+- 억지 장식 이미지 금지
+- 현실적인 화면 또는 설명 장면
+
+개별 프롬프트:
+sitemap diagnostics flow showing live xml check, robots check, response status, and indexing validation, explanatory composition
+
+참고 검색어:
+sitemap diagnostics, search console sitemap error</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">How to fix “Sitemap couldn't fetch” in the right order</title>
+  <title lang="ko">Sitemap couldn't fetch를 해결하기 위한 실제 점검 순서</title>
+
+  <description lang="en">When Search Console says “Sitemap couldn't fetch,” the issue is often the live response, redirect chain, or robots setup. This guide shows the real fix order from XML check to host diagnosis.</description>
+  <description lang="ko">Search Console에서 “Sitemap couldn't fetch”가 뜰 때 원인은 사이트맵 파일보다 live 응답, redirect, robots 설정에 있는 경우가 많다. XML 확인부터 호스트 진단까지 실제 순서를 정리한다.</description>
+
+  <tags lang="en">sitemap error, Search Console, indexing, robots.txt, crawl diagnostics</tags>
+  <tags lang="ko">사이트맵오류, 서치콘솔, 인덱싱, robots.txt, 크롤링진단</tags>
+
+  <body lang="en"><![CDATA[
+<p>“Sitemap couldn't fetch” sounds like a sitemap problem, but in practice it is often a response problem. The sitemap may be valid while the live URL, robots rules, or deployment host is failing around it.</p>
+
+<p>Use the <a href="/units/blog-search-driven-web-operations/">search-driven web operations unit page</a> as the index for follow-up posts on indexing, metadata, CTR, and Search Console checks. If you need the broader operating baseline first, start with <a href="/blog/search-driven-web-operations-rules-you-should-fix-first/">the rules you should fix first</a>.</p>
+
+<h2>1. Open the live sitemap first</h2>
+<p>Do not start from assumptions. Open the exact live sitemap URL and confirm that you get real XML with a valid response code.</p>
+
+<h2>2. Check the host response and redirect path</h2>
+<p>If the sitemap URL redirects, returns HTML, or lands on the wrong hostname, Search Console will treat it as a fetch failure even if the content looks fine locally.</p>
+<p>A healthy baseline is simple: the live sitemap should return `200 OK`, real XML, and the final hostname you actually use in production.</p>
+<image-slot code="002" alt-en="An explanatory image showing sitemap diagnostics through live XML check, response code, redirect path, robots.txt, and final host validation." alt-ko="live XML, 응답 코드, redirect 경로, robots.txt, 최종 호스트를 순서대로 확인하는 사이트맵 진단 흐름을 보여주는 설명 이미지."></image-slot>
+<ul>
+  <li>`200 OK` and real XML: healthy baseline</li>
+  <li>`301` or `302`: not always fatal, but you need to verify the final location</li>
+  <li>`403` or `404`: usually a host, access, or routing problem, not a sitemap syntax problem</li>
+</ul>
+
+<h2>3. Verify robots.txt next</h2>
+<p>Robots is part of sitemap health because it can reference the sitemap and influence crawler behavior. If robots is missing or wrong, your diagnosis is incomplete.</p>
+
+<h2>4. Separate fetch failure from indexing delay</h2>
+<p>A fetch problem means the crawler cannot retrieve the sitemap correctly. That is different from a valid sitemap that has not influenced indexing yet. Those are separate operational states.</p>
+<p>If the sitemap opens with `200 OK` and valid XML, but pages still do not appear in search, you are no longer in fetch diagnosis. That is where indexing, canonical, and content quality checks begin.</p>
+
+<h2>What to do first</h2>
+<p>Lock a small checklist: live XML, response code, final URL, robots.txt, and host consistency. If those five pass, you can stop blaming the sitemap file and move to indexing questions.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>“Sitemap couldn't fetch”는 사이트맵 파일 자체가 틀렸다는 뜻처럼 보이지만, 실제로는 응답 문제인 경우가 많다. 사이트맵 내용은 맞아도 live URL, robots 규칙, 배포 호스트 응답이 틀어져 있으면 같은 메시지가 뜬다.</p>
+
+<p>후속 점검 글은 <a href="/ko/units/blog-search-driven-web-operations/">검색 유입형 웹 운영 유닛 페이지</a>를 기준으로 인덱싱, 메타, CTR, Search Console 흐름으로 이어가면 된다. 운영 기본선이 먼저 필요하면 <a href="/ko/blog/search-driven-web-operations-rules-you-should-fix-first/">검색 유입형 웹 운영 기준 글</a>부터 본다.</p>
+
+<h2>1. live sitemap을 먼저 연다</h2>
+<p>추측부터 하지 말고 실제 live sitemap URL을 먼저 열어야 한다. 진짜 XML이 응답되는지, 상태 코드는 정상인지부터 확인하는 게 첫 번째다.</p>
+
+<h2>2. 응답과 redirect 경로를 같이 본다</h2>
+<p>사이트맵 URL이 중간에 redirect되거나, HTML을 내보내거나, 다른 호스트로 가면 Search Console은 가져오기 실패로 본다. 로컬에서 정상인 것과는 별개다.</p>
+<p>기본선은 단순하다. live sitemap이 `200 OK`, 실제 XML, 그리고 실제 운영 호스트명으로 응답해야 한다.</p>
+<image-slot code="002" alt-en="An explanatory image showing sitemap diagnostics through live XML check, response code, redirect path, robots.txt, and final host validation." alt-ko="live XML, 응답 코드, redirect 경로, robots.txt, 최종 호스트를 순서대로 확인하는 사이트맵 진단 흐름을 보여주는 설명 이미지."></image-slot>
+<ul>
+  <li>`200 OK`와 실제 XML: 정상 기준</li>
+  <li>`301`, `302`: 무조건 오류는 아니지만 최종 도착 URL을 확인해야 한다</li>
+  <li>`403`, `404`: 사이트맵 문법보다 호스트, 접근 권한, 라우팅 문제일 가능성이 높다</li>
+</ul>
+
+<h2>3. robots.txt를 그다음 본다</h2>
+<p>robots는 sitemap 건강 상태의 일부다. sitemap 경로를 참조하고 있고, 크롤러가 볼 때 자연스러운 응답을 주고 있는지 같이 확인해야 한다.</p>
+
+<h2>4. fetch 실패와 인덱싱 지연을 구분한다</h2>
+<p>가져오기 실패는 크롤러가 sitemap을 제대로 못 읽는 상태다. 그와 별개로 sitemap은 정상인데 인덱싱 반영이 늦은 경우도 있다. 두 상태를 섞으면 진단이 꼬인다.</p>
+<p>즉 sitemap이 `200 OK`와 실제 XML로 열리는데도 검색 반영이 안 된다면, 그때부터는 fetch 문제가 아니라 인덱싱, canonical, 콘텐츠 품질 쪽으로 넘어가야 한다.</p>
+
+<h2>무엇부터 시작할까</h2>
+<p>체크리스트는 다섯 개면 충분하다. live XML, 상태 코드, 최종 URL, robots.txt, 호스트 일치 여부다. 이 다섯 가지가 통과하면 그다음부터는 sitemap 파일이 아니라 인덱싱 단계 문제를 보면 된다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

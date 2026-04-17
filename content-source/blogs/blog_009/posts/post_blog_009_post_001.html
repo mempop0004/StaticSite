@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_009_post_001</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>웹 콘텐츠 제작 시스템을 만들기 전에 먼저 고정해야 할 6가지 기준</h1>
+        <div class="studio-meta" data-date>작성 2026-04-12T14:20:47+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="web-content-production-system-rules-you-should-fix-first"
+  blog-id="blog-web-content-production-system"
+  stage="pillar"
+  purpose="operations"
+  search-intent="learn"
+  reader-state="operating"
+  section-style="checklist"
+  image-need="cover-only"
+  timestamp="2026-04-12T14:20:47+09:00"
+  updated-date="2026-04-12T14:20:47+09:00"
+  hero-image="../../../assets/blog-placeholder-1.jpg"
+  related-slugs=""
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>Create a hero image for a blog post about building a web content production system.
+
+Image role: editorial hero image
+Image goal: show one strong contrast between scattered content pieces and one clean production system.
+
+Rules:
+- one scene, one contrast, one message
+- no Korean text
+- no long English text
+- no stock office portrait
+- no busy infographic
+- readable at thumbnail size in one second
+
+Reference keywords:
+content production system, editorial workflow, publishing structure</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>Create an inline explanatory image for a section about writing structure, image slots, metadata, review loops, and publishing stages.
+
+Image role: inline explanatory image
+Image goal: show the grouped production stages that should be fixed before web content scales.
+
+Rules:
+- explanatory composition is allowed
+- no Korean text
+- no long English text
+- use grouped cards, arrows, checklist blocks, or stage panels
+- prioritize clarity over realism
+
+Reference keywords:
+content workflow system, publishing stages, review checklist</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">6 rules to lock down before building a web content production system</title>
+  <title lang="ko">웹 콘텐츠 제작 시스템을 만들기 전에 먼저 고정해야 할 6가지 기준</title>
+
+  <description lang="en">Before scaling web content, lock the rules for writing structure, image slots, metadata, review memory, publishing stages, and quality checks. This guide turns content work into a stable production system.</description>
+  <description lang="ko">웹 콘텐츠를 늘리기 전에 글 구조, 이미지 슬롯, 메타, 리뷰 메모리, 발행 단계, 품질 점검 기준을 먼저 고정해야 한다. 이 글은 콘텐츠 작업을 안정적인 제작 시스템으로 만드는 6가지 기준을 정리한다.</description>
+
+  <tags lang="en">content system, editorial workflow, metadata, image slots, review, publishing</tags>
+  <tags lang="ko">콘텐츠시스템, 에디토리얼워크플로, 메타데이터, 이미지슬롯, 리뷰, 발행</tags>
+
+  <body lang="en"><![CDATA[
+<p>Content production usually becomes expensive before anyone notices. Not because writing is impossible, but because structure, images, metadata, review, and publishing were never treated as one system. Every new post then reinvents the process.</p>
+
+<p>If you want content work that gets faster instead of messier, you need a small production baseline first. These six rules are the first layer.</p>
+
+<p>Read the operating unit first if you want the full frame for this blog: <a href="/units/blog-web-content-production-system/">web content production system unit</a>.</p>
+
+<h2>1. Writing structure should repeat</h2>
+<p>Every post does not need the same tone, but the production structure should be predictable. Decide what a baseline article skeleton looks like.</p>
+<p>Example: a baseline guide can always follow lead, diagnosis, checklist, image support, and next action instead of inventing a new flow every time.</p>
+
+<h2>2. Image roles should be mechanical</h2>
+<p>Hero images, inline explanatory images, and screenshot exceptions should follow fixed roles. Otherwise image work will keep slowing down the whole pipeline.</p>
+<p>Example: 001 is always the hero image, 002 is always the inline explanatory image, and screenshot exceptions are only used when a real UI must be shown.</p>
+
+<h2>3. Metadata needs a rule, not inspiration</h2>
+<p>Titles, descriptions, tags, and slugs should be generated from repeatable logic. The production system gets stronger when metadata no longer depends on last-minute mood.</p>
+<p>Example: a rule like "title = problem + operating outcome" is much more stable than rewriting titles from scratch at publishing time.</p>
+
+<h2>4. Review should improve the next post too</h2>
+<p>A useful review does more than fix the current draft. It leaves one rule behind that improves the next article in the sequence.</p>
+
+<image-slot code="002" alt="Inline visual for grouped writing, image, metadata, review, and publishing stages." />
+
+<h2>5. Publishing should have visible stages</h2>
+<p>Draft, image-ready, reviewed, and published should not be implicit states. A visible stage model reduces confusion and handoff mistakes.</p>
+<p>Example: if a post is still waiting for 002, it should not look "almost done." The stage should already show that the image step is incomplete.</p>
+
+<h2>6. Quality checks should be cheap</h2>
+<p>If quality checks are too heavy, they will be skipped. The best production system makes key checks mechanical enough to survive real publishing pace.</p>
+<p>Example: build check, feed check, hero image check, and internal link check should run fast enough that they are never skipped under time pressure.</p>
+
+<h2>What to lock first</h2>
+<p>Start by fixing one repeatable structure for writing, one repeatable rule for images, and one cheap review memory rule. If those three keep repeating cleanly, the rest of the production system gets easier to scale.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>웹 콘텐츠 제작이 금방 비싸지는 이유는 글을 못 써서가 아니라, 글 구조, 이미지, 메타, 리뷰, 발행을 하나의 시스템으로 보지 않았기 때문이다. 그러면 새 글을 만들 때마다 같은 공정을 다시 발명하게 된다.</p>
+
+<p>콘텐츠를 늘릴수록 더 빨라지는 시스템을 만들고 싶다면, 초반에 작은 제작 기준부터 먼저 잠가야 한다. 이 글은 그 첫 번째 기준 글이다.</p>
+
+<p>이 블로그의 운영 단위를 먼저 보려면 <a href="/ko/units/blog-web-content-production-system/">웹 콘텐츠 제작 시스템 유닛</a>부터 보면 된다.</p>
+
+<h2>1. 글 구조는 반복 가능해야 한다</h2>
+<p>모든 글의 톤이 같을 필요는 없지만, 제작 구조는 예측 가능해야 한다. 기준 글, 비교 글, 체크리스트 글이 각각 어떤 뼈대를 가질지 먼저 정해야 한다.</p>
+<p>예를 들어 기준 글은 lead, 진단, 체크리스트, 이미지 보조, 다음 행동 순서로 고정해두면 새 글마다 구조를 다시 짜지 않아도 된다.</p>
+
+<h2>2. 이미지 역할은 기계적으로 간다</h2>
+<p>대표 이미지, 본문 설명 이미지, 스크린샷 예외 규칙은 고정된 역할로 가야 한다. 그렇지 않으면 이미지 작업이 전체 발행 속도를 계속 늦춘다.</p>
+<p>예를 들어 001은 항상 대표 이미지, 002는 항상 본문 설명 이미지, 실무 캡처는 실제 UI가 꼭 필요한 경우에만 쓰는 식으로 잠가두면 속도가 달라진다.</p>
+
+<h2>3. 메타는 감각이 아니라 규칙으로 만든다</h2>
+<p>제목, 설명, 태그, slug는 마지막 순간의 기분이 아니라 반복 가능한 로직에서 나와야 한다. 그래야 제작 시스템이 점점 강해진다.</p>
+<p>예를 들어 "문제 + 운영 결과" 구조처럼 제목 규칙을 정해두면 발행 직전마다 제목을 새로 고민하지 않아도 된다.</p>
+
+<h2>4. 리뷰는 다음 글도 같이 좋아지게 해야 한다</h2>
+<p>좋은 리뷰는 현재 글만 고치는 데서 끝나지 않는다. 다음 글부터 바로 적용할 한 줄 규칙을 남겨야 한다.</p>
+
+<image-slot code="002" alt="글 구조, 이미지, 메타, 리뷰, 발행 단계를 묶어 보여주는 설명 이미지" />
+
+<h2>5. 발행 단계는 눈에 보여야 한다</h2>
+<p>초안, 이미지 준비, 리뷰 완료, 발행 완료 같은 단계가 암묵적이면 혼란이 커진다. 단계가 보이면 누락과 손실이 줄어든다.</p>
+<p>예를 들어 002가 아직 없는데도 글이 거의 끝난 것처럼 보이면 결국 마지막에 작업이 밀린다. 단계가 보이면 이런 착시가 줄어든다.</p>
+
+<h2>6. 품질 점검은 가벼워야 지속된다</h2>
+<p>품질 점검이 너무 무거우면 결국 건너뛰게 된다. 진짜 좋은 제작 시스템은 핵심 점검을 기계적으로 돌릴 수 있어야 한다.</p>
+<p>예를 들어 build, feed, 대표 이미지, 내부 링크 확인 정도는 시간 압박이 있어도 항상 돌릴 수 있어야 한다.</p>
+
+<h2>무엇부터 잠글까</h2>
+<p>먼저 글 구조 하나, 이미지 규칙 하나, 리뷰 메모리 한 줄을 반복 가능하게 잠가라. 이 세 가지가 흔들리지 않으면 나머지 제작 시스템도 훨씬 쉽게 확장된다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

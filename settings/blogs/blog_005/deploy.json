@@ -1,0 +1,12 @@
+{
+  "blog_folder": "blog_005",
+  "blog_id": "blog-developer-deployment-and-hosting",
+  "hosting_provider": "cloudflare-pages",
+  "production_url": "https://dhguide.pages.dev",
+  "github_repo": "https://github.com/mempop0006/dhguide",
+  "local_working_repo": "https://github.com/golrazo/studio-blog.git",
+  "production_branch": "main",
+  "build_command": "npm run blog:build -- blog_005",
+  "output_dir": "dist",
+  "root_dir": "/"
+}

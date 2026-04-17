@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_004_post_001</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>기술 블로그 운영이 쉬워지는 7가지 시스템 규칙</h1>
+        <div class="studio-meta" data-date>작성 2026-04-12T12:02:00+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="technical-blog-operations-rules-you-should-fix-first"
+  blog-id="blog-technical-blog-operations"
+  stage="pillar"
+  purpose="operations"
+  search-intent="learn"
+  reader-state="operating"
+  section-style="checklist"
+  image-need="cover-only"
+  timestamp="2026-04-12T12:02:00+09:00"
+  updated-date="2026-04-12T12:02:00+09:00"
+  hero-image="../../../assets/blog-placeholder-1.jpg"
+  related-slugs=""
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>Create a hero image for a blog post about technical blog operations.
+
+Image role: editorial hero image
+Image goal: show that a technical blog becomes stable when scattered publishing decisions are turned into a clear operating system.
+
+Rules:
+- one scene, one contrast, one message
+- no Korean text
+- no long English text
+- no stock office portrait
+- no busy infographic
+- thumbnail must be readable in one second
+
+Preferred concept:
+A split editorial composition showing scattered blog drafts, tags, and publishing fragments on one side, and one clean operating structure on the other side.
+
+Reference keywords:
+technical blog operations, editorial system, publishing workflow</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>Create an inline explanatory image for a section about why technical blog operations need early rules for topic units, internal links, image handling, and review loops.
+
+Image role: inline explanatory image
+Image goal: show grouped operating decisions that should be fixed before a technical blog grows.
+
+Rules:
+- explanatory composition is allowed
+- no Korean text
+- no long English text
+- use cards, grouped labels, arrows, or check blocks
+- prioritize clarity over realism
+
+Reference keywords:
+blog workflow system, editorial checklist, internal link structure</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">7 rules to lock down before operating a technical blog</title>
+  <title lang="ko">기술 블로그 운영이 쉬워지는 7가지 시스템 규칙</title>
+
+  <description lang="en">Before a technical blog grows, lock the rules for topic units, title and meta structure, slug policy, internal links, image handling, and review memory. This guide shows the seven system rules that reduce decision fatigue and keep the blog coherent.</description>
+  <description lang="ko">기술 블로그가 커지기 전에 주제 단위, 제목과 메타 구조, slug 규칙, 내부 링크, 이미지 처리, 리뷰 메모리 같은 운영 기준을 먼저 고정해야 한다. 이 글은 결정 피로를 줄이고 구조를 유지하게 만드는 7가지 블로그 시스템 규칙을 정리한다.</description>
+
+  <tags lang="en">technical blog, editorial workflow, internal links, content system, operations, checklist</tags>
+  <tags lang="ko">기술블로그, 에디토리얼워크플로, 내부링크, 콘텐츠시스템, 운영, 체크리스트</tags>
+
+  <body lang="en"><![CDATA[
+<p>Most technical blogs do not drift because the writer suddenly becomes worse. They drift because the operating rules were never locked while the first few posts were going live. Topic boundaries blur, slugs get inconsistent, internal links stay random, and every new article invents a new exception. The real cost is decision fatigue: the same basic choices must be made again on every publish.</p>
+
+<p>If you want a technical blog that still feels coherent after twenty posts, you need to fix a small set of editorial and operating rules early. These seven rules are the first layer.</p>
+
+<h2>1. Define the topic unit before you define the next post</h2>
+<p>A technical blog becomes easier to operate when related posts belong to one topic unit with a shared purpose. That gives you a stable home for related links, follow-up posts, and measurement.</p>
+<p>Do not start from “what should I post today?” Start from “what operating unit does this post belong to?”</p>
+
+<h2>2. Lock title and description patterns early</h2>
+<p>The blog should not swing between vague essays and search-driven fix posts with no rule. Decide how titles explain benefit, problem, or checklist value, and decide how descriptions summarize the practical scope of the post.</p>
+<p>This is not branding polish. It is operational consistency.</p>
+
+<h2>3. Use one slug rule and keep it mechanical</h2>
+<p>Slugs should not depend on mood. A technical blog is easier to maintain when slug length, language, and structure are predictable. That helps with internal links, search indexing, and later editing.</p>
+<p>A simple rule is enough: use English slugs, keep them descriptive, and keep the same naming logic across the whole unit. That keeps URLs easier to share, less likely to break, and easier to search inside the codebase.</p>
+
+<h2>4. Internal links should be designed, not improvised</h2>
+<p>Without an internal link rule, every post behaves like an isolated article. Decide when to link to the unit page, when to link to deeper articles, and how many follow-up paths each post should create.</p>
+<p>For example, a core post should usually link up to its unit page and down to one or two narrower follow-up guides. That turns the blog from a page collection into a navigable system.</p>
+
+<image-slot code="002" alt-en="A diagram showing how a technical blog connects unit pages, post structure, images, and review memory." alt-ko="기술 블로그 운영에서 유닛 페이지, 내부 링크, 이미지 규칙, 리뷰 메모리가 어떻게 연결되는지 보여주는 설명 이미지."></image-slot>
+
+<h2>5. Image rules should remove choice, not add more choice</h2>
+<p>Technical blogs slow down when every post invents a new image pattern. Fix the rule for hero selection, inline image slots, file naming, alt handling, and locale-safe visuals so the system decides most of it.</p>
+<p>If image handling keeps becoming a custom decision, publishing speed will keep dropping.</p>
+
+<h2>6. Review should leave memory behind</h2>
+<p>A good review is not only “rewrite this paragraph.” It should add a rule that strengthens the next article. That is why review memory matters in a technical blog workflow: it prevents the same quality mistakes from repeating.</p>
+<p>One practical version is simple: after review, add one line to the shared memory file such as “always add one concrete internal-link example” or “keep image rules mechanical.” That is what turns review into system improvement.</p>
+
+<h2>7. Measure what makes the unit stronger</h2>
+<p>Do not track only pageviews. Track whether readers move to the unit page, whether they click into related posts, and whether your publishing cost stays controlled. Those are stronger signals for an operations blog than raw impressions alone.</p>
+
+<h2>What to fix first</h2>
+<p>If you are setting up a technical blog now, lock the topic unit, title rule, slug rule, and internal link rule first. Those four decisions remove most of the chaos that appears after the first few posts.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>기술 블로그가 흔들리는 이유는 글쓴이가 갑자기 못 써서가 아니라, 첫 몇 개 글이 올라갈 때 운영 규칙을 고정하지 않았기 때문이다. 주제 경계가 흐려지고, slug가 제각각이 되고, 내부 링크는 우연에 맡겨지고, 새 글을 쓸 때마다 또 다른 예외가 생긴다.</p>
+
+<p>스무 개 글이 넘어가도 구조가 유지되는 기술 블로그를 만들고 싶다면, 에디토리얼과 운영 기준 몇 개를 초반에 먼저 잠가야 한다. 그렇지 않으면 발행할 때마다 같은 결정을 다시 해야 한다. 이 글은 그 첫 번째 기준 글이다.</p>
+
+<h2>1. 다음 글보다 먼저 주제 단위를 정한다</h2>
+<p>기술 블로그는 관련 글이 하나의 주제 단위 안에 묶일 때 운영이 쉬워진다. 그래야 관련 링크, 후속 글, 측정 기준이 같은 축으로 쌓인다.</p>
+<p>“오늘은 뭘 쓸까?”보다 “이 글은 어떤 운영 단위에 속하나?”를 먼저 정하는 쪽이 맞다.</p>
+
+<h2>2. 제목과 설명 규칙을 초반에 고정한다</h2>
+<p>기술 블로그가 애매한 에세이와 검색형 문제 해결 글 사이를 계속 오가면 운영 리듬이 깨진다. 제목은 어떤 효익이나 문제를 전면에 둘지, 설명은 어디까지 실무 범위를 요약할지 먼저 정해야 한다.</p>
+<p>이건 브랜딩 장식이 아니라 운영 일관성이다.</p>
+
+<h2>3. slug 규칙은 기계적으로 간다</h2>
+<p>slug가 기분에 따라 바뀌면 내부 링크와 검색 관리가 금방 복잡해진다. 영어 기준, 설명형, 같은 길이 감각 같은 최소 규칙을 고정해 두는 편이 낫다.</p>
+<p>기술 블로그일수록 slug는 감각보다 규칙으로 가야 한다. 영어 slug를 고정하면 URL 공유, 코드베이스 검색, 후속 수정 관리도 훨씬 쉬워진다.</p>
+
+<h2>4. 내부 링크는 즉흥이 아니라 설계로 넣는다</h2>
+<p>내부 링크 규칙이 없으면 모든 글이 따로 노는 글이 된다. 언제 유닛 페이지로 보낼지, 언제 더 깊은 후속 글로 보낼지, 한 글이 몇 개의 다음 행동을 만들어야 하는지를 먼저 정해야 한다.</p>
+<p>예를 들어 기준 글은 유닛 페이지로 한 번 올라가고, 후속 세부 글로 한두 번 내려가게 설계하는 식이다. 그래야 블로그가 페이지 모음이 아니라 이동 가능한 시스템이 된다.</p>
+
+<image-slot code="002" alt-en="A diagram showing how a technical blog connects unit pages, post structure, images, and review memory." alt-ko="기술 블로그 운영에서 유닛 페이지, 내부 링크, 이미지 규칙, 리뷰 메모리가 어떻게 연결되는지 보여주는 설명 이미지."></image-slot>
+
+<h2>5. 이미지 규칙은 선택지를 줄이는 방향이어야 한다</h2>
+<p>기술 블로그는 글마다 이미지 처리 방식을 새로 정하기 시작하면 발행 속도가 급격히 느려진다. 대표 이미지, 본문 슬롯, 파일명, alt, locale-safe 규칙을 시스템이 판단하게 만들어야 한다.</p>
+<p>이미지 처리가 계속 개별 판단으로 남아 있으면 운영 비용이 계속 올라간다.</p>
+
+<h2>6. 리뷰는 다음 글의 기준을 남겨야 한다</h2>
+<p>좋은 리뷰는 현재 글 문장만 고치는 데서 끝나지 않는다. 다음 글부터 반복해서 적용할 기준을 메모리에 남겨야 한다. 그래야 같은 품질 실수가 줄어든다.</p>
+<p>실무적으로는 리뷰가 끝난 뒤 메모리 파일에 “내부 링크 예시는 최소 한 줄 넣기”, “이미지 규칙은 기계적으로 유지하기” 같은 한 줄 규칙을 남기는 식이 가장 단순하다.</p>
+
+<h2>7. 측정도 운영 단위를 강하게 만드는 방향으로 본다</h2>
+<p>기술 블로그 운영에서 pageview만 보는 건 약하다. 유닛 이동, 관련 글 클릭, 발행 비용 같은 지표를 같이 봐야 블로그 구조가 실제로 강해지고 있는지 판단할 수 있다.</p>
+
+<h2>무엇부터 고칠까</h2>
+<p>지금 기술 블로그를 세팅 중이라면 주제 단위, 제목 규칙, slug 규칙, 내부 링크 규칙 네 가지부터 먼저 잠가라. 이 네 개만 먼저 고정해도 첫 몇 개 글에서 생기는 대부분의 혼란을 줄일 수 있다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 흔들림 -> 고정 같은 핵심 대비만 남긴다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_003_post_004</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>정적 사이트 sitemap could not be read를 점검하는 순서</h1>
+        <div class="studio-meta" data-date>작성 2026-04-15T15:00:00+09:00</div>
+      </div>
+      <div class="studio-actions"><button class="btn" data-copy-title>제목 복사</button></div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002 이미지를 넣는다. 자료형 다이어그램 기준으로 유지한다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="how-to-check-static-site-sitemap-could-not-be-read"
+  blog-id="blog-static-web-operations"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-inline"
+  timestamp="2026-04-15T15:00:00+09:00"
+  updated-date="2026-04-15T15:00:00+09:00"
+  hero-image=""
+  related-slugs="how-to-run-robots-txt-safely-on-a-static-site,how-to-keep-rss-working-on-a-static-site"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: sitemap URL은 보이지만 실제 응답 경로, robots, 호스트 확인이 같이 필요한 자료형 대표 이미지
+
+공통 기준:
+- 블로그용 자료형 다이어그램 이미지여야 함
+- locale-safe, no text
+- 실사 장면 금지
+- 실제 브라우저 스크린샷 재현 금지
+- 핵심은 sitemap 파일 자체보다 응답 경로와 검증 순서
+- 구조가 바로 읽혀야 함
+- 장식보다 정보 구조 우선
+- 3D, isometric, realistic rendering 금지
+
+개별 프롬프트:
+information-led hero diagram for a static website troubleshooting article, showing one sitemap file node, one response path node, one robots node, and one host validation node arranged in a clean diagnostic layout, flat 2D style, neutral light background with one alert accent, no text inside image, no realistic browser UI, no decorative abstraction, should look like a practical troubleshooting framework image
+
+참고 검색어:
+sitemap could not be read, static site sitemap check, technical troubleshooting flow</prompt>
+    </slot>
+
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: live XML, 응답 코드, robots, 최종 호스트를 순서대로 확인하는 점검 흐름 자료형 이미지
+
+공통 기준:
+- 본문 설명에 바로 붙는 자료형 이미지여야 함
+- locale-safe, no text
+- 구조 설명 우선
+- 카드, XML 문서, 상태 코드 표시, robots 문서, 호스트 체크 표시 정도만 사용
+- 한 장면 안에 한 설명 포인트만 남길 것
+- 분위기용 컨셉 아트 금지
+
+개별 프롬프트:
+practical diagnostic diagram for a technical blog post, showing a step-by-step verification chain from live sitemap XML to response status to robots file to final host check, flat 2D layout, clearly separated blocks with connecting lines, no text inside image, no realistic browser screenshot, no person, no decorative abstraction
+
+참고 검색어:
+sitemap diagnostics, response status check, robots validation</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">How to check “Sitemap could not be read” on a static site</title>
+  <title lang="ko">정적 사이트 sitemap could not be read를 점검하는 순서</title>
+
+  <description lang="en">“Sitemap could not be read” usually looks like a sitemap file problem, but static sites often fail around response handling, robots rules, or host mismatch. This guide shows the shortest check order.</description>
+  <description lang="ko">“Sitemap could not be read”는 파일 자체 문제처럼 보이지만, 정적 사이트에서는 응답 처리, robots 규칙, 호스트 불일치에서 더 자주 틀어진다. 가장 짧은 점검 순서를 정리한다.</description>
+
+  <tags lang="en">sitemap, static site, technical seo, robots.txt, static website operations</tags>
+  <tags lang="ko">sitemap, 정적사이트, 기술SEO, robots.txt, 정적웹운영</tags>
+
+  <body lang="en"><![CDATA[
+<p>“Sitemap could not be read” sounds like a sitemap file problem, but static sites often break one step around the file rather than inside the file itself. The XML may exist while the live response, robots rule, redirect path, or host setup is still wrong.</p>
+
+<p>That is why the fastest fix is not editing the sitemap first. The faster move is checking the smallest path from live URL to readable XML.</p>
+
+<h2>1. Open the live sitemap URL first</h2>
+<p>Do not start from the local file or build artifact. Start from the public URL that search tools are actually trying to fetch.</p>
+
+<p>Check only one thing first: does the live sitemap URL return readable XML right now?</p>
+
+<h2>2. Separate file existence from response correctness</h2>
+<p>On static sites, these are not the same problem. The file may exist in the build output while the live route still returns HTML fallback, redirect loops, or the wrong host.</p>
+
+<p>That means you should verify:</p>
+<ul>
+  <li>the final public URL</li>
+  <li>the actual response status</li>
+  <li>whether the body is XML instead of HTML</li>
+</ul>
+
+<h2>3. Check robots.txt after the live response</h2>
+<p>If the sitemap URL is live but search still complains, the next thing to inspect is robots.txt. The rule may block a relevant path or expose a sitemap URL that does not match the real host.</p>
+
+<p>At this point you are not asking “is robots present?” You are asking “does robots point to the same sitemap URL I just verified?”</p>
+
+<image-slot code="002" alt-en="A practical diagnostic diagram showing live sitemap XML, response status, robots file, and final host validation in sequence." alt-ko="live sitemap XML, 응답 상태, robots 파일, 최종 호스트 검증을 순서대로 보여주는 점검 흐름 자료형 이미지."></image-slot>
+
+<h2>4. Verify the final host and redirect path</h2>
+<p>Many static site failures come from one mismatch: sitemap URL, canonical host, deployed host, and robots host do not agree.</p>
+
+<p>Check these together:</p>
+<ul>
+  <li>the sitemap URL you submitted</li>
+  <li>the host that actually serves the XML</li>
+  <li>any redirect in between</li>
+  <li>the host referenced by robots.txt</li>
+</ul>
+
+<p>If those do not line up, the sitemap can look valid while the fetch still fails.</p>
+
+<h2>5. Keep the diagnostic order short</h2>
+<p>The shortest useful order is enough:</p>
+<ol>
+  <li>open the live sitemap URL</li>
+  <li>confirm XML body and status code</li>
+  <li>check robots.txt</li>
+  <li>confirm final host consistency</li>
+  <li>only then inspect sitemap file contents</li>
+</ol>
+
+<p>That order matters because most static-site sitemap failures are routing failures first and file-content failures second.</p>
+
+<h2>What to do first</h2>
+<p>Open the live sitemap URL and verify the exact response before touching the file. If the URL does not return clean XML on the public host, editing the sitemap contents will not fix the real problem.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>“Sitemap could not be read”는 사이트맵 파일 자체 문제처럼 보이지만, 정적 사이트에서는 파일 안보다 파일 주변 한 단계가 더 자주 틀어진다. XML은 존재해도 live 응답, robots 규칙, redirect 경로, 호스트 설정이 어긋나 있으면 같은 오류가 난다.</p>
+
+<p>그래서 가장 빠른 해결은 사이트맵 파일부터 고치는 게 아니다. live URL에서 읽을 수 있는 XML까지 가는 가장 짧은 경로를 먼저 확인하는 쪽이 빠르다.</p>
+
+<h2>1. live sitemap URL부터 연다</h2>
+<p>로컬 파일이나 build 산출물에서 시작하지 마라. 검색 도구가 실제로 가져가려는 공개 URL부터 열어야 한다.</p>
+
+<p>첫 확인은 하나면 충분하다. 지금 이 live sitemap URL이 읽을 수 있는 XML을 반환하는가.</p>
+
+<h2>2. 파일 존재와 응답 정상 여부를 분리한다</h2>
+<p>정적 사이트에서는 이 둘이 같은 문제가 아니다. build output 안에는 파일이 있어도, live 라우트는 여전히 HTML fallback이나 redirect loop, 잘못된 호스트를 반환할 수 있다.</p>
+
+<p>그래서 먼저 봐야 하는 것은 아래다.</p>
+<ul>
+  <li>최종 공개 URL이 무엇인가</li>
+  <li>실제 응답 상태 코드가 무엇인가</li>
+  <li>본문이 HTML이 아니라 XML인가</li>
+</ul>
+
+<h2>3. live 응답 다음에 robots.txt를 본다</h2>
+<p>사이트맵 URL이 살아 있는데도 검색 도구가 계속 실패를 말하면, 다음은 robots.txt다. 필요한 경로를 막고 있거나, 실제 호스트와 다른 sitemap URL을 노출하고 있을 수 있다.</p>
+
+<p>이 단계에서 묻는 질문은 “robots가 있나?”가 아니다. “방금 확인한 sitemap URL과 robots가 같은 경로를 가리키나?”다.</p>
+
+<image-slot code="002" alt-en="A practical diagnostic diagram showing live sitemap XML, response status, robots file, and final host validation in sequence." alt-ko="live sitemap XML, 응답 상태, robots 파일, 최종 호스트 검증을 순서대로 보여주는 점검 흐름 자료형 이미지."></image-slot>
+
+<h2>4. 최종 호스트와 redirect 경로를 같이 본다</h2>
+<p>정적 사이트에서 자주 나는 실패는 하나다. 제출한 sitemap URL, canonical host, 실제 배포 호스트, robots host가 서로 안 맞는 경우다.</p>
+
+<p>이 네 가지를 같이 확인한다.</p>
+<ul>
+  <li>제출한 sitemap URL</li>
+  <li>실제로 XML을 내주는 호스트</li>
+  <li>중간 redirect가 있는가</li>
+  <li>robots.txt가 가리키는 호스트</li>
+</ul>
+
+<p>이것들이 안 맞으면 사이트맵 파일은 멀쩡해 보여도 fetch는 계속 실패한다.</p>
+
+<h2>5. 점검 순서를 짧게 고정한다</h2>
+<p>짧은 순서 하나만 고정해도 충분하다.</p>
+<ol>
+  <li>live sitemap URL을 연다</li>
+  <li>XML 본문과 상태 코드를 확인한다</li>
+  <li>robots.txt를 본다</li>
+  <li>최종 호스트 일치 여부를 확인한다</li>
+  <li>그다음에만 sitemap 파일 내용을 본다</li>
+</ol>
+
+<p>이 순서가 중요한 이유는, 정적 사이트 sitemap 실패의 대부분이 파일 내용 문제보다 라우팅 문제에서 먼저 시작되기 때문이다.</p>
+
+<h2>무엇부터 시작할까</h2>
+<p>파일을 고치기 전에 먼저 live sitemap URL의 정확한 응답부터 확인해라. 공개 호스트에서 XML이 깨끗하게 안 보이면, 사이트맵 내용만 수정해서는 실제 문제를 못 고친다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

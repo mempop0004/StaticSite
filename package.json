@@ -15,11 +15,13 @@
     "blog:dev": "node scripts/run-blog-command.mjs dev",
     "blog:preview": "node scripts/run-blog-command.mjs preview",
     "post:new": "node scripts/create-post-workspace.mjs",
+    "post:focus": "node scripts/focus-post-workspace.mjs",
     "review:post": "node scripts/review-post-with-gemini.mjs",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy:live": "node scripts/deploy-live-repos.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",

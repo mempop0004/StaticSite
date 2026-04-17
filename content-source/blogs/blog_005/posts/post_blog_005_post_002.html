@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_005_post_002</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>Cloudflare Pages vs Vercel를 운영 기준으로 고르는 방법</h1>
+        <div class="studio-meta" data-date>작성 2026-04-13T10:21:40+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="cloudflare-pages-vs-vercel-how-to-choose-for-operations"
+  blog-id="blog-developer-deployment-and-hosting"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-only"
+  timestamp="2026-04-13T10:21:40+09:00"
+  updated-date="2026-04-13T10:21:40+09:00"
+  hero-image="../../../assets/blog-placeholder-1.jpg"
+  related-slugs=""
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 글 제목과 가장 잘 맞는 핵심 장면
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- 과장된 합성 느낌 금지
+- 기사나 실전 가이드에 맞는 현실적인 구도
+
+개별 프롬프트:
+two deployment platforms compared through operations criteria, clean split composition, hosting dashboards and deployment flow, editorial hero
+
+참고 검색어:
+Cloudflare Pages vs Vercel, deployment hosting comparison</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: 핵심 비교나 과정 설명을 돕는 장면
+
+공통 기준:
+- 글의 설명 맥락을 직접 보조해야 함
+- 억지 장식 이미지 금지
+- 현실적인 화면 또는 설명 장면
+
+개별 프롬프트:
+comparison checklist for deployment speed, domains, image handling, logs, and workflow fit, explanatory editorial composition
+
+참고 검색어:
+hosting comparison checklist, deployment workflow comparison</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">Cloudflare Pages vs Vercel: which one fits your operating loop?</title>
+  <title lang="ko">Cloudflare Pages vs Vercel, 운영 루프에 맞는 쪽은 무엇인가</title>
+
+  <description lang="en">Compare Cloudflare Pages and Vercel through real operating criteria: previews, logs, domains, redirects, static asset behavior, and long-term maintenance comfort.</description>
+  <description lang="ko">Cloudflare Pages와 Vercel을 기능표가 아니라 운영 기준으로 비교한다. 프리뷰, 로그, 도메인, redirect, 정적 자산 처리, 유지보수 편의성을 같이 본다.</description>
+
+  <tags lang="en">Cloudflare Pages, Vercel, hosting comparison, deployment, operations</tags>
+  <tags lang="ko">CloudflarePages, Vercel, 호스팅비교, 배포, 운영</tags>
+
+  <body lang="en"><![CDATA[
+<p>Cloudflare Pages and Vercel are often compared as if one is simply better. In practice, the better choice depends on what your operating loop looks like after launch.</p>
+
+<p>Use the <a href="/units/blog-developer-deployment-and-hosting/">deployment and hosting unit page</a> as the index for follow-up comparisons and narrower platform-specific guides. If you need the broader baseline first, start with <a href="/blog/deployment-and-hosting-rules-you-should-fix-first/">the rules you should fix first</a>.</p>
+
+<h2>1. Decide what you optimize for</h2>
+<p>If you care more about simple global delivery and Cloudflare-side routing, Pages may fit faster. If you care more about tighter app tooling and smoother product-facing workflows, Vercel often feels stronger.</p>
+
+<h2>2. Compare debugging comfort, not only deploy speed</h2>
+<p>The platform that feels easier during a healthy deploy is not always the one that feels easier during a broken deploy. Logs, previews, routing visibility, and auth behavior matter more after the first week.</p>
+<image-slot code="002" alt-en="An explanatory image comparing Cloudflare Pages and Vercel through previews, logs, domains, redirects, and asset handling criteria." alt-ko="Cloudflare Pages와 Vercel을 프리뷰, 로그, 도메인, redirect, 자산 처리 기준으로 비교하는 설명 이미지."></image-slot>
+<ul>
+  <li>Vercel often feels stronger when preview flow and app-oriented debugging speed matter most.</li>
+  <li>Cloudflare Pages often feels simpler when the site is mostly static and path behavior needs to stay predictable.</li>
+</ul>
+
+<h2>3. Domains and asset handling should be part of the decision</h2>
+<p>Custom domains, redirects, image paths, and public asset assumptions create a lot of maintenance pain. Compare how each platform fits your actual path and caching habits.</p>
+<p>A practical test is to list your live assumptions first: custom domain rules, trailing slash policy, image path policy, and whether cache invalidation needs to be explicit. If a platform makes those rules harder to keep stable, that cost shows up later.</p>
+
+<h2>4. Match the platform to your team shape</h2>
+<p>A solo operator, a content-heavy site, and a product team do not need the same platform. The operating context decides whether convenience or control matters more.</p>
+<p>A simple rule of thumb is this: content-heavy static operations often benefit from predictable path and caching control, while app-heavy teams often care more about preview flow and app tooling comfort.</p>
+<ul>
+  <li>Solo static site with simple routing: Cloudflare Pages is often easier to keep predictable.</li>
+  <li>Product team with constant previews and app workflow checks: Vercel often fits faster.</li>
+  <li>Mixed case: decide from logs, domains, redirects, and asset behavior before deciding from performance claims.</li>
+</ul>
+
+<h2>What to do first</h2>
+<p>Write down your own checklist before comparing features: logs, domains, redirects, previews, cost shape, and static asset behavior. Then compare platforms against that list instead of marketing headlines.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>Cloudflare Pages와 Vercel을 비교할 때 자주 틀리는 지점은 어느 쪽이 더 좋으냐만 묻는 것이다. 실제로는 배포 후 어떤 운영 루프를 돌릴 것인지에 따라 더 잘 맞는 플랫폼이 달라진다.</p>
+
+<p>후속 비교 글은 <a href="/ko/units/blog-developer-deployment-and-hosting/">배포와 호스팅 유닛 페이지</a>를 기준으로 플랫폼별로 더 좁혀서 이어가면 된다. 운영 기준이 먼저 필요하다면 <a href="/ko/blog/deployment-and-hosting-rules-you-should-fix-first/">배포와 호스팅 기준 글</a>부터 본다.</p>
+
+<h2>1. 무엇을 최적화할지 먼저 정한다</h2>
+<p>글로벌 전달, Cloudflare 쪽 라우팅, 단순한 정적 운영이 더 중요하면 Pages가 맞을 수 있다. 반대로 앱 중심 워크플로, 프리뷰, 제품형 운영이 더 중요하면 Vercel 쪽이 편한 경우가 많다.</p>
+
+<h2>2. 배포 성공보다 디버깅 편의성을 비교한다</h2>
+<p>정상 배포만 볼 때 편한 플랫폼과, 장애가 났을 때 편한 플랫폼은 다를 수 있다. 로그, 프리뷰, 라우팅 가시성, 인증 흐름이 실제 운영에서는 더 중요하다.</p>
+<image-slot code="002" alt-en="An explanatory image comparing Cloudflare Pages and Vercel through previews, logs, domains, redirects, and asset handling criteria." alt-ko="Cloudflare Pages와 Vercel을 프리뷰, 로그, 도메인, redirect, 자산 처리 기준으로 비교하는 설명 이미지."></image-slot>
+<ul>
+  <li>프리뷰와 앱 중심 디버깅이 중요하면 Vercel 쪽이 더 편할 때가 많다.</li>
+  <li>정적 사이트 경로와 캐시를 단순하게 유지하려면 Cloudflare Pages 쪽이 더 예측 가능할 때가 많다.</li>
+</ul>
+
+<h2>3. 도메인과 자산 처리도 비교 기준에 넣는다</h2>
+<p>커스텀 도메인, redirect, 이미지 경로, public 자산 규칙은 유지보수 비용을 크게 바꾼다. 각 플랫폼이 네 실제 경로 규칙과 캐시 습관에 맞는지를 봐야 한다.</p>
+<p>실무에서는 먼저 live 규칙을 적어보면 된다. 커스텀 도메인 연결 방식, trailing slash 규칙, 이미지 경로 규칙, 캐시 무효화 기준이 플랫폼과 충돌하면 나중에 유지비가 커진다.</p>
+
+<h2>4. 팀 형태에 맞춰 고른다</h2>
+<p>1인 운영자, 콘텐츠 중심 사이트, 제품 팀은 필요한 기준이 다르다. 기능표보다 운영 맥락이 플랫폼 선택을 더 정확하게 만든다.</p>
+<p>간단히 말하면 콘텐츠 중심 정적 운영은 경로와 캐시 제어가 더 중요하고, 앱 중심 팀은 프리뷰 흐름과 앱 도구 편의성이 더 중요할 때가 많다.</p>
+<ul>
+  <li>1인 정적 사이트 운영: Cloudflare Pages가 더 단순하게 맞는 경우가 많다.</li>
+  <li>프리뷰를 자주 돌리는 제품 팀: Vercel이 더 빠르게 맞는 경우가 많다.</li>
+  <li>애매하면 성능표보다 로그, 도메인, redirect, 자산 처리 기준으로 먼저 비교한다.</li>
+</ul>
+
+<h2>무엇부터 시작할까</h2>
+<p>비교 전에 네 체크리스트를 먼저 적어라. 로그, 도메인, redirect, 프리뷰, 비용 구조, 정적 자산 처리 기준을 적어두고, 그 목록에 맞춰 비교해야 광고 문구에 끌려가지 않는다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

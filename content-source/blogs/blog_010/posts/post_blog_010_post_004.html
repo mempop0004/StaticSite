@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_010_post_004</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>배포 후 CSS나 JS가 안 뜰 때 base path와 자산 경로부터 확인하는 이유</h1>
+        <div class="studio-meta" data-date>작성 2026-04-15T13:08:00+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="check-base-path-first-when-css-and-js-break-after-deploy"
+  blog-id="blog-real-world-web-troubleshooting"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-inline"
+  timestamp="2026-04-15T13:08:00+09:00"
+  updated-date="2026-04-15T13:08:00+09:00"
+  hero-image=""
+  related-slugs="stop-guessing-6-rules-for-real-world-web-troubleshooting,when-to-use-404-410-and-redirects-without-hurting-seo"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 잘못된 asset path 때문에 스타일과 스크립트가 끊긴 배포 상태와, 올바른 base path로 바로 복구된 상태의 대비 한 장면
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- 이 이미지는 본문 설명도가 아니라 대표 장면이어야 함
+- 과장된 합성 느낌 금지
+- 기사나 실전 가이드에 맞는 현실적인 구도
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+
+직관성 체크:
+- 썸네일로 봤을 때 1초 안에 핵심 대비가 읽혀야 함
+- checklist board처럼 보이면 실패
+- explanatory diagram처럼 보이면 실패
+
+개별 프롬프트:
+editorial hero image for a web troubleshooting article, split contrast between a broken web page with missing style blocks and blank asset placeholders on one side, and a clean correctly loaded page on the other side, flat interface-like composition, no floating clutter, no chaotic particles, no text, no logos, should feel like path correction fixing the page immediately
+
+참고 검색어:
+asset path issue, broken css after deploy, base path mismatch</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: 요청 경로, 실제 배포 경로, base path, 자산 위치가 어떻게 서로 맞거나 어긋나는지 보여주는 구조 이미지
+
+공통 기준:
+- 글의 설명 맥락을 직접 보조해야 함
+- 억지 장식 이미지 금지
+- 현실적인 화면 또는 설명 장면
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+
+직관성 체크:
+- 독자가 본문을 읽다 멈춘 지점을 바로 설명해야 함
+- hero cover처럼 보이면 실패
+- mood image처럼 보이면 실패
+- 대표 이미지와 같은 장면처럼 보이면 실패
+
+개별 프롬프트:
+practical explanatory diagram for a web troubleshooting article, showing one requested page connecting to css and js asset files through a base path branch, with one wrong branch and one correct branch, flat 2D technical diagram, clear route structure, no text, no letters, no realistic UI, no people
+
+참고 검색어:
+base path asset routing, css js 404, deployed asset structure</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">Check the base path first when CSS and JS break after deploy</title>
+  <title lang="ko">배포 후 CSS나 JS가 안 뜰 때 base path와 자산 경로부터 확인하는 이유</title>
+
+  <description lang="en">When styles and scripts disappear after deploy, the root cause is often the asset path, not the framework. This guide shows how to check base path, deploy path, and generated asset routing in the right order.</description>
+  <description lang="ko">배포 후 스타일과 스크립트가 사라질 때 원인은 프레임워크보다 자산 경로인 경우가 많다. base path, 실제 배포 경로, 생성 자산 라우팅을 어떤 순서로 봐야 하는지 정리한다.</description>
+
+  <tags lang="en">asset path, base path, css 404, js 404, deploy troubleshooting</tags>
+  <tags lang="ko">자산경로, 베이스패스, CSS404, JS404, 배포문제해결</tags>
+
+  <body lang="en"><![CDATA[
+<p>A deployed page can look completely broken even when the HTML itself is fine. The layout disappears, scripts stop running, icons go missing, and the first instinct is often to blame the framework or the build output.</p>
+
+<p>In many real cases, the problem is simpler and more mechanical than that. The page is loading from one path, but the generated CSS and JS are being requested from another.</p>
+
+<p>This post is about checking base path and asset routing before guessing deeper causes. The goal is to stop treating broken styles and scripts as a mysterious app failure when they are often just a path mismatch.</p>
+
+<h2>1. The common mistake is treating missing CSS or JS as a rendering bug first</h2>
+<p>When a deployed page loses styling or behavior, people often jump straight into framework settings, hydration issues, or broken components. That is understandable, but it is usually too deep for the first check.</p>
+
+<p>If the generated asset files are being requested from the wrong location, the page will look broken no matter how correct the app code is. You do not have a rendering problem yet. You have a routing problem.</p>
+
+<h2>2. The most important section is understanding that page path and asset path can disagree</h2>
+<p>This is the core diagnostic shift. A page can return 200 and still be operationally broken because the CSS and JS requests are going somewhere else.</p>
+
+<p>That usually happens when the deploy path, framework base path, generated asset path, and public host assumption are not aligned. The page itself may live under a subpath, while assets are still being requested from the root. Or the opposite happens: the app expects a subpath, but the deployed host serves it from the root.</p>
+
+<p>This is why the failure looks stranger than it really is. The first document opens, so the deploy appears healthy. But once the browser asks for styles, scripts, fonts, or image bundles, the mismatch shows up. The result is a page that feels half alive: content appears, but layout collapses and behavior disappears.</p>
+
+<p>People misread this because they focus on what the page looks like instead of what the network is asking for. The browser is not telling you “the app is broken.” It is telling you “I asked for assets in the wrong place.” Those are very different failures, and they lead to very different fixes.</p>
+
+<p>Once you see that distinction, the workflow gets much calmer. Instead of debugging components, you compare four things: the public URL of the page, the actual requested asset path, the configured base path, and the path layout produced by the deploy. Most of the time, the mismatch becomes visible there.</p>
+
+<h2>3. Check these things before touching the app code</h2>
+<ul>
+  <li>Does the page load from the root path or a subpath?</li>
+  <li>Do CSS and JS files request from the same path family as the page?</li>
+  <li>Does the framework config expect a base path that the host is not serving?</li>
+  <li>Did the deploy move assets under a prefixed folder while links still point to root?</li>
+</ul>
+
+<h2>4. One real failure pattern explains most of the confusion</h2>
+<p>Imagine a site deployed under <code>/docs/</code>. The HTML page opens correctly at that subpath, but asset links still point to <code>/assets/...</code> instead of <code>/docs/assets/...</code>. To the operator, the page looks “partly broken.” To the browser, the problem is precise: the page path and asset path do not agree.</p>
+
+<p>The reverse can happen too. The build was generated for a subpath, but the live host serves the site from the root. Then every asset request carries a prefix that the host does not recognize.</p>
+
+<figure class="article-inline-image">
+  <img src="/generated-post-assets/post_blog_010_post_004-slot-002.png" alt="A route structure showing one requested page, the base path branch, and the difference between wrong asset routing and correct asset routing." loading="lazy" decoding="async">
+</figure>
+
+<h2>5. Use one verification order every time</h2>
+<p>Do not start with code edits. Start with the public page URL, then inspect one CSS request and one JS request, then compare them against the configured base path and the actual deploy folder layout. If those four do not line up, the rest of the debugging should wait.</p>
+
+<ul>
+  <li>open the broken page</li>
+  <li>inspect one CSS request and one JS request</li>
+  <li>compare requested paths against the live URL structure</li>
+  <li>compare both against the configured base path</li>
+  <li>only then decide whether the fix belongs in config, deploy path, or generated links</li>
+</ul>
+
+<h2>What to do first</h2>
+<p>Open one broken page and write down three strings side by side: the live page URL, one CSS request URL, and one JS request URL. If those paths do not belong to the same route family, treat it as a base-path or asset-routing problem before touching anything deeper.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>배포된 페이지가 완전히 망가져 보일 때가 있다. HTML 자체는 열리는데 레이아웃이 사라지고, 스크립트가 안 돌고, 아이콘이나 스타일이 빠진다. 이때 사람들은 프레임워크 설정이나 빌드 결과부터 의심하는 경우가 많다.</p>
+
+<p>하지만 실전에서는 원인이 훨씬 더 단순하고 기계적인 경우가 많다. 페이지는 한 경로에서 열리는데, 생성된 CSS와 JS는 다른 경로에서 요청되고 있는 것이다.</p>
+
+<p>이 글은 더 깊은 앱 버그를 추측하기 전에 base path와 자산 라우팅부터 확인하는 방법을 다룬다. 목표는 스타일과 스크립트가 깨진 상황을 막연한 앱 오류로 보지 않고, 먼저 경로 문제로 읽게 만드는 것이다.</p>
+
+<h2>1. 사람들이 자주 틀리는 지점은 CSS나 JS 누락을 렌더링 버그로 먼저 보는 것이다</h2>
+<p>배포 후 페이지에서 스타일이나 동작이 사라지면, 많은 사람이 바로 프레임워크 설정, hydration 문제, 컴포넌트 오류 쪽으로 내려간다. 이해는 되지만 첫 점검으로는 너무 깊다.</p>
+
+<p>생성된 자산 파일이 잘못된 위치로 요청되고 있다면, 앱 코드가 아무리 맞아도 페이지는 깨져 보일 수밖에 없다. 이건 아직 렌더링 문제가 아니라 경로 문제다.</p>
+
+<h2>2. 가장 중요한 지점은 페이지 경로와 자산 경로가 서로 다를 수 있다는 걸 이해하는 것이다</h2>
+<p>여기가 핵심이다. 페이지가 200으로 잘 열려도 CSS와 JS 요청이 다른 데로 가면 운영 기준으로는 이미 깨진 페이지다.</p>
+
+<p>이 상황은 보통 실제 배포 경로, 프레임워크의 base path, 생성된 자산 경로, 공개 호스트 가정이 서로 안 맞을 때 생긴다. 페이지는 서브패스 아래에 있는데 자산은 여전히 루트에서 찾거나, 반대로 앱은 서브패스를 기대하는데 실제 배포는 루트에서 열리고 있는 식이다.</p>
+
+<p>그래서 증상이 이상하게 느껴진다. 첫 문서는 열리니 배포는 된 것처럼 보인다. 하지만 브라우저가 스타일, 스크립트, 폰트, 이미지 번들을 요청하는 순간부터 어긋남이 드러난다. 결과는 “반쯤 살아 있는 페이지”다. 내용은 보이는데 레이아웃은 무너지고 동작은 사라진다.</p>
+
+<p>많은 사람이 여기서 페이지가 어떻게 보이는지만 보고 원인을 추측한다. 하지만 브라우저가 실제로 말해주는 건 “앱이 망가졌다”가 아니라 “자산을 잘못된 위치에서 찾고 있다”에 가깝다. 이 둘은 전혀 다른 문제고, 해결 방법도 완전히 다르다.</p>
+
+<p>이 차이를 보는 순간 점검 순서가 훨씬 차분해진다. 컴포넌트 디버깅으로 내려가기 전에 네 가지를 비교하면 된다. 공개 페이지 URL, 실제 요청된 자산 경로, 설정된 base path, 그리고 배포 결과가 만든 경로 레이아웃이다. 대부분의 경우 어긋남은 여기서 드러난다.</p>
+
+<h2>3. 앱 코드를 건드리기 전에 먼저 볼 기준</h2>
+<ul>
+  <li>페이지는 루트 경로에서 열리는가, 서브패스에서 열리는가</li>
+  <li>CSS와 JS 요청 경로가 페이지와 같은 경로 계열에 속하는가</li>
+  <li>프레임워크 설정이 호스트가 실제로 제공하지 않는 base path를 기대하고 있지 않은가</li>
+  <li>배포 결과가 자산을 접두 경로 아래에 두었는데 링크는 여전히 루트를 가리키고 있지 않은가</li>
+</ul>
+
+<h2>4. 대표적인 실패 장면 하나만 봐도 대부분 이해된다</h2>
+<p>예를 들어 사이트가 <code>/docs/</code> 아래에 배포됐다고 하자. HTML 페이지는 그 경로에서 잘 열리는데, 자산 링크는 여전히 <code>/assets/...</code>로 가고 있다면 브라우저는 <code>/docs/assets/...</code>가 아니라 루트의 자산을 찾게 된다. 운영자는 페이지가 “반쯤 깨졌다”고 느끼지만, 브라우저 기준으로는 아주 정확한 경로 불일치다.</p>
+
+<p>반대 경우도 있다. 빌드는 서브패스용으로 생성됐는데 실제 호스트는 루트에서 사이트를 열고 있으면, 모든 자산 요청이 호스트가 모르는 접두 경로를 달고 나간다.</p>
+
+<figure class="article-inline-image">
+  <img src="/generated-post-assets/post_blog_010_post_004-slot-002.png" alt="요청된 페이지, base path 분기, 잘못된 자산 라우팅과 올바른 자산 라우팅 차이를 보여주는 경로 구조 이미지." loading="lazy" decoding="async">
+</figure>
+
+<h2>5. 점검 순서는 매번 같게 간다</h2>
+<p>코드 수정부터 시작하지 마라. 먼저 공개 페이지 URL을 보고, CSS 요청 하나와 JS 요청 하나를 확인하고, 그 둘을 설정된 base path와 실제 배포 폴더 구조에 대조해라. 이 네 가지가 안 맞으면 다른 디버깅은 기다리는 편이 맞다.</p>
+
+<ul>
+  <li>깨진 페이지를 연다</li>
+  <li>CSS 요청 하나와 JS 요청 하나를 본다</li>
+  <li>요청 경로가 실제 공개 URL 구조와 맞는지 비교한다</li>
+  <li>둘 다 설정된 base path와 대조한다</li>
+  <li>그다음에야 설정 문제인지, 배포 경로 문제인지, 생성 링크 문제인지 판단한다</li>
+</ul>
+
+<h2>무엇부터 시작할까</h2>
+<p>깨진 페이지 하나를 열고 세 문자열을 나란히 적어라. 공개 페이지 URL, CSS 요청 URL 하나, JS 요청 URL 하나다. 이 셋이 같은 경로 계열에 속하지 않으면, 더 깊은 앱 버그를 의심하기 전에 base path나 자산 라우팅 문제로 먼저 다뤄라.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "pseudo-text나 UI 라벨처럼 보이는 가짜 텍스트도 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다",
+      "본문 설명용 체크리스트 보드처럼 보이면 안 된다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "설명보다 정확한 화면 맥락이 더 중요할 때"
+    ],
+    "must": [
+      "실제 도구나 제품 화면과 유사한 구조여야 한다",
+      "핵심 설정이나 변화 지점이 바로 보여야 한다",
+      "불필요한 주변부는 과감히 덜어낸다"
+    ],
+    "avoid": [
+      "이미 설명용 다이어그램이 더 적합한 상황",
+      "너무 넓은 전체 화면 캡처",
+      "민감한 정보가 보이는 실제 계정 화면"
+    ],
+    "outputHint": "스크린샷은 정확성이 목적이다. 미학보다 어떤 설정과 결과를 보여줄지 먼저 결정한다."
+  }
+}</script>
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "blog_folder": "blog_008",
+  "blog_id": "blog-solo-website-operations",
+  "site_url": "https://swops.pages.dev",
+  "site_title": "Solo Website Ops Guide",
+  "site_description": "A practical blog about running a website solo, including publishing loops, maintenance rules, measurement, prioritization, and sustainable operation.",
+  "footer_copy_en": "Practical rules for solo website operations.",
+  "footer_copy_ko": "1인 웹사이트 운영을 위한 실전 기준.",
+  "default_locale": "en",
+  "locales": [
+    "en",
+    "ko"
+  ]
+}

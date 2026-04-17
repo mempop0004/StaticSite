@@ -1,0 +1,14 @@
+{
+  "blog_folder": "blog_005",
+  "blog_id": "blog-developer-deployment-and-hosting",
+  "site_url": "https://dhguide.pages.dev",
+  "site_title": "Deployment & Hosting Guide",
+  "site_description": "A practical blog about choosing deployment and hosting systems with clear rules for rollback, observability, cost shape, domain flow, and team handoff.",
+  "footer_copy_en": "Practical rules for choosing deployment and hosting without drift.",
+  "footer_copy_ko": "배포와 호스팅을 흔들림 없이 고르기 위한 실전 기준.",
+  "default_locale": "en",
+  "locales": [
+    "en",
+    "ko"
+  ]
+}

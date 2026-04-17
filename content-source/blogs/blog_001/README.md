@@ -4,6 +4,6 @@
 - Topic(en): How everyday users can use AI
 - Role: 실제 첫 번째 블로그 운영 폴더
 - Current post:
-  - `post_blog_001_post_001`
+  - `post_blog_001_post_005`
 - Current review:
-  - `practical-ways-everyday-users-can-start-with-ai.review.md`
+  - `how-to-turn-ai-voice-memos-into-clear-meeting-summaries.review.md`

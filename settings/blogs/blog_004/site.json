@@ -1,0 +1,14 @@
+{
+  "blog_folder": "blog_004",
+  "blog_id": "blog-technical-blog-operations",
+  "site_url": "https://technical-43s.pages.dev",
+  "site_title": "Technical Blog Ops Guide",
+  "site_description": "A practical blog about running technical blogs with clear topic rules, editorial structure, internal links, image standards, and review loops.",
+  "footer_copy_en": "Practical rules for operating technical blogs without drift.",
+  "footer_copy_ko": "기술 블로그를 흔들림 없이 운영하기 위한 실전 규칙.",
+  "default_locale": "en",
+  "locales": [
+    "en",
+    "ko"
+  ]
+}

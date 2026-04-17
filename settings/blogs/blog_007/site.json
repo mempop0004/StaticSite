@@ -1,0 +1,14 @@
+{
+  "blog_folder": "blog_007",
+  "blog_id": "blog-web-automation-and-ops-systems",
+  "site_url": "https://waops.pages.dev",
+  "site_title": "Web Automation Ops Guide",
+  "site_description": "A practical blog about web automation and ops systems, including checks, publishing loops, reporting, recurring review flows, and stable automation rules.",
+  "footer_copy_en": "Practical rules for web automation and ops systems.",
+  "footer_copy_ko": "웹 자동화와 운영 시스템을 위한 실전 기준.",
+  "default_locale": "en",
+  "locales": [
+    "en",
+    "ko"
+  ]
+}

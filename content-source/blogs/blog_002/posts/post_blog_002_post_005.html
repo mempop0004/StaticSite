@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_002_post_005</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>낯선 레거시 코드를 AI로 읽을 때 먼저 물어볼 질문</h1>
+        <div class="studio-meta" data-date>작성 2026-04-16T09:28:00+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="questions-to-ask-ai-first-when-reading-unfamiliar-legacy-code"
+  blog-id="blog-ai-for-developers"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-inline"
+  timestamp="2026-04-16T09:28:00+09:00"
+  updated-date="2026-04-16T09:28:00+09:00"
+  hero-image=""
+  related-slugs="how-to-narrow-debugging-hypotheses-faster-with-ai,how-to-use-ai-to-generate-test-drafts-safely"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 낯선 레거시 코드 파일 더미에서 핵심 질문 3개만 남겨 이해 범위를 좁히는 대표 장면
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- 대표 장면이어야 하고 explanation diagram처럼 보이면 실패
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+- realistic IDE 재현 금지
+- 추상 배경 아트 금지
+
+직관성 체크:
+- 썸네일에서 `코드 전체`보다 `질문으로 범위를 줄인다`가 먼저 읽혀야 함
+- checklist board처럼 보이면 실패
+- mood image처럼 보이면 실패
+
+개별 프롬프트:
+information-led hero image for a developer article, one large legacy code document stack reduced into three focused question markers and one highlighted execution path, flat 2D technical composition, no screen text, no realistic IDE, no people, no decorative abstraction, should feel like narrowing understanding before editing
+
+참고 검색어:
+legacy code reading, code understanding workflow, developer questions first</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: 레거시 코드 읽기에서 먼저 봐야 할 세 질문, 즉 entry point, side effects, external dependencies를 구조적으로 보여주는 이미지
+
+공통 기준:
+- 글의 설명 맥락을 직접 보조해야 함
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+- 한 장면에 한 구조만 남겨야 함
+- 대표 이미지와 같은 장면처럼 보이면 실패
+
+직관성 체크:
+- 독자가 어떤 순서로 읽어야 하는지 바로 이해해야 함
+- hero cover처럼 보이면 실패
+- 장식 이미지처럼 보이면 실패
+
+개별 프롬프트:
+practical explanatory diagram for a developer article, one legacy code module block connected to three analysis branches for entry point, side effects, and external dependencies, clean flat worksheet style, no text, no realistic IDE, no people, no decorative abstraction, should feel like a reusable code-reading map
+
+참고 검색어:
+legacy code map, code reading questions, dependency tracing</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">Questions to ask AI first when reading unfamiliar legacy code</title>
+  <title lang="ko">낯선 레거시 코드를 AI로 읽을 때 먼저 물어볼 질문</title>
+
+  <description lang="en">AI is useful with legacy code when it helps you narrow what to inspect first. This guide shows the first questions to ask before you let AI explain an unfamiliar codebase too broadly.</description>
+  <description lang="ko">레거시 코드는 많이 읽는다고 바로 이해되지 않는다. AI를 붙일 때도 넓게 설명하게 두기보다, 먼저 어디를 보고 어떤 질문을 해야 하는지 좁히는 편이 훨씬 실용적이다.</description>
+
+  <tags lang="en">legacy code, ai for developers, code reading, unfamiliar codebase, developer workflow</tags>
+  <tags lang="ko">레거시코드, 개발자AI, 코드읽기, 낯선코드베이스, 개발워크플로</tags>
+
+  <body lang="en"><![CDATA[
+<p>Unfamiliar legacy code feels heavy for a reason. The problem is not just old style or missing comments. The real problem is that everything looks potentially important at the same time.</p>
+
+<p>That is where developers misuse AI. They paste a large file and ask, “What does this do?” The answer is often too broad, too smooth, and too expensive to trust.</p>
+
+<p>A better starting point is not a bigger explanation. It is a smaller question set. AI becomes more useful when it helps you decide what to inspect first.</p>
+
+<h2>1. Do not ask for a full explanation first</h2>
+<p>A full explanation usually compresses too much. It gives you a story about the file before you know which parts actually matter for the bug, feature, or change you are holding.</p>
+
+<p>That creates false comfort. The summary sounds coherent, but you still do not know where execution starts, what hidden side effects exist, or which external system the module depends on.</p>
+
+<h2>2. The best first questions shrink the reading surface</h2>
+<p>This is the core shift. When reading legacy code, the fastest progress usually comes from shrinking the surface area, not from increasing explanation volume.</p>
+
+<p>Three questions do most of the early work:</p>
+<ul>
+  <li>Where is the entry point?</li>
+  <li>What side effects does this code cause?</li>
+  <li>Which external dependencies or data boundaries does it touch?</li>
+</ul>
+
+<p>Those questions matter because they turn one heavy file into one execution map. Entry point tells you where to start. Side effects tell you what changes after the code runs. External dependencies tell you where hidden behavior may enter from outside the file.</p>
+
+<p>Without those three, teams often read legacy code line by line and still miss the real shape of it. They know what individual functions look like, but not which part of the file is structurally important.</p>
+
+<p>AI is useful here because it can quickly outline these boundaries if you ask for them directly. “Show me the entry path and side effects” is far more actionable than “Explain this code.”</p>
+
+<h2>3. Ask AI for map questions, not prose questions</h2>
+<p>Good prompts here are map-like:</p>
+<blockquote>
+  <p>Given this file, show the likely entry point, any side effects, and the external dependencies it touches. Keep the answer short and structured.</p>
+</blockquote>
+
+<p>You can add one more prompt when the file is especially noisy:</p>
+<blockquote>
+  <p>Which functions are safe to ignore on a first read, and which ones should I inspect first if I need to change behavior?</p>
+</blockquote>
+
+<image-slot code="002" alt-en="A legacy code module being analyzed through three branches for entry point, side effects, and external dependencies." alt-ko="하나의 레거시 코드 모듈이 진입점, 부작용, 외부 의존성 세 갈래로 나뉘어 읽히는 구조를 보여주는 설명 이미지."></image-slot>
+
+<h2>4. One practical example changes the reading order</h2>
+<p>Imagine a large service file that handles request validation, caching, database writes, and analytics dispatch in one place. If you read it top to bottom, everything looks equally important.</p>
+
+<p>If you ask for entry point, side effects, and dependencies first, the file becomes easier to triage. You may learn that only one exported function matters, two helper functions are pure, and the real risk sits at the cache write and analytics dispatch boundary.</p>
+
+<p>That changes the reading order immediately. You stop reading for completeness and start reading for leverage.</p>
+
+<h2>5. Keep one short code-reading template</h2>
+<p>You do not need a complex workflow. A small template is enough:</p>
+<ol>
+  <li>entry point</li>
+  <li>side effects</li>
+  <li>external dependencies</li>
+  <li>safe-to-ignore parts</li>
+  <li>risky change points</li>
+</ol>
+
+<p>The better the template, the less AI has room to invent a confident but useless overview.</p>
+
+<h2>What to do first</h2>
+<p>Take one unfamiliar file from your current work and ask AI for only the entry point, side effects, and external dependencies. If the file still feels equally wide after that, the question was not narrow enough.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>낯선 레거시 코드는 무겁게 느껴질 이유가 있다. 스타일이 오래됐거나 주석이 부족해서만이 아니다. 모든 줄이 동시에 중요해 보인다는 점이 진짜 문제다.</p>
+
+<p>개발자들이 AI를 여기서 가장 많이 잘못 쓴다. 큰 파일을 통째로 붙여 넣고 “이거 뭐 하는 코드야?”라고 묻는다. 그러면 대체로 답은 넓고, 매끈하고, 믿기엔 비싼 요약이 된다.</p>
+
+<p>더 좋은 시작은 더 큰 설명이 아니라 더 작은 질문 집합이다. AI는 코드 전체를 친절하게 설명할 때보다, 무엇부터 봐야 하는지 좁혀줄 때 훨씬 유용하다.</p>
+
+<h2>1. 처음부터 전체 설명을 시키지 않는다</h2>
+<p>전체 설명은 너무 많은 것을 한 번에 눌러 담는다. 지금 잡고 있는 버그나 변경과 상관없이 파일 전체에 대한 이야기부터 만들어낸다.</p>
+
+<p>그렇게 얻은 설명은 그럴듯하지만, 여전히 중요한 건 남는다. 실행이 어디서 시작하는지, 어떤 부작용이 있는지, 외부 시스템과 어디서 맞닿는지 같은 핵심은 오히려 흐려질 수 있다.</p>
+
+<h2>2. 가장 좋은 첫 질문은 읽을 범위를 줄여준다</h2>
+<p>여기가 핵심이다. 레거시 코드를 읽을 때 가장 빨리 진전이 나는 순간은 설명량이 많아질 때가 아니라, 읽어야 할 표면이 줄어들 때다.</p>
+
+<p>초반에는 세 질문이 대부분의 일을 한다.</p>
+<ul>
+  <li>진입점이 어디인가</li>
+  <li>이 코드가 만드는 부작용은 무엇인가</li>
+  <li>어떤 외부 의존성이나 데이터 경계를 건드리는가</li>
+</ul>
+
+<p>이 질문이 중요한 이유는 무거운 파일 하나를 실행 지도 하나로 바꿔주기 때문이다. 진입점은 어디서 읽기 시작할지 알려주고, 부작용은 실행 뒤 무엇이 바뀌는지 알려주고, 외부 의존성은 파일 밖에서 숨어 들어오는 행동을 보여준다.</p>
+
+<p>이 셋 없이 읽으면 팀은 줄 단위로 많이 읽고도 구조를 놓친다. 함수가 무슨 모양인지는 아는데, 어느 부분이 실제로 중요한지 모르고 끝난다.</p>
+
+<p>AI는 여기서 직접적인 경계만 빠르게 그려줄 때 유용하다. “이 코드를 설명해줘”보다 “진입 경로와 부작용을 보여줘”가 훨씬 실전적이다.</p>
+
+<h2>3. 설명 질문보다 지도 질문을 던진다</h2>
+<p>좋은 프롬프트는 지도처럼 좁다.</p>
+<blockquote>
+  <p>이 파일을 기준으로 진입점, 부작용, 외부 의존성을 짧고 구조적으로 정리해줘. 전체 설명보다 먼저 읽어야 할 부분이 보이게 해줘.</p>
+</blockquote>
+
+<p>파일이 특히 시끄럽다면 한 줄을 더 붙이면 좋다.</p>
+<blockquote>
+  <p>처음 읽을 때 무시해도 되는 함수와, 동작을 바꾸려면 먼저 봐야 하는 함수를 나눠줘.</p>
+</blockquote>
+
+<image-slot code="002" alt-en="A legacy code module being analyzed through three branches for entry point, side effects, and external dependencies." alt-ko="하나의 레거시 코드 모듈이 진입점, 부작용, 외부 의존성 세 갈래로 나뉘어 읽히는 구조를 보여주는 설명 이미지."></image-slot>
+
+<h2>4. 예시 하나만 떠올려도 읽는 순서가 달라진다</h2>
+<p>예를 들어 요청 검증, 캐시 처리, 데이터베이스 쓰기, 분석 이벤트 전송이 한 파일 안에 섞여 있는 서비스 코드가 있다고 하자. 위에서 아래로 읽으면 모든 줄이 똑같이 중요해 보인다.</p>
+
+<p>반대로 진입점, 부작용, 의존성을 먼저 보면 구조가 갑자기 줄어든다. 실제로 중요한 건 export된 함수 하나일 수 있고, 헬퍼 함수 둘은 처음 읽을 때 무시해도 될 수 있고, 진짜 위험은 캐시 쓰기와 분석 이벤트 경계에만 몰려 있을 수 있다.</p>
+
+<p>이 차이가 크다. 완독하려고 읽는 상태에서, leverage를 얻기 위해 읽는 상태로 바뀌기 때문이다.</p>
+
+<h2>5. 짧은 코드 읽기 틀 하나만 고정한다</h2>
+<p>복잡한 워크플로는 필요 없다. 작은 메모 틀 하나면 충분하다.</p>
+<ol>
+  <li>진입점</li>
+  <li>부작용</li>
+  <li>외부 의존성</li>
+  <li>처음엔 무시해도 되는 부분</li>
+  <li>변경 위험이 높은 지점</li>
+</ol>
+
+<p>틀이 좋아질수록 AI가 그럴듯하지만 쓸모 없는 전체 개요를 만들어낼 공간은 줄어든다.</p>
+
+<h2>무엇부터 시작할까</h2>
+<p>지금 작업 중인 낯선 파일 하나를 골라 AI에게 진입점, 부작용, 외부 의존성만 먼저 물어봐라. 그 뒤에도 파일이 똑같이 넓게 느껴진다면, 질문이 아직 충분히 좁지 않았던 것이다.</p>
+]]></body>
+</post>
+  </script>
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

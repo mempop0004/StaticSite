@@ -1,0 +1,6 @@
+{
+  "english_import_url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+  "korean_import_url": "https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css",
+  "english_font_var": "'Inter', 'Segoe UI', Arial, 'Helvetica Neue', sans-serif",
+  "korean_font_var": "'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Segoe UI', sans-serif"
+}

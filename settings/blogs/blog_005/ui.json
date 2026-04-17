@@ -1,0 +1,10 @@
+{
+  "content_max_width": 853,
+  "shell_max_width": 1120,
+  "mobile_gutter": 16,
+  "desktop_gutter": 24,
+  "english_intro_max_width": 760,
+  "english_search_shell_width": 853,
+  "english_search_copy_width": 700,
+  "mobile_breakpoint": 768
+}

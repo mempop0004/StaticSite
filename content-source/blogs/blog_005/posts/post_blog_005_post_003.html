@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_005_post_003</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>배포 플랫폼을 바꾸기 전에 먼저 확인해야 할 것</h1>
+        <div class="studio-meta" data-date>작성 2026-04-14T09:00:00+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="what-to-check-before-changing-your-deployment-platform"
+  blog-id="blog-developer-deployment-and-hosting"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-only"
+  timestamp="2026-04-14T09:00:00+09:00"
+  updated-date="2026-04-14T09:00:00+09:00"
+  hero-image="../../../assets/blog-placeholder-1.jpg"
+  related-slugs="deployment-and-hosting-rules-you-should-fix-first,cloudflare-pages-vs-vercel-how-to-choose-for-operations"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>Title:
+What to check before changing your deployment platform
+
+Core idea:
+Platform migrations fail when hidden operating assumptions move without being listed first.
+
+Image role:
+Cover image for a blog post thumbnail and header.
+
+What to show:
+One migration planning sheet with a source platform column, a target platform column, and a highlighted checklist of domains, env vars, build output, redirects, and rollback. It should feel like a deployment artifact, not a decorative comparison graphic.
+
+Do not show:
+person, desk scene, browser chrome, split hero with logos only, arrows everywhere, floating icons, 3D, isometric
+
+Style:
+flat editorial cover, document/data visual, minimal 2D poster, neutral palette with one muted warning accent</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>Title:
+What to check before changing your deployment platform
+
+Core idea:
+A safe platform move depends on matching public surfaces, build output, runtime behavior, and rollback steps before cutover.
+
+Image role:
+Inline explanatory image.
+
+What to show:
+A document-style migration checklist with grouped rows for domain, environment variables, build output, redirects, logs, and rollback. Show it like a practical operations worksheet.
+
+Do not show:
+person, desk scene, realistic UI, decorative icons, 3D, isometric
+
+Style:
+flat explanatory editorial visual, document/data visual, clear grouped rows, clean spacing</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">What to check before changing your deployment platform</title>
+  <title lang="ko">배포 플랫폼을 바꾸기 전에 먼저 확인해야 할 것</title>
+
+  <description lang="en">Most platform moves fail from hidden operating assumptions, not code. This guide shows what to lock around domains, env vars, build output, redirects, logs, and rollback before cutover.</description>
+  <description lang="ko">플랫폼 이전은 코드보다 숨어 있는 운영 가정 때문에 더 자주 실패한다. 도메인, 환경 변수, 빌드 출력, 리다이렉트, 로그, 롤백을 컷오버 전에 어떻게 잠글지 정리한다.</description>
+
+  <tags lang="en">deployment platform, hosting migration, domain, env vars, ops risk</tags>
+  <tags lang="ko">배포플랫폼, 호스팅이전, 도메인, 환경변수, 운영리스크</tags>
+
+  <body lang="en"><![CDATA[
+<p>Platform migrations rarely fail because the new platform cannot serve your code. They fail because the current platform was quietly handling more than the team wrote down. Custom domains, preview behavior, redirects, feed paths, image assumptions, and logging habits are usually the real migration surface.</p>
+
+<p>Use the <a href="/units/blog-developer-deployment-and-hosting/">deployment and hosting unit page</a> as the index for narrower platform guides. If you need the baseline first, start with <a href="/blog/deployment-and-hosting-rules-you-should-fix-first/">the rules you should fix first</a>. If your decision is still at the platform-comparison stage, continue with <a href="/blog/cloudflare-pages-vs-vercel-how-to-choose-for-operations/">Cloudflare Pages vs Vercel</a>.</p>
+
+<h2>1. Lock public surfaces before you compare features</h2>
+<p>Your domain behavior matters more than the platform feature list. List the current live assumptions first: custom domains, HTTPS enforcement, trailing slash policy, robots.txt, sitemap URL, RSS URL, public asset paths, and any redirect rules that users already depend on.</p>
+<p>If the target platform changes even one of those by accident, the migration is already carrying more risk than the team thinks.</p>
+
+<h2>2. Separate build assumptions from runtime assumptions</h2>
+<p>Many teams say “the build works” and stop too early. That only covers one layer. You still need to list which assumptions belong to build output and which belong to runtime behavior.</p>
+<ul>
+  <li>Build layer: output directory, asset path rules, image optimization, static export assumptions</li>
+  <li>Runtime layer: environment variables, serverless behavior, rewrites, redirects, preview auth, log access</li>
+</ul>
+<p>If those two layers are mixed in one vague checklist, the migration will be harder to debug when something breaks after cutover.</p>
+
+<h2>3. Do not move domains before you verify the generated output</h2>
+<p>A safe sequence is boring on purpose. First verify the generated build. Then verify the public output on a temporary URL. Only after that should the main domain move.</p>
+<p>That means checking the real public behavior of pages, feeds, sitemap, redirects, and assets on the target platform before you cut over DNS.</p>
+<image-slot code="002" alt-en="A document-style migration checklist showing domains, environment variables, build output, redirects, logs, and rollback groups before a deployment platform move." alt-ko="배포 플랫폼 이전 전에 도메인, 환경 변수, 빌드 출력, 리다이렉트, 로그, 롤백 항목을 그룹으로 정리한 마이그레이션 체크리스트를 보여주는 설명 이미지."></image-slot>
+
+<h2>4. Environment variables should be rewritten as a dependency list</h2>
+<p>Do not copy environment variables blindly. Rewrite them as a dependency list instead: which feature needs which variable, what breaks when it is missing, and whether the variable belongs to build time or runtime.</p>
+<p>That simple rewrite catches the common mistakes: missing analytics keys, broken auth callbacks, wrong origin URLs, stale webhook endpoints, or secrets copied into the wrong environment.</p>
+
+<h2>5. Write the rollback before the cutover</h2>
+<p>If rollback is still “we will switch back if needed,” then rollback does not exist yet. Write the exact rollback boundary: which domain record changes back, which deployment remains available, which environment variables stay untouched, and how long you will observe the new platform before calling the move complete.</p>
+<p>A good rollback plan should let one person revert the public surface quickly without having to rediscover the old settings under pressure.</p>
+
+<h2>What to do first</h2>
+<p>Open a blank checklist and write six groups only: domains, environment variables, build output, redirects, logs, and rollback. Fill those groups using your current live system before you compare platform features. If you cannot fill that sheet clearly, the migration decision is still early.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>플랫폼 이전은 보통 새 플랫폼이 코드를 못 띄워서 실패하지 않는다. 지금 플랫폼이 조용히 대신해주던 일을 팀이 적어두지 않았기 때문에 실패한다. 커스텀 도메인, 프리뷰 동작, redirect, 피드 경로, 이미지 경로, 로그 확인 방식이 실제 이전 표면이다.</p>
+
+<p>후속 글은 <a href="/ko/units/blog-developer-deployment-and-hosting/">배포와 호스팅 유닛 페이지</a>를 기준으로 더 좁은 플랫폼 글로 이어가면 된다. 기본 기준이 먼저 필요하면 <a href="/ko/blog/deployment-and-hosting-rules-you-should-fix-first/">먼저 고정해야 할 배포와 호스팅 기준</a>부터 보고, 아직 플랫폼 선택 단계라면 <a href="/ko/blog/cloudflare-pages-vs-vercel-how-to-choose-for-operations/">Cloudflare Pages vs Vercel 비교 글</a>로 이어가면 된다.</p>
+
+<h2>1. 기능표보다 공개 표면을 먼저 잠근다</h2>
+<p>실제 이전에서는 플랫폼 기능표보다 도메인 동작이 더 중요하다. 현재 live 기준을 먼저 적어라. 커스텀 도메인, HTTPS 강제, trailing slash 규칙, robots.txt, sitemap URL, RSS URL, public 자산 경로, 사용자가 이미 기대하는 redirect 규칙이 무엇인지부터 적는다.</p>
+<p>타깃 플랫폼이 이중 하나만 조용히 바꿔도 이전 리스크는 생각보다 훨씬 커진다.</p>
+
+<h2>2. 빌드 가정과 런타임 가정을 분리한다</h2>
+<p>“빌드가 된다”는 말은 절반만 맞다. 먼저 빌드 출력에 속한 가정과 런타임 동작에 속한 가정을 분리해야 한다.</p>
+<ul>
+  <li>빌드 층: output 디렉터리, 자산 경로, 이미지 최적화, 정적 export 규칙</li>
+  <li>런타임 층: 환경 변수, 서버리스 동작, rewrite, redirect, 프리뷰 인증, 로그 접근</li>
+</ul>
+<p>이 두 층이 한 체크리스트 안에서 뒤섞이면 컷오버 후 문제가 났을 때 디버깅이 훨씬 어려워진다.</p>
+
+<h2>3. 도메인을 옮기기 전에 생성 결과를 먼저 본다</h2>
+<p>안전한 이전 순서는 지루할 정도로 단순하다. 먼저 generated build를 검증하고, 임시 URL에서 공개 결과를 확인하고, 그 뒤에야 메인 도메인을 움직인다.</p>
+<p>즉 타깃 플랫폼에서 페이지, feed, sitemap, redirect, 자산 경로가 실제 public URL에서 어떻게 보이는지를 DNS 변경 전에 먼저 확인해야 한다.</p>
+<image-slot code="002" alt-en="A document-style migration checklist showing domains, environment variables, build output, redirects, logs, and rollback groups before a deployment platform move." alt-ko="배포 플랫폼 이전 전에 도메인, 환경 변수, 빌드 출력, 리다이렉트, 로그, 롤백 항목을 그룹으로 정리한 마이그레이션 체크리스트를 보여주는 설명 이미지."></image-slot>
+
+<h2>4. 환경 변수는 복사본이 아니라 의존성 목록으로 다시 적는다</h2>
+<p>환경 변수를 그냥 복사하면 빠지는 것이 많다. 어떤 기능이 어떤 변수를 필요로 하는지, 빠지면 무엇이 깨지는지, 빌드 타임 변수인지 런타임 변수인지 의존성 목록으로 다시 적어야 한다.</p>
+<p>이렇게 다시 적으면 자주 놓치는 항목이 드러난다. 분석 키 누락, 인증 callback URL 오류, origin URL 불일치, webhook endpoint 누락, 잘못된 환경으로 복사된 secret 같은 것들이다.</p>
+
+<h2>5. 롤백은 컷오버 전에 문장으로 써놔야 한다</h2>
+<p>“문제가 생기면 다시 돌린다”는 건 롤백 계획이 아니다. 어떤 도메인 레코드를 되돌리고, 어떤 배포를 그대로 남겨두고, 어떤 환경 변수는 손대지 않고, 새 플랫폼을 몇 분 또는 몇 시간 관찰한 뒤 완료로 볼지까지 적어야 한다.</p>
+<p>좋은 롤백 계획은 압박 상황에서도 한 사람이 공개 표면을 빠르게 원래 상태로 되돌릴 수 있어야 한다.</p>
+
+<h2>무엇부터 시작할까</h2>
+<p>빈 체크리스트에 여섯 항목만 먼저 적어라. 도메인, 환경 변수, 빌드 출력, redirect, 로그, 롤백이다. 그다음 현재 live 시스템을 기준으로 그 칸을 채워라. 이 목록을 명확하게 채우지 못한다면 아직 플랫폼 기능 비교보다 이전 준비가 먼저다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

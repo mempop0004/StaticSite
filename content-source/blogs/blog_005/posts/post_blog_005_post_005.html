@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_005_post_005</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>Netlify vs Cloudflare Pages를 비용과 기능으로 비교하는 기준</h1>
+        <div class="studio-meta" data-date>작성 2026-04-16T11:45:00+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="how-to-compare-netlify-vs-cloudflare-pages-by-cost-and-capability"
+  blog-id="blog-developer-deployment-and-hosting"
+  stage="pillar"
+  purpose="comparison"
+  search-intent="learn"
+  reader-state="operating"
+  section-style="checklist"
+  image-need="cover-inline"
+  timestamp="2026-04-16T11:45:00+09:00"
+  updated-date="2026-04-16T11:45:00+09:00"
+  hero-image=""
+  related-slugs="cloudflare-pages-vs-vercel-how-to-choose-for-operations,how-to-operate-preview-deployments-as-promotion-gates"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: Netlify와 Cloudflare Pages 중 하나를 고르는 비교 장면, 비용 구조와 운영 적합성이 갈리는 대비
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+- split comparison이어야 함
+
+직관성 체크:
+- 썸네일에서 두 선택지의 차이가 한 축으로 읽혀야 함
+- 한쪽만 강조된 광고 배너처럼 보이면 실패
+
+개별 프롬프트:
+split comparison hero image for a deployment platform article, showing two balanced platform lanes with different cost and capability signals, one side emphasizing flexible deploy controls and one side emphasizing edge-integrated static delivery, flat 2D editorial composition, no text, no realistic dashboard, no people
+
+참고 검색어:
+Netlify vs Cloudflare Pages, deployment comparison, hosting cost structure</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: build, bandwidth, functions, preview, rollback 같은 비교 축이 두 플랫폼으로 갈라지는 구조 이미지
+
+공통 기준:
+- 글의 설명 맥락을 직접 보조해야 함
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+- 한 장면에 한 비교 구조만 남긴다
+
+직관성 체크:
+- 독자가 어떤 비교 축으로 봐야 하는지 바로 이해해야 함
+- hero cover처럼 보이면 실패
+
+개별 프롬프트:
+practical comparison diagram for a hosting article, five comparison axes branching into two platform columns, flat 2D worksheet style, balanced side-by-side structure, no text, no realistic UI, no people
+
+참고 검색어:
+deployment comparison axes, hosting decision criteria, platform comparison map</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">How to compare Netlify vs Cloudflare Pages by cost and capability</title>
+  <title lang="ko">Netlify vs Cloudflare Pages를 비용과 기능으로 비교하는 기준</title>
+
+  <description lang="en">Netlify and Cloudflare Pages are both easy to start with, but their cost structure and operational fit differ. This guide compares the two platforms by build flow, bandwidth, previews, functions, and rollback behavior.</description>
+  <description lang="ko">Netlify와 Cloudflare Pages는 둘 다 시작은 쉽지만, 비용 구조와 운영 적합성은 다르다. build 흐름, bandwidth, preview, functions, rollback 기준으로 실제 비교하는 방법을 정리한다.</description>
+
+  <tags lang="en">netlify, cloudflare pages, hosting comparison, deployment costs, developer hosting</tags>
+  <tags lang="ko">Netlify, CloudflarePages, 호스팅비교, 배포비용, 개발자호스팅</tags>
+
+  <body lang="en"><![CDATA[
+<p>Netlify and Cloudflare Pages often look similar at the beginning. Both let you connect a repo, push a deploy, and get a live URL quickly. That surface similarity is why teams often choose too early.</p>
+
+<p>The real difference appears later, when the site grows, previews become part of the workflow, functions start to matter, and cost is no longer just a price page line item.</p>
+
+<p>This post is about comparing the two by operating shape, not by brand preference. The goal is to decide which platform fits your deploy loop, cost structure, and recovery style better.</p>
+
+<h2>1. The common mistake is comparing headline pricing without comparing cost structure</h2>
+<p>Teams often start with plan names and monthly numbers. That looks efficient, but it hides the real operational cost.</p>
+
+<p>Build minutes, bandwidth, function usage, preview usage, and rollback recovery all create different kinds of cost. A platform can look cheaper at the top level while becoming more expensive once your workflow changes.</p>
+
+<h2>2. The best comparison starts from operating fit, not features alone</h2>
+<p>This is the main rule. Hosting platforms should not be compared as generic feature lists. They should be compared by the shape of work they are expected to carry.</p>
+
+<p>If your team needs frequent preview links, easy branch-based review, and a broad plugin ecosystem, one platform may fit better. If your workflow is already close to Cloudflare’s edge model and you care more about static delivery and adjacent edge capabilities, the other may fit more naturally.</p>
+
+<p>That difference matters because the real question is not “which service has more boxes checked?” It is “which platform turns our normal deploy loop into less friction?” A platform that looks richer on paper can still be the worse operating choice if it adds review friction, makes rollback awkward, or hides the true cost of repeated deploys.</p>
+
+<p>That is why cost and capability should be read together. Preview behavior changes review cost. Function model changes maintenance cost. Rollback style changes incident cost. A useful comparison treats those as one operating system, not separate bullets.</p>
+
+<h2>3. Compare these five axes first</h2>
+<ul>
+  <li>build and deploy flow</li>
+  <li>preview and branch review behavior</li>
+  <li>bandwidth and asset delivery shape</li>
+  <li>functions or dynamic extension path</li>
+  <li>rollback and recovery speed</li>
+</ul>
+
+<h2>4. One example makes the tradeoff clearer</h2>
+<p>Imagine a documentation-heavy team shipping many preview builds each week. Preview behavior and review ergonomics may matter more than raw edge integration. In that case, the “better” platform is the one that reduces review friction and hidden cost around repeated deploys.</p>
+
+<p>Now imagine a static-first site already leaning into Cloudflare services. Then the surrounding edge environment, asset delivery behavior, and operational consistency may matter more than plugin breadth.</p>
+
+<image-slot code="002" alt-en="A comparison map showing build, preview, bandwidth, functions, and rollback as the five decision axes between Netlify and Cloudflare Pages." alt-ko="build, preview, bandwidth, functions, rollback 다섯 비교 축이 Netlify와 Cloudflare Pages 두 선택지로 갈라지는 구조를 보여주는 설명 이미지."></image-slot>
+
+<h2>5. Do not separate rollback from cost</h2>
+<p>Teams often compare platform cost and recovery behavior separately. That is a mistake. Slow rollback, awkward recovery, or unclear preview history all carry operating cost too.</p>
+
+<p>A platform that saves a little money but makes production mistakes slower to reverse may still be more expensive in practice.</p>
+
+<h2>What to do first</h2>
+<p>Write down your current deploy loop in one line: how often you ship, how often you review previews, whether you need functions, and how fast you need rollback. Then compare Netlify and Cloudflare Pages against that loop instead of against their marketing pages.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>Netlify와 Cloudflare Pages는 시작 단계에서는 비슷해 보이기 쉽다. 둘 다 저장소를 연결하고 배포를 돌리고 live URL을 바로 얻을 수 있기 때문이다. 그래서 많은 팀이 너무 빨리 고른다.</p>
+
+<p>차이는 나중에 드러난다. preview가 일상적인 운영 루프에 들어오고, functions가 필요해지고, 비용이 단순한 가격표 숫자가 아니게 되는 순간부터다.</p>
+
+<p>이 글은 브랜드 선호가 아니라 운영 형태를 기준으로 두 플랫폼을 비교하는 방법을 다룬다. 목표는 어떤 플랫폼이 지금 팀의 deploy loop, 비용 구조, rollback 방식에 더 잘 맞는지 판단하는 것이다.</p>
+
+<h2>1. 사람들이 자주 틀리는 지점은 가격표 숫자만 먼저 비교하는 것이다</h2>
+<p>많은 팀이 요금제 이름과 월 요금부터 본다. 얼핏 효율적으로 보이지만, 실제 운영 비용 구조를 놓치기 쉽다.</p>
+
+<p>build minutes, bandwidth, function usage, preview usage, rollback recovery는 서로 다른 종류의 비용을 만든다. 겉으로는 더 싸 보이는 플랫폼이 운영 루프가 바뀐 뒤에는 더 비싸질 수도 있다.</p>
+
+<h2>2. 가장 좋은 비교는 기능표보다 운영 적합성에서 시작한다</h2>
+<p>여기가 핵심 기준이다. 호스팅 플랫폼은 generic feature list로 비교하면 안 된다. 실제로 어떤 일을 반복해서 싣게 될 플랫폼인지부터 봐야 한다.</p>
+
+<p>preview 링크를 자주 쓰고, branch 기반 리뷰가 중요하고, plugin ecosystem을 넓게 활용하는 팀이라면 한쪽이 더 자연스러울 수 있다. 반대로 워크플로가 이미 Cloudflare edge 모델과 가까워서 정적 배포와 주변 edge 기능을 함께 보는 팀이라면 다른 쪽이 더 잘 맞을 수 있다.</p>
+
+<p>중요한 건 “어느 서비스가 더 많은 기능을 가졌는가”가 아니다. “우리의 평소 deploy loop를 어느 쪽이 덜 마찰적으로 만들어주는가”다. 문서상으론 더 풍부해 보여도, preview 검토를 느리게 만들거나 rollback을 어색하게 만들거나, 반복 배포의 숨은 비용을 키우면 운영 기준으로는 더 나쁜 선택일 수 있다.</p>
+
+<p>그래서 비용과 기능은 같이 읽어야 한다. preview 동작은 review 비용을 바꾸고, function 모델은 유지보수 비용을 바꾸고, rollback 방식은 사고 비용을 바꾼다. 좋은 비교는 이걸 하나의 운영 시스템으로 본다.</p>
+
+<h2>3. 먼저 비교할 다섯 축</h2>
+<ul>
+  <li>build와 deploy 흐름</li>
+  <li>preview와 branch review 동작</li>
+  <li>bandwidth와 자산 전달 구조</li>
+  <li>functions나 동적 확장 경로</li>
+  <li>rollback과 recovery 속도</li>
+</ul>
+
+<h2>4. 예시 하나만 봐도 선택 기준이 달라진다</h2>
+<p>예를 들어 문서 중심 팀이 매주 preview build를 많이 만든다고 하자. 이런 경우 raw edge integration보다 preview 동작과 검토 편의가 더 중요할 수 있다. 그때 더 좋은 플랫폼은 review friction과 반복 배포의 숨은 비용을 줄여주는 쪽이다.</p>
+
+<p>반대로 정적 중심 사이트가 이미 Cloudflare 서비스와 가까이 묶여 있다면, edge 환경의 일관성, 자산 전달 방식, 주변 기능과의 결합이 더 중요한 기준이 될 수 있다.</p>
+
+<image-slot code="002" alt-en="A comparison map showing build, preview, bandwidth, functions, and rollback as the five decision axes between Netlify and Cloudflare Pages." alt-ko="build, preview, bandwidth, functions, rollback 다섯 비교 축이 Netlify와 Cloudflare Pages 두 선택지로 갈라지는 구조를 보여주는 설명 이미지."></image-slot>
+
+<h2>5. rollback은 비용과 따로 보면 안 된다</h2>
+<p>많은 팀이 플랫폼 비용과 recovery 동작을 따로 비교한다. 하지만 rollback이 느리거나, 복구 흐름이 어색하거나, preview 이력이 불분명하면 그것도 운영 비용이다.</p>
+
+<p>가격이 조금 싸도 production 실수를 되돌리는 속도가 느리면 실제로는 더 비싼 선택일 수 있다.</p>
+
+<h2>무엇부터 시작할까</h2>
+<p>지금 팀의 deploy loop를 한 줄로 적어라. 얼마나 자주 배포하는지, preview를 얼마나 자주 검토하는지, functions가 필요한지, rollback이 얼마나 빨라야 하는지다. 그다음 marketing page가 아니라 그 운영 루프를 기준으로 Netlify와 Cloudflare Pages를 비교해라.</p>
+]]></body>
+</post>
+  </script>
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

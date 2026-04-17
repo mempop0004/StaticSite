@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_004_post_002</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>기술 블로그 내부 링크를 토픽 클러스터 기준으로 설계하는 방법</h1>
+        <div class="studio-meta" data-date>작성 2026-04-13T10:21:40+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="how-to-design-internal-links-for-a-technical-blog"
+  blog-id="blog-technical-blog-operations"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-only"
+  timestamp="2026-04-13T10:21:40+09:00"
+  updated-date="2026-04-13T10:21:40+09:00"
+  hero-image="../../../assets/blog-placeholder-1.jpg"
+  related-slugs=""
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 글 제목과 가장 잘 맞는 핵심 장면
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- 과장된 합성 느낌 금지
+- 기사나 실전 가이드에 맞는 현실적인 구도
+
+개별 프롬프트:
+technical blog topic clusters connected by clear internal links, clean editorial hero, structured nodes and paths, no text-heavy labels
+
+참고 검색어:
+technical blog internal links, topic cluster, content structure</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: 핵심 비교나 과정 설명을 돕는 장면
+
+공통 기준:
+- 글의 설명 맥락을 직접 보조해야 함
+- 억지 장식 이미지 금지
+- 현실적인 화면 또는 설명 장면
+
+개별 프롬프트:
+pillar post connecting to support articles through grouped topic clusters and link paths, explanatory editorial composition
+
+참고 검색어:
+internal linking map, topic cluster structure</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">Stop using random related posts: a topic cluster strategy for tech blogs</title>
+  <title lang="ko">관련 글 위젯은 그만, 토픽 클러스터로 내부 링크를 설계하는 법</title>
+
+  <description lang="en">Move beyond random related-post boxes. Learn a simple pillar-support map, concrete link roles, and a repeatable next-click path that raises SEO and reader depth.</description>
+  <description lang="ko">관련 글 위젯을 붙이는 수준에서 벗어나자. 기준 글-후속 글 구조, 링크 역할, 다음 클릭 경로를 실전 예시로 정리한다.</description>
+
+  <tags lang="en">internal links, technical blog, topic cluster, pillar post, content structure</tags>
+  <tags lang="ko">내부링크, 기술블로그, 토픽클러스터, 기준글, 콘텐츠구조</tags>
+
+  <body lang="en"><![CDATA[
+<p>Technical blogs usually add internal links too late. A new post goes live, then someone adds two or three related links at the end and calls it a structure. That is not a cluster. It is just cleanup after publishing.</p>
+
+<p>Use the <a href="/units/blog-technical-blog-operations/">technical blog operations unit page</a> as the index for the follow-up posts on topic selection, review loops, image rules, and publishing structure. If you need a baseline operating checklist first, start with <a href="/blog/technical-blog-operations-rules-you-should-fix-first/">the rules you should fix first</a>.</p>
+
+<h2>1. Start from a topic unit, not a link widget</h2>
+<p>The real design unit is the topic cluster. Decide which post is the pillar, which posts support it, and which next-click path makes sense for a reader who is still trying to understand the topic.</p>
+
+<h2>2. Each post should know its role</h2>
+<p>A pillar post explains the frame. A support post solves one narrower problem. A comparison post helps a decision. Internal links should reflect that role instead of pointing everywhere equally.</p>
+<image-slot code="002" alt-en="An explanatory image showing a pillar post connected to support posts and a comparison post through clear internal link paths." alt-ko="기준 글이 후속 글과 비교 글로 연결되는 토픽 클러스터 링크 구조를 보여주는 설명 이미지."></image-slot>
+
+<h2>3. Link depth should follow reading intent</h2>
+<p>If the reader is still at the baseline stage, send them to another clarifying post, not to an unrelated edge case. Good internal links match the next question the reader is likely to ask.</p>
+
+<h2>4. Build repeatable link patterns</h2>
+<p>Use a small pattern: pillar -> support, support -> pillar, support -> adjacent support, and support -> next action. That is enough to make the cluster feel intentional.</p>
+<p>For example, a pillar about React performance can point to support posts on memoization, image loading, and bundle splitting, while each support post points back to the pillar and one adjacent support post.</p>
+<p>Another example:</p>
+<ul>
+  <li>Pillar: “React performance guide”</li>
+  <li>Support: “When to use memoization”</li>
+  <li>Support: “Image loading checklist”</li>
+  <li>Comparison: “CSR vs SSR for performance”</li>
+</ul>
+
+<h2>What to do first</h2>
+<p>Pick one topic you already own and draw the pillar plus three support posts around it. If your current internal links do not reflect that map, the cluster is still accidental.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>기술 블로그 내부 링크는 보통 너무 늦게 붙는다. 글을 하나 올리고 나서 관련 글 몇 개를 덧붙이는 방식으로는 토픽 클러스터가 만들어지지 않는다. 그건 구조 설계가 아니라 발행 후 정리다.</p>
+
+<p>후속 글은 <a href="/ko/units/blog-technical-blog-operations/">기술 블로그 운영 유닛 페이지</a>를 기준으로 주제 선정, 이미지 규칙, 리뷰 루프 쪽으로 이어가면 된다. 운영 기준이 먼저 필요하다면 <a href="/ko/blog/technical-blog-operations-rules-you-should-fix-first/">기술 블로그 운영 기준 글</a>부터 확인한다.</p>
+
+<h2>1. 링크 박스가 아니라 토픽 유닛부터 잡는다</h2>
+<p>먼저 정해야 하는 것은 링크 위치가 아니라 토픽 구조다. 어떤 글이 기준 글이고, 어떤 글이 후속 설명 글이며, 독자가 다음에 무엇을 눌러야 하는지부터 정해야 한다.</p>
+
+<h2>2. 글마다 역할을 다르게 둔다</h2>
+<p>기준 글은 큰 틀을 설명하고, 후속 글은 더 좁은 문제를 해결하고, 비교 글은 선택을 돕는다. 내부 링크도 이 역할을 따라가야지 모든 글을 비슷하게 연결하면 안 된다.</p>
+<image-slot code="002" alt-en="An explanatory image showing a pillar post connected to support posts and a comparison post through clear internal link paths." alt-ko="기준 글이 후속 글과 비교 글로 연결되는 토픽 클러스터 링크 구조를 보여주는 설명 이미지."></image-slot>
+
+<h2>3. 링크 깊이는 독자의 다음 질문을 따라간다</h2>
+<p>아직 기본 개념을 이해하는 단계의 독자에게 곧바로 예외 케이스를 보내면 흐름이 깨진다. 좋은 내부 링크는 독자가 다음에 물을 질문에 맞춰 이동 경로를 만든다.</p>
+
+<h2>4. 반복 가능한 링크 패턴을 만든다</h2>
+<p>패턴은 단순해도 된다. 기준 글 -> 후속 글, 후속 글 -> 기준 글, 후속 글 -> 인접 후속 글, 후속 글 -> 다음 행동 정도만 있어도 클러스터가 살아난다.</p>
+<p>예를 들어 React 성능 기준 글이 있으면 memoization, 이미지 로딩, 번들 분할 같은 후속 글이 붙고, 각 후속 글은 기준 글과 인접 후속 글 하나를 다시 가리키는 식이다.</p>
+<p>다른 예시는 이렇게 단순하게 시작하면 된다.</p>
+<ul>
+  <li>기준 글: “React 성능 가이드”</li>
+  <li>후속 글: “memoization을 써야 하는 경우”</li>
+  <li>후속 글: “이미지 로딩 체크리스트”</li>
+  <li>비교 글: “CSR vs SSR 성능 선택 기준”</li>
+</ul>
+
+<h2>무엇부터 시작할까</h2>
+<p>이미 글이 있는 주제 하나를 골라 기준 글과 후속 글 세 개를 먼저 그려봐라. 지금 내부 링크가 그 지도와 다르면 아직 구조가 아니라 우연에 가까운 상태다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

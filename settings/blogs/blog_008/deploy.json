@@ -1,0 +1,12 @@
+{
+  "blog_folder": "blog_008",
+  "blog_id": "blog-solo-website-operations",
+  "hosting_provider": "cloudflare-pages",
+  "production_url": "https://swops.pages.dev",
+  "github_repo": "https://github.com/mempop0009/SWOps",
+  "local_working_repo": "https://github.com/golrazo/studio-blog.git",
+  "production_branch": "main",
+  "build_command": "npm run blog:build -- blog_008",
+  "output_dir": "dist",
+  "root_dir": "/"
+}

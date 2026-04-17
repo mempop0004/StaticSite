@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_007_post_005</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>글 리뷰 결과를 다음 글 규칙으로 누적하는 자동화 방식</h1>
+        <div class="studio-meta" data-date>작성 2026-04-16T16:00:00+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="how-to-accumulate-review-results-into-rules-for-the-next-post"
+  blog-id="blog-web-automation-and-ops-systems"
+  stage="pillar"
+  purpose="operations"
+  search-intent="learn"
+  reader-state="improving"
+  section-style="checklist"
+  image-need="cover-inline"
+  timestamp="2026-04-16T16:00:00+09:00"
+  updated-date="2026-04-16T16:00:00+09:00"
+  hero-image=""
+  related-slugs="how-to-turn-automation-output-into-actionable-ops-reports,how-to-build-a-minimum-post-deploy-verification-loop"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 흩어진 리뷰 메모가 다음 글을 위한 소수의 운영 규칙 카드로 정리되는 한 장면
+
+공통 기준:
+- 핵심 포인트가 한 장면에서 바로 읽혀야 함
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+- no scattered papers
+- no clutter cloud
+- no vortex
+- 사람이나 책상 장면 금지
+
+직관성 체크:
+- 썸네일에서 리뷰 메모가 규칙 세트로 압축되는 대비가 보여야 함
+- checklist board처럼 보이면 실패
+- 설명도처럼 칸이 너무 많아 보이면 실패
+
+개별 프롬프트:
+clean editorial hero image for an automation systems article, showing many rough review note fragments being reduced into three or four stable rule cards inside one small rules library, flat 2D composition, strong before-and-after contrast, no text, no letters, no UI labels, no scattered paper storm, no people, should feel like operational refinement rather than abstract data art
+
+참고 검색어:
+review loop, automation rules, quality system</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: 리뷰 결과가 분류, 규칙화, 다음 글 적용으로 이어지는 누적 구조 설명 이미지
+
+공통 기준:
+- 글의 설명 맥락을 직접 보조해야 함
+- no text
+- no letters
+- no pseudo-text
+- no ui labels
+- 분위기용 컨셉 아트 금지
+- 대표 이미지와 같은 장면 금지
+
+직관성 체크:
+- 리뷰 결과가 바로 버려지지 않고 규칙 저장소를 거쳐 다음 글 체크에 반영되는 구조가 보여야 함
+- hero cover처럼 보이면 실패
+- 한눈에 process diagram처럼 읽혀야 함
+
+개별 프롬프트:
+practical explanatory diagram for an automation workflow article, showing one flow from review findings to grouped rule cards to a next-post checklist, flat 2D information-led layout, minimal objects, no text, no letters, no UI labels, no people, should feel like a reusable quality accumulation system
+
+참고 검색어:
+review feedback loop, rule accumulation, editorial automation system</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">How to accumulate review results into rules for the next post</title>
+  <title lang="ko">글 리뷰 결과를 다음 글 규칙으로 누적하는 자동화 방식</title>
+
+  <description lang="en">Post reviews only pay off when their findings change the next draft. This guide shows how to turn repeated review notes into a small rule system that improves later posts automatically.</description>
+  <description lang="ko">글 리뷰는 그 글 하나에서 끝나면 비싸다. 반복되는 리뷰 결과를 규칙으로 쌓아 다음 글에 자동으로 반영하는 운영 방식을 정리한다.</description>
+
+  <tags lang="en">review automation, editorial system, quality loop, publishing workflow, ops automation</tags>
+  <tags lang="ko">리뷰자동화, 편집시스템, 품질루프, 발행워크플로, 운영자동화</tags>
+
+  <body lang="en"><![CDATA[
+<p>Many content systems say they review every post, but the same problems keep returning. The image still contains text. The hero and inline image still overlap. The article still flattens out after the intro. When that happens, the review process is producing comments, not improvement.</p>
+
+<p>A review only becomes operationally valuable when its result changes the next draft. That means repeated findings have to become rules, not memories.</p>
+
+<p>This post is about building that transition on purpose. The goal is not storing every comment forever. The goal is reducing the chance of repeating the same mistake in the next post.</p>
+
+<h2>1. The common mistake is treating review as post-specific cleanup</h2>
+<p>Many teams review one article, fix one article, then move on. That feels productive because the current piece gets cleaner. But system-wise, nothing changed. The next draft still starts from the same weak defaults.</p>
+
+<p>That is why review can feel expensive. You spend time identifying issues, but the same categories come back because the process has no memory layer.</p>
+
+<h2>2. Review results only compound when they are rewritten as reusable rules</h2>
+<p>This is the central shift. A review note is usually tied to one artifact. A rule is tied to the next decision.</p>
+
+<p>For example, “this image feels too abstract” is a useful review comment for one post. But it becomes operationally useful only after it turns into a rule such as “developer and ops posts must show concrete objects or structure, not abstract signal flow.” The first sentence explains what went wrong. The second sentence changes the next image prompt.</p>
+
+<p>The same applies to writing. “This section feels thin” is a comment. “Every post must have one section that carries the most weight, with two concrete examples or consequences” is a rule. Once the rule exists, the next draft starts stronger before review even begins.</p>
+
+<p>This is where automation matters. If repeated findings are translated into a small rule set, the system can inject them into the next workspace, review checklist, or image prompt template automatically. That is when review stops being a cleanup ritual and becomes a compounding quality loop.</p>
+
+<p>Without that rewrite step, the system remains dependent on human memory. And human memory is exactly what fails under speed, fatigue, or repetitive production. The stronger system does not trust the writer to remember everything. It encodes the lesson where the next draft is made.</p>
+
+<h2>3. Split review output into throwaway notes and reusable rules</h2>
+<p>Not every comment deserves a permanent rule. A useful split is simple:</p>
+<ul>
+  <li>throwaway note: specific to one post, one image, or one awkward sentence</li>
+  <li>reusable rule: likely to improve the next similar post too</li>
+  <li>template update: strong enough to change the default drafting or image prompt structure</li>
+</ul>
+
+<p>If every note becomes permanent, the system bloats. If nothing becomes permanent, the system forgets.</p>
+
+<h2>4. Store the rule where the next draft will actually touch it</h2>
+<p>A hidden archive is not enough. If the next draft starts in a post workspace, the rule has to live in the workspace template, checklist, or the blog-specific memory file that gets read before drafting.</p>
+
+<p>That is why rule location matters as much as rule wording. A good rule in the wrong place is still easy to ignore.</p>
+
+<image-slot code="002" alt-en="A process diagram showing review findings being grouped into reusable rules and then applied to a next-post checklist." alt-ko="리뷰 결과가 재사용 가능한 규칙으로 묶인 뒤 다음 글 체크리스트에 반영되는 구조를 보여주는 설명 이미지."></image-slot>
+
+<h2>5. One concrete loop shows whether the system is improving</h2>
+<p>Suppose three reviews in a row complain that hero images are abstract and inline images repeat the same idea. That should not remain three separate observations. It should create two new defaults: the hero prompt must define one clear contrast scene, and the inline prompt must define one explanation structure with a different role. If the fourth post starts from that rule, review time is already cheaper.</p>
+
+<p>The same loop works for article structure. If two posts in a row feel flat, the fix is not “write better next time.” The fix is updating the template so the main section is explicitly heavier and examples are mandatory. Once that change lands in the drafting layer, quality starts earlier.</p>
+
+<h2>What to do first</h2>
+<p>Take the last three review notes you repeated most often and rewrite each one as a rule for the next draft. If the rule cannot change the next workspace, checklist, or prompt, it is still just a comment.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>많은 콘텐츠 시스템이 모든 글을 리뷰한다고 말하지만, 실제로는 같은 문제가 계속 반복된다. 이미지 안에 글자가 또 들어가고, 대표 이미지와 본문 이미지가 또 비슷해지고, 글은 도입부 이후 다시 평평해진다. 이 상태라면 리뷰는 개선을 만들고 있는 게 아니라 코멘트만 만들고 있는 것이다.</p>
+
+<p>리뷰가 운영적으로 가치 있으려면 그 결과가 다음 초안을 바꿔야 한다. 그러려면 반복되는 지적이 메모로 끝나지 않고 규칙으로 바뀌어야 한다.</p>
+
+<p>이 글은 그 전환을 어떻게 만드는지 다룬다. 목표는 모든 코멘트를 영구 보관하는 게 아니라, 같은 실수를 다음 글에서 다시 낼 확률을 줄이는 것이다.</p>
+
+<h2>1. 사람들이 자주 틀리는 지점은 리뷰를 그 글 하나의 마감 정리로만 쓰는 것이다</h2>
+<p>많은 팀은 글 하나를 리뷰하고, 그 글 하나를 고치고, 바로 다음 글로 넘어간다. 당장은 현재 글이 깨끗해진 것처럼 보여서 생산적으로 느껴진다. 하지만 시스템 기준으로는 아무것도 바뀌지 않는다. 다음 초안은 여전히 같은 약한 기본값에서 다시 시작한다.</p>
+
+<p>그래서 리뷰가 자꾸 비싸게 느껴진다. 문제를 찾는 데 시간을 썼는데, 구조가 바뀌지 않으니 같은 종류의 문제가 다시 돌아오기 때문이다.</p>
+
+<h2>2. 리뷰 결과는 재사용 가능한 규칙으로 다시 써야만 누적된다</h2>
+<p>여기가 핵심 전환점이다. 리뷰 코멘트는 보통 하나의 산출물에 묶여 있다. 반면 규칙은 다음 판단에 묶여 있다.</p>
+
+<p>예를 들어 “이 이미지는 너무 추상적이다”는 한 글에 대해서는 유효한 지적이다. 하지만 운영적으로 쓸모가 생기는 순간은 “개발자 글과 운영 글 이미지는 추상 신호 흐름보다 구체적인 객체나 구조를 보여야 한다” 같은 규칙으로 바뀔 때다. 첫 문장은 무엇이 잘못됐는지 말한다. 두 번째 문장은 다음 이미지 프롬프트를 바꾼다.</p>
+
+<p>글 구조도 같다. “이 섹션이 얇다”는 코멘트다. “모든 글에는 가장 무게가 실린 섹션 하나가 있어야 하고, 그 안에 실제 예시나 실패 결과를 최소 두 개 넣는다”는 규칙이다. 규칙이 생기면 다음 초안은 리뷰를 받기 전부터 더 강한 상태로 시작한다.</p>
+
+<p>자동화가 필요한 이유도 여기에 있다. 반복되는 지적을 작은 규칙 세트로 바꾸면, 시스템이 그 규칙을 다음 작업장 템플릿이나 리뷰 체크리스트, 이미지 프롬프트 기본값에 자동으로 밀어 넣을 수 있다. 그때부터 리뷰는 마감 정리가 아니라 누적되는 품질 루프가 된다.</p>
+
+<p>이 재작성 단계가 없으면 시스템은 결국 사람 기억력에 의존하게 된다. 하지만 속도가 붙거나 피곤해지거나 생산이 반복될수록 가장 먼저 무너지는 것이 바로 기억이다. 더 강한 시스템은 작성자가 다 기억하길 기대하지 않는다. 배운 교훈을 다음 초안이 만들어지는 자리 안에 심는다.</p>
+
+<h2>3. 리뷰 출력은 버리는 메모와 남기는 규칙으로 나눠야 한다</h2>
+<p>모든 코멘트가 영구 규칙이 될 필요는 없다. 기준은 단순하게 나누면 된다.</p>
+<ul>
+  <li>버리는 메모: 특정 글, 특정 이미지, 특정 문장에만 해당하는 지적</li>
+  <li>재사용 규칙: 다음 비슷한 글에도 바로 도움 되는 지적</li>
+  <li>템플릿 수정: 초안 기본 구조나 이미지 프롬프트 기본값까지 바꿔야 할 정도로 강한 지적</li>
+</ul>
+
+<p>모든 메모를 다 영구화하면 시스템이 비대해지고, 아무것도 영구화하지 않으면 시스템이 계속 잊는다.</p>
+
+<h2>4. 규칙은 다음 초안이 실제로 닿는 곳에 저장해야 한다</h2>
+<p>어딘가 숨은 아카이브에 적어두는 것만으로는 부족하다. 다음 글이 작업장 HTML에서 시작된다면, 규칙도 작업장 템플릿이나 체크리스트, 초안 전에 읽는 블로그별 memory 파일 안에 있어야 한다.</p>
+
+<p>그래서 규칙의 문장만큼 저장 위치도 중요하다. 좋은 규칙이 잘못된 위치에 있으면 결국 다시 무시된다.</p>
+
+<image-slot code="002" alt-en="A process diagram showing review findings being grouped into reusable rules and then applied to a next-post checklist." alt-ko="리뷰 결과가 재사용 가능한 규칙으로 묶인 뒤 다음 글 체크리스트에 반영되는 구조를 보여주는 설명 이미지."></image-slot>
+
+<h2>5. 실제 반복 루프 하나를 보면 시스템이 좋아지는지 판단할 수 있다</h2>
+<p>예를 들어 세 번 연속으로 “대표 이미지가 추상적이다”, “본문 이미지가 같은 말을 반복한다”는 지적이 나왔다고 해보자. 그걸 세 개의 독립 코멘트로 두면 안 된다. 대신 대표 이미지는 하나의 분명한 대비 장면을 가져야 하고, 본문 이미지는 역할이 다른 구조 설명이어야 한다는 두 개의 기본 규칙으로 바뀌어야 한다. 네 번째 글이 그 규칙에서 출발하면 리뷰 비용은 이미 내려간다.</p>
+
+<p>글 구조도 같다. 두 글 연속으로 평평하다는 얘기가 나오면 해결책은 “다음엔 더 잘 쓰자”가 아니다. 핵심 섹션을 더 무겁게 쓰도록 템플릿을 바꾸고, 예시를 강제하는 쪽으로 초안 기본값을 수정해야 한다. 품질은 그때부터 리뷰가 아니라 작성 시작 지점에서 올라간다.</p>
+
+<h2>무엇부터 시작할까</h2>
+<p>최근 세 번의 리뷰에서 가장 자주 반복된 지적 세 개를 골라 각각 “다음 초안을 바꾸는 규칙”으로 다시 써봐라. 그 규칙이 다음 작업장, 체크리스트, 프롬프트 중 하나를 바꾸지 못한다면, 아직은 그냥 코멘트에 머물러 있는 것이다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>

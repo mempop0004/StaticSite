@@ -1,0 +1,12 @@
+{
+  "blog_folder": "blog_009",
+  "blog_id": "blog-web-content-production-system",
+  "hosting_provider": "cloudflare-pages",
+  "production_url": "https://websys-bk7.pages.dev",
+  "github_repo": "https://github.com/mempop0010/WebSys",
+  "local_working_repo": "https://github.com/golrazo/studio-blog.git",
+  "production_branch": "main",
+  "build_command": "npm run blog:build -- blog_009",
+  "output_dir": "dist",
+  "root_dir": "/"
+}

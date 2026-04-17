@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>post_blog_004_post_004</title>
+  <link rel="stylesheet" href="./assets/posts.css">
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-topbar">
+      <div>
+        <h1 class="studio-title" data-title>기준 글과 후속 글을 나누는 기술 블로그 구조</h1>
+        <div class="studio-meta" data-date>작성 2026-04-15T16:10:00+09:00</div>
+      </div>
+      <div class="studio-actions">
+        <button class="btn" data-copy-title>제목 복사</button>
+      </div>
+    </header>
+
+    <div class="studio-main">
+      <section class="studio-left">
+        <div class="studio-tabs">
+          <button class="studio-tab is-active" data-tab="preview">미리보기</button>
+          <div class="locale-switch">
+            <button class="locale-btn is-active" data-locale="ko">ko</button>
+            <button class="locale-btn" data-locale="en">en</button>
+          </div>
+        </div>
+        <div class="studio-content">
+          <div class="post-preview is-active" data-panel="preview" data-preview></div>
+        </div>
+      </section>
+
+      <aside class="studio-side">
+        <section class="side-card">
+          <h3>태그</h3>
+          <div class="pill-list" data-tag-list></div>
+        </section>
+
+        <section class="side-card">
+          <h3>이미지 슬롯</h3>
+          <div class="side-label">같은 이름 폴더에 001, 002, 003 이미지를 넣는다. .sel 이 있으면 대표 이미지 우선이다.</div>
+          <div data-slot-list></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script id="post-source" type="text/plain">
+<post
+  slug="how-to-separate-pillar-and-supporting-posts-in-a-technical-blog"
+  blog-id="blog-technical-blog-operations"
+  stage="pillar"
+  purpose="problem-fix"
+  search-intent="fix"
+  reader-state="stuck"
+  section-style="checklist"
+  image-need="cover-inline"
+  timestamp="2026-04-15T16:10:00+09:00"
+  updated-date="2026-04-15T16:10:00+09:00"
+  hero-image=""
+  related-slugs="how-to-design-internal-links-for-a-technical-blog,how-to-keep-technical-blog-categories-small-and-clear"
+>
+  <images>
+    <slot code="001" role="cover">
+      <prompt>이 글의 핵심 맥락을 한 장면에서 바로 읽을 수 있는 대표 이미지를 만들어줘.
+
+이미지 역할: 대표 Hero 이미지
+이미지 설명: 중심이 잘못 잡힌 블로그 구조와 중심이 바로 잡힌 블로그 구조의 차이를 한 장면 대비로 보여주는 대표 이미지
+
+공통 기준:
+- 블로그 썸네일용 대표 이미지여야 함
+- locale-safe, no text
+- 실사 책상 장면 금지
+- 실제 브라우저나 CMS 화면 재현 금지
+- 핵심은 '어떤 글이 중심이냐'의 차이
+- 한 장면 안에서 잘못된 중심과 안정된 중심의 대비가 읽혀야 함
+- 장식보다 구조 대비 우선
+- 3D, isometric, realistic rendering 금지
+
+개별 프롬프트:
+editorial cover image for a technical blogging article, showing two contrasting blog structures in one flat 2D composition: on one side a narrow post wrongly acting as the center and pulling everything into an unstable cluster, on the other side a true pillar post holding supporting posts in a stable hierarchy, no text, no realistic UI, no people, no decorative abstraction, should feel like a sharp visual argument about choosing the right center post
+
+참고 검색어:
+pillar post structure, wrong center post, content cluster hierarchy</prompt>
+    </slot>
+    <slot code="002" role="inline">
+      <prompt>이 글의 본문에서 실제 설명을 돕는 보조 이미지를 만들어줘.
+
+이미지 역할: 본문 설명 이미지
+이미지 설명: 기준 글, 후속 글, 비교 글이 서로 다른 역할로 배치되고 링크되는 구조를 설명하는 자료형 이미지
+
+공통 기준:
+- 본문 설명에 바로 붙는 자료형 이미지여야 함
+- locale-safe, no text
+- 구조 설명 우선
+- 카드, 연결선, 역할 구분 블록 정도만 사용
+- 한 장면 안에 한 설명 포인트만 남길 것
+- 분위기용 컨셉 아트 금지
+
+개별 프롬프트:
+practical explanatory diagram for a technical blog article, showing one pillar post block at the top, three supporting post blocks below it, and one comparison post block to the side, with clear directional relationship lines that imply pillar-to-supporting and supporting-back-to-pillar flow, flat 2D layout, no text, no person, no realistic UI, should feel like a reusable operating map rather than a decorative thumbnail
+
+참고 검색어:
+pillar post, supporting post, comparison post, content cluster diagram</prompt>
+    </slot>
+  </images>
+
+  <title lang="en">How to separate pillar and supporting posts in a technical blog</title>
+  <title lang="ko">기준 글과 후속 글을 나누는 기술 블로그 구조</title>
+
+  <description lang="en">Many technical blogs keep publishing without separating the pillar post from the supporting post. This guide shows how to assign roles so structure, internal links, and expansion stay clean.</description>
+  <description lang="ko">기술 블로그는 글을 늘릴수록 기준 글과 후속 글의 역할을 나눠야 구조가 살아난다. 어떤 글을 기준 글로 두고 어떤 글을 후속 설명 글로 둘지 운영 기준으로 정리한다.</description>
+
+  <tags lang="en">pillar post, supporting post, technical blog, content structure, internal linking</tags>
+  <tags lang="ko">기준글, 후속글, 기술블로그, 콘텐츠구조, 내부링크</tags>
+
+  <body lang="en"><![CDATA[
+<p>Technical blogs start drifting when every post is treated as if it has the same job. Once that happens, internal links get messy, category lines blur, and expansion becomes harder than writing the next article.</p>
+
+<p>The fix is simple in theory and often ignored in practice: separate the pillar post from the supporting post. One defines the frame. The others answer narrower questions inside it.</p>
+
+<p>This post is about role separation, not publishing volume. The question is not how many posts you have. The question is whether each post has a clear structural job.</p>
+
+<p>If the center of the topic is wrong, every later post makes the mistake bigger. That is why this is less a writing problem than a structural one.</p>
+
+<h2>1. The pillar post owns the frame</h2>
+<p>A pillar post should explain the broad problem space, define the key terms, and make the reader understand what sits inside the topic and what does not.</p>
+
+<p>If a post cannot introduce the structure of the topic, it is probably not the pillar post. It may still be useful, but it should not carry the index role.</p>
+
+<p>A good pillar post usually does three jobs at once:</p>
+<ul>
+  <li>defines the boundary of the topic</li>
+  <li>names the main sub-questions under it</li>
+  <li>acts as the stable destination that narrower posts can link back to</li>
+</ul>
+
+<h2>2. The real mistake is not writing too little, but promoting the wrong post to the center</h2>
+<p>The most common structural failure is not lack of content. It is giving the center role to the wrong article.</p>
+
+<p>This usually happens after a narrower post starts performing well. It is concrete, it ranks faster, and it feels more useful than the broader post. Then the blog quietly starts treating that narrow article as the center of the topic.</p>
+
+<p>That feels efficient, but it creates a long-term problem. A narrow post can solve one question very well, yet still be a bad center because it cannot hold the rest of the topic around it. The moment you add more related posts, the structure starts tilting toward whatever happened to perform first.</p>
+
+<p>That is why the pillar post should be chosen by structural value, not by short-term traction. The center post is the post that best explains the map. A supporting post may win more clicks, but the pillar post should still own orientation, scope, and role naming.</p>
+
+<p>In practice, this is where many technical blogs drift without noticing. One post about internal links gets traction, so every later post starts linking to it. Then a category cleanup post is published, but it also links into that same internal-link post because it already looks central. A few months later, the blog has traffic, but no stable map.</p>
+
+<p>The fix is usually not replacing the pillar. The fix is restoring roles. The narrow post keeps its traffic job. The pillar post keeps its map job. Once those roles are separated again, adding the next article becomes easier instead of more confusing.</p>
+
+<p>That is the point where a blog starts feeling organized instead of accidental. Readers may not name the structure explicitly, but they feel the difference immediately when every later post lands in a place that already makes sense.</p>
+
+<h2>3. Supporting posts solve narrower questions</h2>
+<p>Supporting posts should not repeat the whole structure. Their job is to solve one narrower problem under the pillar.</p>
+<ul>
+  <li><strong>Pillar post:</strong> explains the operating model</li>
+  <li><strong>Supporting post:</strong> explains one part in detail</li>
+  <li><strong>Comparison post:</strong> helps choose between two options inside the topic</li>
+</ul>
+
+<p>The structure gets stronger when each post type stays in its own role.</p>
+
+<p>For example, if the topic is technical blog operations, the pillar post can explain how structure, internal links, categories, and comparison posts work together. A supporting post can focus only on internal links. Another supporting post can focus only on category size. A comparison post can answer whether a problem should become a comparison post or a checklist post.</p>
+
+<h2>4. Do not let supporting posts pretend to be the center</h2>
+<p>A common failure pattern is letting a narrower post act like the main index because it gets more traffic or because it feels more concrete. That makes the cluster unstable.</p>
+
+<p>Traffic can change. Structure should not. The center post should stay the center because it explains the map better, not because it is currently more popular.</p>
+
+<p>If a narrower post starts attracting more visits, treat that as evidence that the topic matters, not as a reason to replace the pillar. The better move is usually to strengthen links between the narrow post and the real center.</p>
+
+<image-slot code="002" alt-en="A practical diagram showing one pillar post, several supporting posts, and one comparison post arranged by role inside a technical blog cluster." alt-ko="하나의 기준 글과 여러 후속 글, 그리고 비교 글이 역할별로 나뉘어 연결된 기술 블로그 구조를 보여주는 자료형 이미지."></image-slot>
+
+<h2>5. Assign links by role, not by recency</h2>
+<p>Once the roles are clear, linking becomes easier. The pillar post links down to supporting posts. Supporting posts link back up to the pillar and sideways only when the next question is naturally adjacent.</p>
+
+<p>That is better than linking based on recency or on whatever article was published last week.</p>
+
+<p>A quick operating rule works well:</p>
+<ul>
+  <li>pillar to supporting: always</li>
+  <li>supporting to pillar: always</li>
+  <li>supporting to supporting: only when the reader's next step is obvious</li>
+  <li>comparison to pillar: always, so the decision stays inside the topic map</li>
+</ul>
+
+<h2>6. A small role map is enough</h2>
+<p>You do not need a large taxonomy. A small map is enough:</p>
+<ol>
+  <li>one pillar post</li>
+  <li>three supporting posts</li>
+  <li>one comparison or decision post</li>
+</ol>
+
+<p>If you cannot draw that map cleanly, the topic is still too vague or the post roles are not separated enough yet.</p>
+
+<h2>7. Use a quick role test before you publish</h2>
+<p>Before publishing, ask four short questions:</p>
+<ul>
+  <li>Does this post define the topic, or solve one narrow question?</li>
+  <li>If the post disappeared, would the topic map still exist?</li>
+  <li>Can this post link back to a clearer center?</li>
+  <li>Is this really a comparison post instead of a second pillar in disguise?</li>
+</ul>
+
+<h2>What to do first</h2>
+<p>Pick one topic cluster you already have and label each existing post as pillar, supporting, comparison, or stray. If two posts both claim to be the center, the structure is already drifting.</p>
+]]></body>
+
+  <body lang="ko"><![CDATA[
+<p>기술 블로그 구조가 흐려지는 이유는 글이 많아서가 아니다. 모든 글이 비슷한 역할을 하도록 방치하기 때문이다. 그러면 내부 링크는 뒤엉키고, 카테고리 구분은 흐려지고, 다음 글을 추가할수록 구조가 약해진다.</p>
+
+<p>해결은 단순하다. 기준 글과 후속 글을 분리하면 된다. 하나는 주제의 틀을 잡고, 나머지는 그 안에서 더 좁은 질문을 해결해야 한다.</p>
+
+<p>이 글은 발행량을 늘리는 법이 아니라 글 역할을 나누는 법을 다룬다. 핵심 질문은 몇 개를 썼느냐가 아니라, 각 글이 구조 안에서 무슨 일을 하느냐다.</p>
+
+<p>중심이 잘못 잡히면 이후에 붙는 글이 많아질수록 실수도 같이 커진다. 그래서 이 문제는 단순한 작성 문제가 아니라 구조 문제에 가깝다.</p>
+
+<h2>1. 기준 글은 주제의 틀을 맡는다</h2>
+<p>기준 글은 넓은 문제 영역을 설명하고, 핵심 용어를 고정하고, 이 주제 안에 무엇이 들어오고 무엇이 빠지는지 보여줘야 한다.</p>
+
+<p>어떤 글이 주제의 지도를 설명하지 못한다면 그 글은 기준 글이 아니다. 유용할 수는 있어도 인덱스 역할까지 맡으면 안 된다.</p>
+
+<p>좋은 기준 글은 보통 세 가지 일을 동시에 한다.</p>
+<ul>
+  <li>주제의 경계를 정한다</li>
+  <li>그 아래에 들어갈 하위 질문을 이름 붙인다</li>
+  <li>후속 글이 다시 돌아올 안정적인 중심이 된다</li>
+</ul>
+
+<h2>2. 진짜 문제는 글이 부족한 게 아니라, 중심에 놓을 글을 잘못 고르는 데 있다</h2>
+<p>기술 블로그 구조가 흔들릴 때 가장 흔한 실패는 글 수가 부족한 게 아니다. 중심 역할을 주면 안 되는 글이 중심 자리를 가져가는 것이다.</p>
+
+<p>보통은 더 좁고 더 구체적인 글이 먼저 검색 유입을 받으면서 이 일이 시작된다. 그 글은 당장 더 실용적으로 보이고, 더 빨리 반응을 얻고, 그래서 운영자도 모르게 점점 중심 글처럼 취급된다.</p>
+
+<p>문제는 거기서 생긴다. 더 좁은 글은 한 질문을 잘 푸는 데는 유리하지만, 주제 전체를 붙잡아 두는 중심이 되기에는 약할 수 있다. 그런데 그 글을 중심처럼 쓰기 시작하면 이후에 붙는 글들도 전부 그 좁은 문제를 기준으로 정렬된다. 그러면 구조는 점점 비뚤어진다.</p>
+
+<p>그래서 기준 글은 단기 유입이 아니라 구조 가치로 골라야 한다. 중심 글은 클릭이 가장 많은 글이 아니라, 주제의 지도를 가장 잘 설명하는 글이어야 한다. 후속 글은 더 많은 유입을 받아도 괜찮지만, 방향을 정하는 역할까지 가져가면 안 된다.</p>
+
+<p>실제로는 이런 식으로 무너진다. 내부 링크 설계 글 하나가 먼저 반응을 얻고, 이후 글들이 모두 그 글로만 몰리기 시작한다. 그다음 카테고리 정리 글이 나와도 역시 그 글에 붙고, 비교 글이 나와도 그 글에 붙는다. 몇 달 뒤엔 글은 늘었는데, 독자가 전체 지도를 읽을 중심은 사라진다.</p>
+
+<p>이때 필요한 건 기준 글을 갈아엎는 게 아니라 역할을 복구하는 일이다. 후속 글은 유입을 담당하고, 기준 글은 지도를 담당하게 다시 분리해야 한다. 역할이 다시 갈라지면 다음 글을 붙일 때마다 구조가 더 또렷해진다.</p>
+
+<p>이 지점부터 블로그는 우연히 쌓인 모음이 아니라 설계된 구조처럼 보이기 시작한다. 독자가 그 이유를 말로 설명하지 못해도, 새 글이 어디에 붙는지 자연스럽게 읽히면 이미 차이는 만들어진 것이다.</p>
+
+<h2>3. 후속 글은 더 좁은 질문 하나를 푼다</h2>
+<p>후속 글은 전체 구조를 다시 설명하는 글이 아니다. 기준 글 아래에서 더 좁은 문제 하나를 깊게 푸는 글이어야 한다.</p>
+<ul>
+  <li><strong>기준 글:</strong> 운영 모델과 전체 틀을 설명한다</li>
+  <li><strong>후속 글:</strong> 그 안의 한 부분을 자세히 푼다</li>
+  <li><strong>비교 글:</strong> 주제 안에서 두 선택지를 고르게 돕는다</li>
+</ul>
+
+<p>글 역할이 섞이지 않을수록 구조는 강해진다.</p>
+
+<p>예를 들어 기술 블로그 운영이 주제라면, 기준 글은 구조와 내부 링크, 카테고리, 비교 글의 역할까지 전체 지도를 설명할 수 있다. 후속 글은 내부 링크 설계만 다루고, 다른 후속 글은 카테고리 크기만 다룬다. 비교 글은 어떤 주제를 비교 글로 써야 하는지처럼 선택을 돕는 데 집중한다.</p>
+
+<h2>4. 후속 글이 중심인 척하게 두지 않는다</h2>
+<p>자주 생기는 실패는 더 구체적인 후속 글이 검색 유입을 받는다는 이유로 중심 역할까지 가져가는 것이다. 그러면 클러스터가 금방 흔들린다.</p>
+
+<p>유입은 바뀔 수 있어도 구조는 바뀌면 안 된다. 중심 글은 지금 인기 있는 글이 아니라, 지도를 가장 잘 설명하는 글이어야 한다.</p>
+
+<p>더 좁은 글에 유입이 몰리기 시작하면 그 글을 중심으로 승격시키기보다, 그 글과 실제 중심 글 사이 연결을 더 분명하게 만드는 편이 보통 더 낫다.</p>
+
+<image-slot code="002" alt-en="A practical diagram showing one pillar post, several supporting posts, and one comparison post arranged by role inside a technical blog cluster." alt-ko="하나의 기준 글과 여러 후속 글, 그리고 비교 글이 역할별로 나뉘어 연결된 기술 블로그 구조를 보여주는 자료형 이미지."></image-slot>
+
+<h2>5. 링크는 최근 글이 아니라 역할 기준으로 건다</h2>
+<p>역할이 정해지면 링크도 쉬워진다. 기준 글은 후속 글로 내려가고, 후속 글은 기준 글로 다시 올라오고, 인접 후속 글로는 독자의 다음 질문이 자연스러울 때만 옆으로 연결한다.</p>
+
+<p>이게 최근 발행 글 위주로 엮는 것보다 훨씬 안정적이다.</p>
+
+<p>실무에서는 아래 정도만 고정해도 충분하다.</p>
+<ul>
+  <li>기준 글에서 후속 글로: 항상 연결</li>
+  <li>후속 글에서 기준 글로: 항상 연결</li>
+  <li>후속 글끼리: 독자의 다음 질문이 분명할 때만 연결</li>
+  <li>비교 글에서 기준 글로: 항상 연결해서 판단이 주제 지도 안에 남게 한다</li>
+</ul>
+
+<h2>6. 작은 역할 지도로도 충분하다</h2>
+<p>큰 분류 체계가 필요한 게 아니다. 작은 지도 하나면 충분하다.</p>
+<ol>
+  <li>기준 글 1개</li>
+  <li>후속 글 3개</li>
+  <li>비교 또는 선택 글 1개</li>
+</ol>
+
+<p>이 지도가 깔끔하게 안 그려지면, 주제가 아직 너무 흐리거나 글 역할이 충분히 분리되지 않은 상태다.</p>
+
+<h2>7. 발행 전에 역할 테스트를 한 번 돌린다</h2>
+<p>발행 전에 네 가지를 짧게 물어보면 역할 혼선을 많이 줄일 수 있다.</p>
+<ul>
+  <li>이 글은 주제를 정의하는가, 아니면 더 좁은 질문 하나를 푸는가</li>
+  <li>이 글이 사라져도 주제 지도가 남는가</li>
+  <li>이 글은 더 분명한 중심 글로 다시 연결될 수 있는가</li>
+  <li>이 글은 사실 두 번째 기준 글이 아니라 비교 글인가</li>
+</ul>
+
+<h2>무엇부터 시작할까</h2>
+<p>지금 이미 있는 주제 묶음 하나를 골라 각 글을 기준 글, 후속 글, 비교 글, stray 중 하나로 표시해봐라. 중심이라고 주장하는 글이 둘이면 구조는 이미 흔들리고 있는 것이다.</p>
+]]></body>
+</post>
+  </script>
+
+  <script id="slot-guides" type="application/json">{
+  "cover": {
+    "label": "대표 Hero 이미지",
+    "goal": "글의 핵심 맥락을 썸네일 한 장에서 바로 읽히게 만든다.",
+    "visualType": "editorial composite / information-led hero",
+    "useWhen": [
+      "글 전체를 대표하는 한 장면이 필요할 때",
+      "검색 결과나 공유 카드에서 첫 인상을 결정할 때"
+    ],
+    "must": [
+      "한 장면, 한 포인트, 강한 대비로 시선이 바로 가야 한다",
+      "글 제목과 핵심 맥락이 바로 연결돼야 한다",
+      "뉴스, 칼럼, 실전 가이드에 맞는 현실적인 톤을 유지한다",
+      "generic stock photo 대신 글의 핵심 감각이나 핵심 대비가 바로 보여야 한다",
+      "대표 이미지는 개념형이어야 한다",
+      "한 장면, 한 메시지, 한 대비로 끝내야 한다",
+      "이미지 안에는 언어 텍스트를 넣지 않는다",
+      "왼쪽 하나와 오른쪽 하나처럼 결과를 단순하게 압축해야 한다",
+      "썸네일에서 1초 안에 읽혀야 한다"
+    ],
+    "avoid": [
+      "유치한 합성 느낌",
+      "가짜 자막, 값싼 클릭베이트 컷",
+      "텍스트를 여러 줄 얹는 구성",
+      "그냥 책상 앞 사람 한 명만 있는 모호한 라이프스타일 컷",
+      "과정 설명용 화살표와 패널이 많은 인포그래픽 구성",
+      "이메일, 요약, 메모 같은 여러 기능을 한 장에 다 넣는 구성",
+      "설명도처럼 해석해야 이해되는 구성"
+    ],
+    "outputHint": "대표 이미지는 글 전체를 설명하지 않는다. 혼란 -> 정리, 복잡함 -> 간결함 같은 핵심 대비만 남긴다. 결과 패널도 하나만 남기는 편이 좋다."
+  },
+  "inline": {
+    "label": "본문 설명 이미지",
+    "goal": "본문에서 특정 설명, 비교, 단계 이해를 직접 돕는다.",
+    "visualType": "information-led visual / explanatory composite",
+    "useWhen": [
+      "텍스트만으로는 설명이 느려질 때",
+      "화면, 흐름, 비교 포인트를 즉시 보여줘야 할 때"
+    ],
+    "must": [
+      "본문 앞뒤 문단의 설명 맥락을 직접 보조해야 한다",
+      "한 이미지에 한 설명 포인트만 담는다",
+      "장식보다 이해 보조 역할이 우선이다",
+      "사람 감정보다 문서, 화면, 비교 포인트 같은 정보 단서를 우선 노출한다",
+      "사진 같은 장면이 아니라 설명용 구성물이어도 괜찮다",
+      "텍스트 없는 단계/흐름 설명을 우선한다",
+      "섹션 이해를 돕는 실제 구조 설명이 우선이다"
+    ],
+    "avoid": [
+      "글과 무관한 분위기용 이미지",
+      "텍스트를 많이 넣는 설명 이미지",
+      "표로 해결할 수 있는 내용을 억지로 이미지화하는 것",
+      "단순히 노트북 보는 사람처럼 모호한 스톡 장면"
+    ],
+    "outputHint": "본문 설명 이미지는 process visual에 가깝다. 단계, 관계, 흐름, before/after를 시각 구조로 설명한다."
+  },
+  "comparison": {
+    "label": "비교용 이미지",
+    "goal": "A와 B의 차이를 한 화면에서 바로 읽게 만든다.",
+    "visualType": "split comparison / before-after composition",
+    "useWhen": [
+      "툴 비교, 전후 비교, 선택 기준 비교가 핵심일 때",
+      "한 장면 안에서 대비가 분명할 때"
+    ],
+    "must": [
+      "비교 대상이 동시에 보이거나 즉시 연상돼야 한다",
+      "비교 포인트가 한 가지 축으로 명확해야 한다",
+      "과장보다 판단 보조가 우선이다",
+      "split composition이나 before/after처럼 차이가 한눈에 보여야 한다",
+      "설명 문장보다 시각 구조로 차이를 읽게 해야 한다"
+    ],
+    "avoid": [
+      "비교 요소가 너무 많아 한눈에 안 읽히는 장면",
+      "광고 배너처럼 보이는 구도",
+      "실제 비교보다 자극성만 강조하는 컷",
+      "비교와 상관없는 인물 중심 사진"
+    ],
+    "outputHint": "비교 차트나 표로 더 정확하면 이미지 대신 표를 쓴다. 언어 의존 라벨은 기본 금지다."
+  },
+  "screenshot": {
+    "label": "실무 화면 캡처",
+    "goal": "실제 설정 화면, 도구 화면, 결과 화면을 정확히 보여준다.",
+    "visualType": "real screenshot or reconstructed UI crop",
+    "useWhen": [
+      "실제 UI 위치나 설정값이 중요할 때",
+      "문제 해결 글에서 확인 대상을 정확히 짚어야 할 때"
+    ],
+    "must": [
+      "정확한 화면과 실제 맥락을 보여줘야 한다",
+      "필요한 부분만 보이게 좁혀야 한다",
+      "실제 이해를 돕는 장면이어야 한다",
+      "보여줄 설정 위치나 강조 포인트가 명확해야 한다"
+    ],
+    "avoid": [
+      "해상도 낮은 캡처",
+      "개인정보가 섞인 캡처",
+      "어디를 보라는지 모르는 넓은 화면"
+    ],
+    "outputHint": "실제 캡처가 있더라도 글 이해를 위해 재구성 이미지가 더 나으면 교체한다. 단, screenshot만 예외적으로 언어 의존 가능하다."
+  }
+}</script>
+
+  <script src="./assets/posts.js"></script>
+</body>
+</html>
